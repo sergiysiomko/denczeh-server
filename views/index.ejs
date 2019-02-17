@@ -1,0 +1,175 @@
+<%- include('header',{title:"Робота за кордоном"})-%>
+<header>
+    <div class="menu-wrapper">
+    <menu>
+        <div class="menu-item"><a href="#">Головна</a></div>
+        <div class="menu-item"><a href="#">Вакансії</a></div>
+        <div class="menu-item list-menu"><a href="#">Інформація</a>
+            <ul>
+                <li class="list-item"><a href="#">inf1</a></li>
+                <li class="list-item"><a href="#">inf2</a></li>
+                <li class="list-item"><a href="#">inf3</a></li>
+                <li class="list-item"><a href="#">inf4</a></li>
+                <li class="list-item"><a href="#">inf5</a></li>
+            </ul>
+        </div>
+        <div class="menu-item"><a href="#">Послуги</a></div>
+        <div class="menu-item"><a href="#">Контакти</a></div>
+    </menu>
+    </div>
+    <h1 class="main-title" id="asdf">
+        Робота за кордоном
+    </h1>
+    <div class="buttons">
+        <div class="header-button"><a href="#" class="red-button">Заповнити анкету</a></div>
+        <div class="header-button"><a href="#" class="blue-button">Інформація</a></div>
+        <div class="header-button"><a href="#" class="green-button">Запитання - Відповідь</a></div>
+    </div>
+</header>
+<main>
+    <div class="vacancies-wrapper">
+        <section id="vacancies">
+            <h2>Актуальні вакансії</h2>
+            <%vacancies.forEach(function(v){%>
+                <article class="vacancy">
+                    <div class="vacancy-info">
+                            <h3 class="vacancy-title"><%=v.title%></h3>
+                            <div class="location">
+                                <img src="img/location-icon.png" alt="location-icon" class="location-icon">
+                                <span class="location-text"><%=v.location%></span>
+                            </div>
+                            <div class="vacancy-payment">
+                                    <img src="img/money-icon.png" alt="payment-icon" class="payment-icon">
+                                <span class="payment-text"><%=v.payment%> <%=v.currency%></span>
+                            </div>
+                            <a href="/vacancies/<%=v.link%>">Детальніше...</a>
+                    </div>
+                    
+                    <img src="img/<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img">
+                 </article>
+            <%})%>
+            
+            <!--<article class="vacancy">
+                    <div class="vacancy-info">
+                            <h3 class="vacancy-title">Збір, комплектація і пакування техніки Panasonic</h3>
+                            <div class="location">
+                                <img src="img/location-icon.png" alt="location-icon" class="location-icon">
+                                <span class="location-text">Чехія, Плзень</span>
+                            </div>
+                            <div class="vacancy-payment">
+                                    <img src="img/money-icon.png" alt="payment-icon" class="payment-icon">
+                                <span class="payment-text">100 крон/год</span>
+                            </div>
+                            <a href="#">Детальніше...</a>
+                    </div>
+                    
+                    <img src="img/vacancy1.jpg" alt="vacancy photo" class="vacancy-img">
+            </article>
+            <article class="vacancy">
+                    <div class="vacancy-info">
+                            <h3 class="vacancy-title">Збір, комплектація і пакування техніки Panasonic</h3>
+                            <div class="location">
+                                <img src="img/location-icon.png" alt="location-icon" class="location-icon">
+                                <span class="location-text">Чехія, Плзень</span>
+                            </div>
+                            <div class="vacancy-payment">
+                                    <img src="img/money-icon.png" alt="payment-icon" class="payment-icon">
+                                <span class="payment-text">100 крон/год</span>
+                            </div>
+                            <a href="#">Детальніше...</a>
+                    </div>
+                    
+                    <img src="img/vacancy1.jpg" alt="vacancy photo" class="vacancy-img">
+            </article>
+            <article class="vacancy">
+                    <div class="vacancy-info">
+                            <h3 class="vacancy-title">Збір, комплектація і пакування техніки Panasonic</h3>
+                            <div class="location">
+                                <img src="img/location-icon.png" alt="location-icon" class="location-icon">
+                                <span class="location-text">Чехія, Плзень</span>
+                            </div>
+                            <div class="vacancy-payment">
+                                    <img src="img/money-icon.png" alt="payment-icon" class="payment-icon">
+                                <span class="payment-text">100 крон/год</span>
+                            </div>
+                            <a href="#">Детальніше...</a>
+                    </div>
+                    
+                    <img src="img/vacancy1.jpg" alt="vacancy photo" class="vacancy-img">
+            </article>
+            <article class="vacancy">
+                    <div class="vacancy-info">
+                            <h3 class="vacancy-title">Збір, комплектація і пакування техніки Panasonic</h3>
+                            <div class="location">
+                                <img src="img/location-icon.png" alt="location-icon" class="location-icon">
+                                <span class="location-text">Чехія, Плзень</span>
+                            </div>
+                            <div class="vacancy-payment">
+                                    <img src="img/money-icon.png" alt="payment-icon" class="payment-icon">
+                                <span class="payment-text">100 крон/год</span>
+                            </div>
+                            <a href="#">Детальніше...</a>
+                    </div>
+                    
+                    <img src="img/vacancy1.jpg" alt="vacancy photo" class="vacancy-img">
+            </article>-->
+        </section>
+    </div>
+    <section id="socialnetwork">
+            <h2>
+                Ми в соціальних мережах
+            </h2>
+            <a href="#">
+                <img src="img/instagram-logo.png" alt="instagram">
+            </a>
+            <a href="#">
+                <img src="img/facebook-logo.png" alt="facebook">
+            </a>
+            
+        </section>
+    <section id="galery">
+        <h2>Фотогалерея</h2>
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>    
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>  
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>  
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>  
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>  
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>
+        <a href="img/img.jpg" data-fancybox="galery">
+            <img src="img/img.jpg" alt="">
+        </a>  
+            
+    </section>
+
+    
+    
+    
+</main>
+<%- include('footer')-%>

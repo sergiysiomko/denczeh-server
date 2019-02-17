@@ -1,0 +1,333 @@
+body{
+    background-color: rgb(216, 216, 216);
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-image: url("/img/header.jpg");
+    background-size: cover;
+    height: 650px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.menu-wrapper{
+    background-color: rgba(160, 162, 165, 0.7);
+    height: 75px;
+}
+menu{
+    
+    display: flex;
+    margin: 0 auto;
+    width:70%;
+    padding: 0;
+    font-size: 16pt;
+    color:rgb(255,255,255);
+    /* font-family: Arial, Helvetica, sans-serif; */
+    
+    height: 75px;
+    line-height: 70px;
+    justify-content: center;
+}
+.menu-item.list-menu{
+    overflow: hidden;
+    position: relative;
+    
+}
+.menu-item.list-menu:hover{
+    overflow: visible;
+    height: 290px;/*75+45*5-10*/
+    background-color: rgb(193, 116, 6);
+}
+.menu-item:hover{
+    background-color:rgb(193, 116, 6);
+}
+.menu-item.list-menu ul{
+    list-style: none;
+    line-height: 45px;
+    margin-top: -10px;
+    margin-bottom: 0;
+    padding: 0;
+}
+.list-menu .list-item{
+    width:100%;
+    text-align: center;
+}
+.list-menu .list-item a{
+    padding: 0;
+} 
+.list-menu .list-item a:hover{
+    
+    background-color: rgb(192, 133, 51);
+}
+.menu-item a{
+    display: block;
+    text-decoration: none;
+    color:white;
+}
+.menu-item> a{
+   height: 75px;
+    padding:0 15px;
+}
+.menu-item a:active{
+    color:grey
+}
+
+header .main-title{
+    text-transform: uppercase;
+    font-size: 75pt;
+    text-align: center;
+    background-color: rgba(200,200,200,0.5);
+    width: 70%;
+    align-self: center;
+    padding: 20px;
+    margin: 0;
+    font-family: Playfair;
+    min-width: 560px;
+}
+
+header .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-self: center;
+    padding-bottom: 20px;
+    width: 58%;
+}
+header .buttons .header-button{
+    padding:0 15px;
+}
+header .buttons .header-button a{
+    border-radius: 3px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    height: 50px;
+    width: 220px;
+    text-align: center;
+    line-height: 48px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    background-color: rgb(193, 116, 6);
+    font-weight: bold;
+    
+}
+main{
+    border-top: 1px solid rgb(175, 175, 175);
+    
+}
+main .vacancies-wrapper{
+    background-image: url("/img/background.png");
+   
+    
+}
+#vacancies{
+    
+    height:auto;
+    min-height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1100px;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+#vacancies h2{
+    text-align: center;
+    font-size: 24pt;
+    margin: 0;
+    padding: 20px 0px;
+    width:100%;
+}
+#vacancies .vacancy{
+    /* border:1px solid grey; */
+    width:450px;
+    height:200px;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 12pt;
+    margin: 15px 10px;
+}
+
+
+#vacancies .vacancy .vacancy-info{
+    width: 56%;
+    padding: 8px 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#vacancies .vacancy .vacancy-title{
+    color:#4c4c4c;
+    margin:0 9px;
+    font-size: 16pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#vacancies .vacancy .location-text,
+#vacancies .vacancy .payment-text{
+    vertical-align: 5px;
+}
+#vacancies .vacancy a{
+    font-size: 15pt;
+    color:rgb(131, 81, 15);
+    line-height: 40px;
+}
+#vacancies .vacancy .vacancy-img{
+    width: 44%;
+    border-radius: 0 10px 10px 0;
+}
+
+#socialnetwork{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+}
+#socialnetwork h2{
+    text-align: center;
+    font-size: 24pt;
+    margin: 0;
+    padding: 20px 0px;
+    width:100%;
+    background-color: rgb(255, 194, 103);
+    margin-bottom: 10px;
+}
+#socialnetwork img{
+    margin: 8px;
+}
+
+
+#galery{
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#galery h2{
+    text-align: center;
+    font-size: 24pt;
+    margin: 0;
+    padding: 20px 0px;
+    width: 100%;
+    background-color:rgb(255, 250, 144);
+}
+#galery a{
+    overflow: hidden;
+    width:16%;
+
+}
+#galery img{
+    width:100%;
+   transition: 0.3s ease-in-out;
+}
+
+#galery img:hover{
+    /* transform: scale(1.15); */
+    opacity: 0.8;
+}
+
+#contacts{
+    padding-bottom: 20px;
+    background-color: rgb(12, 10, 94);
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+#contacts h2{
+    text-align: center;
+    font-size: 24pt;
+    margin: 0;
+    padding: 20px 0px;
+    width:100%;
+    color: aliceblue;
+}
+#contacts .contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color:white;
+    height: 96px;
+    margin: 0 10px;
+  
+}
+#contacts .contact .content-wraper{
+    display: flex;
+    width: 240px;
+    flex-direction: column;
+    margin: auto;
+    font-size: 15pt;
+    letter-spacing: 3px;
+}
+   
+aside{
+    width: 45px;
+    height: 135px;
+    position: fixed;
+    top: 47%;
+    left: 0;
+    z-index: 50;
+    background-color: white;
+
+}
+aside img {
+    display: block;
+}
+
+
+@media only screen and (max-width:920px){
+    menu{
+        width:auto;
+        
+    }
+    .menu-item> a{
+        padding: 0 4.5px;
+    }
+ 
+}
+@media only screen and (max-width:750px){
+    header .main-title{
+        font-size: 60pt;
+    }
+    header .buttons{
+        flex-direction: column;
+        align-items: center;
+    }
+    header .buttons .header-button a{
+        width: 300px;
+    }
+    #galery a{
+        overflow: hidden;
+        width:23%;
+    
+    }
+}
+@media only screen and (max-width:1195px){
+    #vacancies{
+        width:100%;
+    }
+}
+@media only screen and (max-width:955px){
+    #vacancies{
+        justify-content: center;
+    }
+}
+
+
+@font-face {
+    font-family: "Playfair"; 
+    src: url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "PlayfairBold"; 
+    src: url("/fonts/PlayfairDisplay-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
