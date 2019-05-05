@@ -32,8 +32,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/vacancies');
 
 var app = express();
-app.listen(80,"192.168.1.6",() => {
-  console.log("Сервер запущено");
+const host = "127.0.0.1"
+app.listen(80, host,() => {
+  console.log(`Сервер запущено на ${host}`);
 });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -85,6 +86,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error',{error:err});
+
 });
 module.exports = app;

@@ -14,6 +14,10 @@ var VacancySchema = new Schema({
         type:String,
         unique:true,
         required:true
-    }
+    },
+    category: String,
+    experience:Boolean,
+    lang:Boolean
+
 })
 module.exports = mongoose.model("Vacancy",VacancySchema);

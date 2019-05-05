@@ -1,23 +1,7 @@
 <%- include('header',{title:"Робота за кордоном"})-%>
 <header>
-    <div class="menu-wrapper">
-    <menu>
-        <div class="menu-item"><a href="#">Головна</a></div>
-        <div class="menu-item"><a href="#">Вакансії</a></div>
-        <div class="menu-item list-menu"><a href="#">Інформація</a>
-            <ul>
-                <li class="list-item"><a href="#">inf1</a></li>
-                <li class="list-item"><a href="#">inf2</a></li>
-                <li class="list-item"><a href="#">inf3</a></li>
-                <li class="list-item"><a href="#">inf4</a></li>
-                <li class="list-item"><a href="#">inf5</a></li>
-            </ul>
-        </div>
-        <div class="menu-item"><a href="#">Послуги</a></div>
-        <div class="menu-item"><a href="#">Контакти</a></div>
-    </menu>
-    </div>
-    <h1 class="main-title" id="asdf">
+   <%- include('menu')-%>
+    <h1 class="main-title">
         Робота за кордоном
     </h1>
     <div class="buttons">
@@ -45,10 +29,9 @@
                             <a href="/vacancies/<%=v.link%>">Детальніше...</a>
                     </div>
                     
-                    <img src="img/<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img">
+                    <img src="<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img">
                  </article>
             <%})%>
-            
             <!--<article class="vacancy">
                     <div class="vacancy-info">
                             <h3 class="vacancy-title">Збір, комплектація і пакування техніки Panasonic</h3>

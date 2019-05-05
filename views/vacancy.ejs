@@ -1,0 +1,14 @@
+<%- include('header',{title:"Робота за кордоном"})-%>
+<%- include('menu')-%>
+
+<div id="vacancy">
+    <h1><%=vacancy.title%></h1>
+    <div id="description"><%-vacancy.bigDescription%></div>
+    <%vacancy.images.forEach((image)=>{%>
+        <a href="<%=image%>" data-fancybox="galery">
+            <img src="<%=image%>" alt="">
+        </a>
+    <%})%>
+</div>
+
+<%- include('footer')-%>

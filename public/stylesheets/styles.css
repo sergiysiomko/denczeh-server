@@ -15,6 +15,7 @@ header{
 .menu-wrapper{
     background-color: rgba(160, 162, 165, 0.7);
     height: 75px;
+    /* margin-bottom: -18px; */
 }
 menu{
     
@@ -279,6 +280,19 @@ aside img {
     display: block;
 }
 
+#vacancy{
+    padding: 1px;
+    background-color: #feffef;
+    width: 70%;
+    margin:0 auto;
+    font-family: OpenSans;
+    font-size: 14pt;
+}
+#vacancy #description{
+    
+}
+
+
 
 @media only screen and (max-width:920px){
     menu{
@@ -328,6 +342,12 @@ aside img {
 @font-face {
     font-family: "PlayfairBold"; 
     src: url("/fonts/PlayfairDisplay-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "OpenSans"; 
+    src: url("/fonts/opensans.ttf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
 } 
