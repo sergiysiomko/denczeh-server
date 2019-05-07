@@ -17,14 +17,22 @@ var mongoose = require('mongoose');
 // mongoose.connect("mongodb://localhost/denczechdb");
 // var db = mongoose.connection;
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/denczechdb",{
-  useNewUrlParser:true
+const localDbUri = "mongodb://localhost/denczechdb";
+const dbUri = 'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10250/densitedb?ssl=true&sslverifycertificate=false';
+//'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
+
+
+mongoose.connect(dbUri,{
+  useNewUrlParser:true,
+  useMongoClient:true
 })
   .then(() => {
     console.log("MongoDB has started...");
   })
   .catch((err) => {
-    throw new Error("db crash");
+    //throw new Error("db crash");
+    console.log(err)
+    console.log('db crash')
   })
   
 
@@ -32,9 +40,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/vacancies');
 
 var app = express();
-const host = "127.0.0.1"
-app.listen(80, host,() => {
-  console.log(`Сервер запущено на ${host}`);
+var host = "127.0.0.1"
+var port = process.env.PORT || 1337;
+app.listen(port,() => {
+  console.log(`Сервер запущено на ${host}
+  порт: ${port}`);
 });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

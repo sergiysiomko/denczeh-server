@@ -1,0 +1,12 @@
+ddensite.gmail.com
+#2!Juc8E
+
+
+"documentEndpoint": "https://densitedb-westeurope.documents.azure.com:443/"
+
+{
+  "primaryMasterKey": "l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==",
+  "primaryReadonlyMasterKey": "76HwClawypWkzzqsslTN9Kjhch5Yosp9Gr0FooMFOjLgwyo4sFnpcxN4N5k55xYtBKWIBfSLPeOd7APXxHuNoA==",
+  "secondaryMasterKey": "pb6s9EMvU8GWVyq629Ie5X3Me9epdsM9QrcJHyIg5pnJN3kBhxqbRZZUIONCb98u1bVOzaWAkq1JCfTuIjeaMA==",
+  "secondaryReadonlyMasterKey": "ELfjkt8vuzHgxiwPDLP7kuXxtmcvcIQsL0X8W3k2lzU9LpKpFytG76DJSCwZP3w89wV1JZtVG82SN1UCDGAz9A=="
+}
