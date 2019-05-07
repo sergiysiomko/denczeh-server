@@ -3,6 +3,9 @@ var createError = require('http-errors');
 var router = express.Router();
 var Vacancy = require('../dbmodels/vacancy-model');
 
+router.get('/add',async function(req, res, next){
+  res.render('add')
+})
 router.get('/:link', async function(req, res, next) {
   try {
     let vacancy = await Vacancy.findOne({link:req.params.link})
@@ -18,6 +21,20 @@ router.get('/:link', async function(req, res, next) {
   let vacancy = await Vacancy.findOne({link:req.params.link})
   res.render('vacancy', {vacancy:vacancy});
 })
+
+
+router.post('/add',async function(req, res, next){
+  req.body.images=[];
+  req.body.faceImage='/img/vacancies';
+  req.body.experience = !!req.body.experience;
+  req.body.lang = !!req.body.lang;
+  req.body.link = req.body.link||rus_to_latin(req.body.title)
+  console.log(req.body)
+  let newVacancy = new Vacancy(req.body);
+  await newVacancy.save();
+  res.redirect('/vacancies/add')
+})
+
 
 router.get('/json/:link', async function(req, res, next) {
   /*console.log(req.params.link);

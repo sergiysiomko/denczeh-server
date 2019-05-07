@@ -16,7 +16,7 @@ router.get('/', async function(req, res, next) {
   //   "link" : "Panasonic",
   // })
   // await v.save();
-  var vacancies = await Vacancy.find({});
+  let vacancies = await Vacancy.find({});
   //console.log(vacancies);
   res.render("index", {vacancies:vacancies});
 });

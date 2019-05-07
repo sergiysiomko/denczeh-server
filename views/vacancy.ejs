@@ -2,13 +2,17 @@
 <%- include('menu')-%>
 
 <div id="vacancy">
-    <h1><%=vacancy.title%></h1>
-    <div id="description"><%-vacancy.bigDescription%></div>
-    <%vacancy.images.forEach((image)=>{%>
-        <a href="<%=image%>" data-fancybox="galery">
-            <img src="<%=image%>" alt="">
-        </a>
-    <%})%>
+    <div class='main-text'>
+        <h1><%=vacancy.title%></h1>
+        <div id="description"><%-vacancy.bigDescription%></div>     
+    </div>  
+    <div class='vacancy-galary'>
+        <%vacancy.images.forEach((image)=>{%>
+            <a href="<%=image%>" data-fancybox="galery">
+                <img src="<%=image%>" alt="">
+            </a>
+        <%})%>
+    </div>
 </div>
 
 <%- include('footer')-%>

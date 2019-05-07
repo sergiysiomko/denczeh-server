@@ -1,0 +1,72 @@
+<%- include('header',{title:"Робота за кордоном"})-%>
+<%- include('menu')-%>
+<style>
+    .caption{
+        display:inline-block;
+        width: 180px;
+        text-align: right;
+        margin-right: 10px;
+    }
+    input[type="submit"]{
+        color: white;
+        display: block;
+        width: 170px;
+        height: 38px;
+        margin-left: 100px;
+        background: #38ab38;
+    }
+</style>
+<form action='/vacancies/add' method="post">
+    <p>
+        <span class="caption">Назва</span>
+        <input type="text" name="title" value="">
+    </p>
+    <p>
+        <span class="caption">Оплата</span>
+        <input type="number" name="payment" value="">
+    </p>
+    <p>
+        <span class="caption">Валюта</span>
+        <input type="text" name="currency" value="">
+    </p>
+    <p>
+        <span class="caption">Короткий опис</span>
+        <input type="text" name="description" value="">
+    </p>
+    <p>
+        <span class="caption">Головний текст</span>
+        <br>
+        <textarea rows="20" cols="70" name="bigDescription"></textarea>
+    </p>
+    <p>
+        <span class="caption">Місто</span>
+        <input type="text" name="location" value="">
+    </p>
+    <p>
+        <span class="caption">link: /vacancies/</span>
+        <input type="text" name="link" value="">
+    </p>
+    <p>
+        <span class="caption">Категорія</span>  
+        <select name="category">
+            <option value=""></option>
+            <option value="по професії">по професії</option>
+            <option value="різноробочі - склади">різноробочі - склади</option>
+            <option value="різноробочі - заводи">різноробочі - заводи</option>
+
+        </select>
+    </p>
+    <p>
+        <label for="experience">
+            <span class="caption">Досвід роботи</span>
+            <input type="checkbox" name="experience" value="Досвід роботи" id="experience">
+        </label>
+    </p>
+    <p>
+        <label for="lang">
+            <span class="caption">Знання мови</span>
+            <input type="checkbox" name="lang" value="Знання мови" id="lang">
+        </label>
+    </p>
+    <input type="submit" name="" value="ЗБЕРЕГТИ">
+</form>
