@@ -1,6 +1,8 @@
 ddensite.gmail.com
 #2!Juc8E
 
+den.site@outlook.com
+densite123
 
 "documentEndpoint": "https://densitedb-westeurope.documents.azure.com:443/"
 

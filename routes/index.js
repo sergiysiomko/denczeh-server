@@ -17,7 +17,7 @@ router.get('/', async function(req, res, next) {
   // })
   // await v.save();
   let vacancies = await Vacancy.find({});
-  console.log(vacancies);
+  //console.log(vacancies);
 
   res.render("index", {vacancies:vacancies});
 });

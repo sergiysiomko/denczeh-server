@@ -22,11 +22,9 @@ const dbUri = 'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09
 //'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
 
 
-mongoose.connect(dbUri,{
-  useNewUrlParser:true,
-  useMongoClient:true
-})
-  .then(() => {
+mongoose.connect(localDbUri,{
+  useNewUrlParser:true
+}).then(() => {
     console.log("MongoDB has started...");
   })
   .catch((err) => {
@@ -34,17 +32,29 @@ mongoose.connect(dbUri,{
     console.log(err)
     console.log('db crash')
   })
+
+// mongoose.connect(dbUri,{
+//   useNewUrlParser:true,
+//   useMongoClient:true
+// }).then(() => {
+//     console.log("MongoDB has started...");
+//   })
+//   .catch((err) => {
+//     //throw new Error("db crash");
+//     console.log(err)
+//     console.log('db crash')
+//   })
   
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/vacancies');
+var infoRouter = require('./routes/info');
 
 var app = express();
 var host = "127.0.0.1"
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 80;
 app.listen(port,() => {
-  console.log(`Сервер запущено на ${host}
-  порт: ${port}`);
+  console.log(`Сервер запущено на ${host}  порт: ${port}`);
 });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -82,6 +92,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/vacancies', usersRouter);
+app.use('/info', infoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -13,13 +13,15 @@ router.get('/:link', async function(req, res, next) {
       res.render('vacancy', {vacancy:vacancy});
       
     }
-    else
-      next(createError(404))
+    else{
+      //next(createError(404))
+      res.redirect('/')
+    }
   } catch (error) {
     next(error)
   }
-  let vacancy = await Vacancy.findOne({link:req.params.link})
-  res.render('vacancy', {vacancy:vacancy});
+  // let vacancy = await Vacancy.findOne({link:req.params.link})
+  // res.render('vacancy', {vacancy:vacancy});
 })
 
 
