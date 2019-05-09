@@ -22,20 +22,8 @@ const dbUri = 'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09
 //'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
 
 
-mongoose.connect(localDbUri,{
-  useNewUrlParser:true
-}).then(() => {
-    console.log("MongoDB has started...");
-  })
-  .catch((err) => {
-    //throw new Error("db crash");
-    console.log(err)
-    console.log('db crash')
-  })
-
-// mongoose.connect(dbUri,{
-//   useNewUrlParser:true,
-//   useMongoClient:true
+// mongoose.connect(localDbUri,{
+//   useNewUrlParser:true
 // }).then(() => {
 //     console.log("MongoDB has started...");
 //   })
@@ -44,6 +32,18 @@ mongoose.connect(localDbUri,{
 //     console.log(err)
 //     console.log('db crash')
 //   })
+
+mongoose.connect(dbUri,{
+  useNewUrlParser:true
+  //,useMongoClient:true
+}).then(() => {
+    console.log("MongoDB has started...");
+  })
+  .catch((err) => {
+    //throw new Error("db crash");
+    console.log(err)
+    console.log('db crash')
+  })
   
 
 var indexRouter = require('./routes/index');
@@ -51,10 +51,10 @@ var usersRouter = require('./routes/vacancies');
 var infoRouter = require('./routes/info');
 
 var app = express();
-var host = "127.0.0.1"
-var port = process.env.PORT || 80;
-app.listen(port,() => {
-  console.log(`Сервер запущено на ${host}  порт: ${port}`);
+// var host = "127.0.0.1"
+// var port = process.env.PORT || 80;
+app.listen(80,() => {
+  console.log('Сервер запущено');
 });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
