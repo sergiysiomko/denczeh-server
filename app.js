@@ -53,7 +53,7 @@ var infoRouter = require('./routes/info');
 var app = express();
 // var host = "127.0.0.1"
 // var port = process.env.PORT || 80;
-app.listen(80,() => {
+app.listen(1337,() => {
   console.log('Сервер запущено');
 });
 // view engine setup
