@@ -34,14 +34,15 @@ menu{
     line-height: 70px;
     justify-content: center;
 }
+ 
 .menu-item.list-menu{
     overflow: hidden;
     position: relative;
-    
+    text-align: center;
 }
 .menu-item.list-menu:hover{
     overflow: visible;
-    height: 290px;/*75+45*5-10*/
+    height: max-content;/*75+45*5-10*/
     background-color: rgb(193, 116, 6);
 }
 .menu-item:hover{
@@ -53,17 +54,27 @@ menu{
     margin-top: -10px;
     margin-bottom: 0;
     padding: 0;
+    font-size: 13pt;
+
 }
 .list-menu .list-item{
-    width:100%;
     text-align: center;
+    max-width: 144px;
+    border-bottom: 1px solid rgb(150, 87, 0);
+
+}
+.list-menu .list-item:last-child{
+    border: none;
+}
+.list-menu .list-item:hover{
+    background-color: rgb(192, 133, 51);
 }
 .list-menu .list-item a{
     padding: 0;
 } 
 .list-menu .list-item a:hover{
     
-    background-color: rgb(192, 133, 51);
+    
 }
 .menu-item a{
     display: block;
@@ -72,7 +83,7 @@ menu{
 }
 .menu-item> a{
    height: 75px;
-    padding:0 15px;
+   padding:0 15px;
 }
 .menu-item a:active{
     color:grey
@@ -234,7 +245,7 @@ main .vacancies-wrapper{
 }
 
 #contacts{
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     background-color: rgb(12, 10, 94);
     display:flex;
     flex-wrap: wrap;
@@ -250,6 +261,15 @@ main .vacancies-wrapper{
     padding: 20px 0px;
     width:100%;
     color: aliceblue;
+}
+#contacts #license{
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    font-family: monospace;
+    letter-spacing: 0.2em;
+    font-size: 14pt;
+
 }
 #contacts .contact{
     display: flex;
@@ -306,6 +326,26 @@ aside img {
     width: 100%;
 }
 
+#info-text{
+    background-image: url("../img/white-ornamic.png");
+}
+#info-text main{
+    border: none;
+    margin: 0 auto;
+    width:70%;
+    max-width: 1000px;
+    font-size: 14pt;
+    padding:20px;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow:1px 8px 8px 2px white;
+}
+#info-text main h1{
+    margin-top: 0;
+}
+#info-text #vacancies{
+    width:100%;
+    justify-content: center;
+}
 @media only screen and (max-width:920px){
     menu{
         width:auto;
@@ -331,6 +371,9 @@ aside img {
         overflow: hidden;
         width:23%;
     
+    }
+    #info-text main{
+        width:90%;
     }
 }
 @media only screen and (max-width:1195px){

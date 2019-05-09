@@ -3,7 +3,9 @@ var createError = require('http-errors');
 var router = express.Router();
 
 const infoPages = ['aboutCzech','perspectiva','pratsevlashtuvannya'];
-
+router.get("/twoYear",(req,res) => {
+        res.render('info/twoYear');
+})
 router.get("/:name",(req, res)=>{
     let name = req.params.name;
     if(infoPages.includes(name))
