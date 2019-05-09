@@ -267,7 +267,7 @@ main .vacancies-wrapper{
     color: aliceblue;
     text-align: center;
     font-family: monospace;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     font-size: 14pt;
 
 }
@@ -320,6 +320,7 @@ aside img {
     padding-right: 15px;
 }
 #vacancy .vacancy-galary {
+    margin-top: 20px;
     width: 300px;
 }
 #vacancy .vacancy-galary img{
