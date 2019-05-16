@@ -5,17 +5,7 @@ var Vacancy = require('../dbmodels/vacancy-model');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  // var v= new Vacancy({
-  //   "title" : "Збір, комплектація і пакування техніки Panasonic",
-  //   "payment" : 100,
-  //   "currency":"крон/год",
-  //   "faceImage":"vacancy1.jpg",
-  //   "description" : "some description",
-  //   "bigDescription" : "some big description",
-  //   "location" : "Чехія, Плзень",
-  //   "link" : "Panasonic",
-  // })
-  // await v.save();
+  
   let vacancies = await Vacancy.find({});
   //console.log(vacancies);
 

@@ -39,51 +39,20 @@
                 Ми в соціальних мережах
             </h2>
             <a href="https://www.instagram.com/denisyuk.czjob/">
-                <img src="img/instagram-logo.png" alt="instagram">
+                <img src="/img/instagram-logo.png" alt="instagram">
             </a>
             <a href="https://www.facebook.com/profile.php?id=100030753322152">
-                <img src="img/facebook-logo.png" alt="facebook">
+                <img src="/img/facebook-logo.png" alt="facebook">
             </a>
             
         </section>
     <section id="galery">
-        <h2>Фотогалерея</h2>
-        <a href="img/vacancies/22a183c41ca82f0aa69f9aaed34ece15.jpg" data-fancybox="galery">
-            <img src="img/little/22a183c41ca82f0aa69f9aaed34ece15.jpg" alt="">
+        <h2>Фотогалерея (візи)</h2>
+        <%for(let i = 1;i<=12;i++){%>
+        <a href="/img/visa/visa-(<%=i.toString()%>).jpg" data-fancybox="galery">
+            <img src="/img/little/visa-(<%=i.toString()%>).jpg" alt="">
         </a>
-        <a href="img/vacancies/gallery_50187440_7505cd7d-0baf-48cc-b9ef-53283744b360.jpeg" data-fancybox="galery">
-            <img src="img/little/gallery_50187440_7505cd7d-0baf-48cc-b9ef-53283744b360.jpeg" alt="">
-        </a>    
-        <a href="img/vacancies/20171022_490018.jpg" data-fancybox="galery">
-            <img src="img/little/20171022_490018.jpg" alt="">
-        </a>
-        <a href="img/vacancies/ckp-p201502190433901.jpg" data-fancybox="galery">
-            <img src="img/little/ckp-p201502190433901.jpg" alt="">
-        </a>  
-        <a href="img/vacancies/employee-pictured-in-factory-of-md-elektronik-chotesov-which-is-the-EG8BJH.jpg" data-fancybox="galery">
-            <img src="img/little/employee-pictured-in-factory-of-md-elektronik-chotesov-which-is-the-EG8BJH.jpg" alt="">
-        </a>
-        <a href="img/vacancies/News_-_2017_Logistik_fuer_ZooRoyal.jpg" data-fancybox="galery">
-            <img src="img/little/News_-_2017_Logistik_fuer_ZooRoyal.jpg" alt="">
-        </a> 
-        <a href="img/vacancies/photo_1463507638.jpg" data-fancybox="galery">
-            <img src="img/little/photo_1463507638.jpg" alt="">
-        </a>
-        <a href="img/vacancies/photo_1478620684.jpg" data-fancybox="galery">
-            <img src="img/little/photo_1478620684.jpg" alt="">
-        </a>  
-        <a href="img/vacancies/pricep-sortimentovoz.jpg" data-fancybox="galery">
-            <img src="img/little/pricep-sortimentovoz.jpg" alt="">
-        </a>
-        <a href="img/vacancies/Ris_11.jpg" data-fancybox="galery">
-            <img src="img/little/skolko-poluchayut-svarshhiki.jpg" alt="">
-        </a>
-        <a href="img/vacancies/upakovshiki-na-sklady-megamarketa.jpg" data-fancybox="galery">
-            <img src="img/little/upakovshiki-na-sklady-megamarketa.jpg" alt="">
-        </a>
-        <a href="img/vacancies/gPolYRPskbO7l3OOBKUz.png" data-fancybox="galery">
-            <img src="img/little/gPolYRPskbO7l3OOBKUz.png" alt="">
-        </a>
+        <%}%>
             
     </section>
 

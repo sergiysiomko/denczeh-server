@@ -16,7 +16,7 @@ header{
     flex-direction: column;
 }
 .menu-wrapper{
-    background-color: rgba(160, 162, 165, 0.7);
+    background-color: #9e9e9e;
     height: 75px;
     /* margin-bottom: -18px; */
 }
@@ -27,7 +27,7 @@ menu{
     width:70%;
     padding: 0;
     font-size: 16pt;
-    color:rgb(255,255,255);
+    color:#fafafa;
     /* font-family: Arial, Helvetica, sans-serif; */
     
     height: 75px;
@@ -43,10 +43,10 @@ menu{
 .menu-item.list-menu:hover{
     overflow: visible;
     height: max-content;/*75+45*5-10*/
-    background-color: rgb(193, 116, 6);
+    background-color: #d36e16;
 }
 .menu-item:hover{
-    background-color:rgb(193, 116, 6);
+    background-color:#d36e16;
 }
 .menu-item.list-menu ul{
     list-style: none;
@@ -62,12 +62,13 @@ menu{
     max-width: 144px;
     border-bottom: 1px solid rgb(150, 87, 0);
 
+
 }
 .list-menu .list-item:last-child{
     border: none;
 }
 .list-menu .list-item:hover{
-    background-color: rgb(192, 133, 51);
+    background-color: #df8a0c;
 }
 .list-menu .list-item a{
     padding: 0;
@@ -124,7 +125,7 @@ header .buttons .header-button a{
     line-height: 48px;
     margin-bottom: 15px;
     letter-spacing: 1px;
-    background-color: rgb(193, 116, 6);
+    background-color: #d36e16;
     font-weight: bold;
     
 }
@@ -176,9 +177,9 @@ main .vacancies-wrapper{
     justify-content: space-between;
 }
 #vacancies .vacancy .vacancy-title{
-    color:#4c4c4c;
+    color:#424242;
     margin:0 9px;
-    font-size: 16pt;
+    font-size: 18pt;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #vacancies .vacancy .location-text,
@@ -187,8 +188,9 @@ main .vacancies-wrapper{
 }
 #vacancies .vacancy a{
     font-size: 15pt;
-    color:rgb(131, 81, 15);
+    color:#a0500b;
     line-height: 40px;
+    text-shadow: #7b614a 1px 1px 3px;
 }
 #vacancies .vacancy .vacancy-img{
     width: 44%;
@@ -207,7 +209,7 @@ main .vacancies-wrapper{
     margin: 0;
     padding: 20px 0px;
     width:100%;
-    background-color: rgb(255, 194, 103);
+    background-color: #ffb74d;
     margin-bottom: 10px;
 }
 #socialnetwork img{
@@ -227,7 +229,7 @@ main .vacancies-wrapper{
     margin: 0;
     padding: 20px 0px;
     width: 100%;
-    background-color:rgb(255, 250, 144);
+    background-color:#ffe57f;
 }
 #galery a{
     overflow: hidden;
@@ -305,7 +307,7 @@ aside img {
 
 #vacancy{
     padding: 1px 30px 0px 52px;
-    background-color: #feffef;
+    background-color: #fff3e0;
     /* width: 70%; */
     margin:0 auto;
     font-family: OpenSans;
