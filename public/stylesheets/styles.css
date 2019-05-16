@@ -73,10 +73,6 @@ menu{
 .list-menu .list-item a{
     padding: 0;
 } 
-.list-menu .list-item a:hover{
-    
-    
-}
 .menu-item a{
     display: block;
     text-decoration: none;
@@ -186,15 +182,19 @@ main .vacancies-wrapper{
 #vacancies .vacancy .payment-text{
     vertical-align: 5px;
 }
-#vacancies .vacancy a{
+#vacancies .vacancy .vacancy-info a{
     font-size: 15pt;
     color:#a0500b;
     line-height: 40px;
     text-shadow: #7b614a 1px 1px 3px;
 }
-#vacancies .vacancy .vacancy-img{
+#vacancies .vacancy > a{
+    display:block;
     width: 44%;
-    border-radius: 0 10px 10px 0;
+}
+
+#vacancies .vacancy .vacancy-img{
+    border-radius: 0 10px 10px 0; 
 }
 
 #socialnetwork{

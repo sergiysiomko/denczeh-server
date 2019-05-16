@@ -3,9 +3,9 @@ var createError = require('http-errors');
 var router = express.Router();
 var Vacancy = require('../dbmodels/vacancy-model');
 
-router.get('/add',async function(req, res, next){
-  res.render('add')
-})
+// router.get('/add',async function(req, res, next){
+//   res.render('add')
+// })
 router.get('/:link', async function(req, res, next) {
   try {
     let vacancy = await Vacancy.findOne({link:req.params.link})
