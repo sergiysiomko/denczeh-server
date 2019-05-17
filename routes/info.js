@@ -2,7 +2,7 @@ var express = require('express');
 var createError = require('http-errors');
 var router = express.Router();
 
-const infoPages = ['aboutCzech','perspectiva','pratsevlashtuvannya'];
+const infoPages = ['aboutCzech','perspectiva','pratsevlashtuvannya','answers'];
 router.get("/twoYear",(req,res) => {
         res.render('info/twoYear');
 })
