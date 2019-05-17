@@ -50,6 +50,7 @@ mongoose.connect(dbUri,{
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/vacancies');
 var infoRouter = require('./routes/info');
+var anketRouter = require('./routes/anket');
 
 var app = express();
 // var host = "127.0.0.1"
@@ -94,6 +95,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/vacancies', usersRouter);
 app.use('/info', infoRouter);
+app.use('/anket',anketRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

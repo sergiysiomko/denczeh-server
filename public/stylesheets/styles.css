@@ -2,7 +2,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(236, 236, 236);
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -320,6 +320,7 @@ aside img {
     width: 780px;
     flex-grow: 1;
     padding-right: 15px;
+    text-align: justify;
 }
 #vacancy .vacancy-galary {
     margin-top: 20px;
@@ -331,6 +332,7 @@ aside img {
 
 #info-text{
     background-image: url("../img/white-ornamic.png");
+    text-align: justify;
 }
 #info-text main{
     border: none;
@@ -348,6 +350,19 @@ aside img {
 #info-text #vacancies{
     width:100%;
     justify-content: center;
+}
+
+#anket{
+    margin:100px auto;
+    background-color: rgb(255,224,130);
+    width:400px;
+    height: 350px;
+    font-family: OpenSans;
+    border: 3px solid beige;
+    border-radius: 5px;
+}
+#anket h1{
+    text-align: center;
 }
 @media only screen and (max-width:920px){
     menu{
