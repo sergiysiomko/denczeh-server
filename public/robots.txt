@@ -1,0 +1,9 @@
+Host: http://denysiukjob.com.ua
+
+User-agent:*
+Dissalow:/stylesheets/
+Dissalow:/img/
+Allow:/
+Allow:/info/*
+Allow:/vacancies/*
+Sitemap: http://denysiukjob.com.ua/sitemap.xml

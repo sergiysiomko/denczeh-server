@@ -186,7 +186,7 @@ main .vacancies-wrapper{
     font-size: 15pt;
     color:#a0500b;
     line-height: 40px;
-    text-shadow: #7b614a 1px 1px 3px;
+    text-shadow: #7b614a 1px 1px 5px;
 }
 #vacancies .vacancy > a{
     display:block;

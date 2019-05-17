@@ -18,7 +18,8 @@ var mongoose = require('mongoose');
 // var db = mongoose.connection;
 mongoose.Promise = global.Promise;
 const localDbUri = "mongodb://localhost/denczechdb";
-const dbUri = 'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10250/densitedb?ssl=true&sslverifycertificate=false';
+const dbUri = 'mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/densitedb?retryWrites=true'
+//'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10250/densitedb?ssl=true&sslverifycertificate=false';
 //'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
 
 
