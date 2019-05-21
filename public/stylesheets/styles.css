@@ -352,42 +352,142 @@ aside img {
     justify-content: center;
 }
 
+.anket-wrapper{
+    background-color: #e8eaf6;
+    padding: 1px;
+}
 #anket{
-    margin:100px auto;
-    background-color: rgb(255,224,130);
+    margin:80px auto;
+    background-color: #f4ff81;
     width:400px;
     height: 350px;
-    font-family: OpenSans;
-    border: 3px solid beige;
-    border-radius: 5px;
+    font-family: Verdana;
+    padding: 1px;
+    border:0;
+    border-radius: 9px;
+    box-shadow: #2c3e50 3px 3px 7px;
+}
+#anket form{
+    margin: 0 auto;
+    width: 320px;
 }
 #anket h1{
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-shadow: #306d30 2px 2px 3px;
 }
+#anket input, #anket select{
+    display: block;
+    outline: none;
+    border: #332611 2px solid;
+    width:320px;
+    font-size: 16pt;
+    padding: 2px 0;
+    margin:15px 0;
+    background-color: white;
+}
+#anket input:focus, #anket select:focus{
+    border: #7a7367 2px solid;
+}
+#anket select option{
+    padding: 0;
+}
+#anket input[type='text'],#anket input[type='tel']{
+    width:316px;
+}
+#anket input[type='submit']{
+    background-color: #4caf50;
+}
+
+.contacts-page-wrapper{
+    background-color: #fff3e0;
+    padding:1px 0;
+    font-family: OpenSans;
+    
+}
+#contacts-page{
+    border:0;
+    margin: 0 auto;
+    width:82%;
+    padding: 20px;
+    background-color: rgba(255,255,255,1);
+    box-shadow: white 0px 7px 4px 4px;
+}
+/* #contacts-page h1{
+    
+} */
+#contacts-page .office-img{
+    width:87%;
+    max-width: 550px;
+    border-radius: 4px;
+}
+#contacts-page .worker{
+    display:flex;
+    flex-direction: column;
+
+}
+#contacts-page .worker .worker-info-item{
+    display: flex;
+    margin-bottom: 4px;
+}
+
+#contacts-page .worker .worker-info-item .text a{
+    color:rgb(72, 72, 236);
+    line-height: 24px;
+}
+#contacts-page .worker .worker-info-item .text a:visited{
+    color:rgb(72, 72, 236);
+}
+#contacts-page .worker h3{
+    margin-bottom: 10px;
+    margin-left: 6px;
+
+}    
+#contacts-page .worker .icon{
+    height: 24px;
+    width: 24px;
+    margin-right:5px;
+    background-repeat: no-repeat;
+}
+#contacts-page .worker .icon.viber{
+    background-image: url('../img/contact-viber.png');
+}
+#contacts-page .worker .icon.instagram{
+    background-image: url('../img/contact-instagram.png');
+}
+#contacts-page .worker .icon.tel{
+    background-image: url('../img/contact-phone.png');
+}
+#contacts-page .worker .icon.facebook{
+    background-image: url('../img/contact-facebook.png');
+}
+#contacts-page .map{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+#contacts-page .map iframe{
+    width: 100%;
+    height:450px;
+    border:0;
+}
+
 
 /* accordion start */
 
-
-  h1 {
-      
-    text-align: center;
-  }
-  h2 {
-    margin: 0 0 0.5em;
-    font-weight: normal;
-  }
-  input {
+#description input {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
-  .row {
+  #description .row {
     display: flex;
   }
-  .row .col {
+  #description .row .col {
     flex: 1;
   }
-  .row .col:last-child {
+  #description .row .col:last-child {
     margin-left: 1em;
   }
   /* Accordion styles */
@@ -455,6 +555,7 @@ aside img {
 @media only screen and (max-width:750px){
     header .main-title{
         font-size: 60pt;
+        min-width: 320px;;
     }
     header .buttons{
         flex-direction: column;
