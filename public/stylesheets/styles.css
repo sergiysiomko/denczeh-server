@@ -414,9 +414,8 @@ aside img {
 
 .contacts-page-wrapper{
     background-color: #fff3e0;
-    padding:1px 0;
     font-family: OpenSans;
-    
+    overflow-y: hidden;
 }
 #contacts-page{
     border:0;
@@ -424,7 +423,7 @@ aside img {
     width:82%;
     padding: 20px;
     background-color: rgba(255,255,255,1);
-    box-shadow: white 0px 7px 4px 4px;
+    box-shadow: white 0px 5px 4px 4px;
 }
 
 #contacts-page .office-img{
