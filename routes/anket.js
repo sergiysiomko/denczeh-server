@@ -22,11 +22,16 @@ router.post('/',(req, res) => {
         from: 'denjobtech@gmail.com', // sender address
         to: 'zstu42@gmail.com', // list of receivers
         subject: 'Анкета', // Subject line
-        text: `
-        Ім'я: ${data.name}
-        Зручний час: ${data.time}
-        Телефон: ${data.tel}` // plain text body
-        //html: '<b>NodeJS Email Tutorial</b>' // html body
+        // text: `
+        // Ім'я: ${data.name}
+        // Зручний час: ${data.time}
+        // Телефон: ${data.tel}` // plain text body
+        html: `
+        <b>Ім'я:</b> <br>${data.name}
+        <b>Побажання:</b>${data.description}<br>
+        <b>Зручний час:</b> <br> ${data.time}
+
+        <b>Телефон: </b> <br>${data.tel}
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

@@ -358,9 +358,9 @@ aside img {
 }
 #anket{
     margin:80px auto;
-    background-color: #f4ff81;
+    background-color: #fdffe3;
     width:400px;
-    height: 350px;
+    height: 450px;
     font-family: Verdana;
     padding: 1px;
     border:0;
@@ -375,9 +375,11 @@ aside img {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    text-shadow: #306d30 2px 2px 3px;
+    text-shadow: #768576 2px 2px 3px;
 }
-#anket input, #anket select{
+#anket input, 
+#anket select,
+#anket textarea{
     display: block;
     outline: none;
     border: #332611 2px solid;
@@ -387,17 +389,27 @@ aside img {
     margin:15px 0;
     background-color: white;
 }
-#anket input:focus, #anket select:focus{
+#anket input:focus, 
+#anket select:focus
+#anket textarea:focus{
     border: #7a7367 2px solid;
 }
-#anket select option{
-    padding: 0;
+#anket input::placeholder, 
+#anket select::placeholder,
+#anket textarea::placeholder{
+    margin-left: 4px;
 }
-#anket input[type='text'],#anket input[type='tel']{
+#anket select option{
+    text-indent:5px;
+}
+#anket input[type='text'],
+#anket input[type='tel'],
+#anket textarea{
     width:316px;
 }
 #anket input[type='submit']{
     background-color: #4caf50;
+    color:white;
 }
 
 .contacts-page-wrapper{
@@ -414,9 +426,7 @@ aside img {
     background-color: rgba(255,255,255,1);
     box-shadow: white 0px 7px 4px 4px;
 }
-/* #contacts-page h1{
-    
-} */
+
 #contacts-page .office-img{
     width:87%;
     max-width: 550px;
