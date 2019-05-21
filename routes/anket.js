@@ -8,7 +8,7 @@ router.get('/',(req, res) => {
 
 router.post('/',(req, res) => {
     let data = req.body;
-
+    //console.log(data)
     let transporter = nodeMailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -27,10 +27,10 @@ router.post('/',(req, res) => {
         // Зручний час: ${data.time}
         // Телефон: ${data.tel}` // plain text body
         html: `
-        <b>Ім'я:</b> <br>${data.name}
-        <b>Побажання:</b>${data.description}<br>
-        <b>Зручний час:</b> <br> ${data.time}
-        <b>Телефон: </b> <br>${data.tel}`
+        <b>Ім'я:</b> <br>${data.name}<br><br>
+        <b>Побажання:</b><br>${data.description}<br><br>
+        <b>Зручний час:</b> <br> ${data.time}<br><br>
+        <b>Телефон: </b> <br>${data.tel}<br><br>`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
