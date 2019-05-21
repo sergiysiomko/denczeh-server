@@ -30,8 +30,7 @@ router.post('/',(req, res) => {
         <b>Ім'я:</b> <br>${data.name}
         <b>Побажання:</b>${data.description}<br>
         <b>Зручний час:</b> <br> ${data.time}
-
-        <b>Телефон: </b> <br>${data.tel}
+        <b>Телефон: </b> <br>${data.tel}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
