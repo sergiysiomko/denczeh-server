@@ -341,7 +341,7 @@ aside img {
     max-width: 1000px;
     font-size: 14pt;
     padding:20px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.8);
     box-shadow:1px 8px 8px 2px white;
 }
 #info-text main h1{
@@ -388,6 +388,7 @@ aside img {
     padding: 2px 0;
     margin:15px 0;
     background-color: white;
+    font-family: serif;
 }
 #anket input:focus, 
 #anket select:focus
@@ -472,6 +473,7 @@ aside img {
     background-image: url('../img/contact-facebook.png');
 }
 #contacts-page .map{
+    text-align: center;
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;
