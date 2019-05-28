@@ -1,19 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 //var bodyParser = require('body-parser');
 // var session = require('express-session');
-var favicon = require('serve-favicon');
-var multer = require('multer');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var flash = require('connect-flash');
-var expressValidator = require('express-validator');
-var expressMessages = require('express-messages');
+//var favicon = require('serve-favicon');
+//var multer = require('multer');
+const passport = require('passport');
+//var LocalStrategy = require('passport-local').Strategy;
+const flash = require('connect-flash');
+const expressValidator = require('express-validator');
+//var expressMessages = require('express-messages');
 //var mongo = require('mongodb');
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // mongoose.connect("mongodb://localhost/denczechdb");
 // var db = mongoose.connection;
 mongoose.Promise = global.Promise;
@@ -88,10 +88,13 @@ app.use(expressValidator() );
 
 app.use(flash());
 app.use(function (req, res, next) {
-  res.locals.messages = expressMessages(req, res);
+  //res.locals.messages = expressMessages(req, res);
+  
   next();
 });
-
+http.get('*', function(req, res) {  
+  res.redirect('https://' + req.headers.host + req.url);
+})
 
 app.use('/', indexRouter);
 app.use('/vacancies', usersRouter);
