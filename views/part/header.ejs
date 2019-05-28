@@ -15,7 +15,10 @@
 <script>
 // redirect to https
     let url = window.location.toString()
-    if(url.startsWith('http')){
+    if(url.startsWith('https')){
+        return
+    }else{
+
         window.location = url.replace(/http/,'https')
     }
     
