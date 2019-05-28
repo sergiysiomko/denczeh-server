@@ -92,8 +92,11 @@ app.use(function (req, res, next) {
   
   next();
 });
-http.get('*', function(req, res) {  
-  res.redirect('https://' + req.headers.host + req.url);
+app.get('*', function(req, res) {  
+  if(req.protocol == 'http'){
+    res.redirect('https://' + req.headers.host + req.url);
+
+  }
 })
 
 app.use('/', indexRouter);
