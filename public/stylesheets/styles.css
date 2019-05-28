@@ -185,7 +185,7 @@ main .vacancies-wrapper{
     font-size: 15pt;
     color:#a0500b;
     line-height: 40px;
-    text-shadow: #7b614a 1px 1px 5px;
+    text-shadow: #bfa48c  1px 1px 5px;
 }
 #vacancies .vacancy > a{
     display:block;
@@ -581,7 +581,7 @@ aside img {
 }
 @media only screen and (max-width:750px){
     header .main-title{
-        font-size: 60pt;
+        font-size: 45pt;
         min-width: 320px;;
     }
     header .buttons{
@@ -598,6 +598,34 @@ aside img {
     }
     #info-text main{
         width:90%;
+    }
+    
+}
+@media only screen and (max-width:480px){
+    menu{
+        font-size:13pt;
+        font-weight: bolder;
+    }
+    header .main-title{
+        font-size: 35pt;
+    }
+    #vacancies .vacancy {
+        height: 135px;
+        margin: 10px 0;
+        font-size: 10pt;
+        width: 100%;
+    }
+    #vacancies .vacancy .vacancy-title {
+        font-size: 12pt;
+    }
+    #vacancies .vacancy .vacancy-info a {
+        font-size: 12pt;
+    }
+    #vacancies .vacancy > a {
+        overflow: hidden;
+    }
+    #vacancies .vacancy .vacancy-img {
+        width:100%
     }
 }
 @media only screen and (max-width:1195px){

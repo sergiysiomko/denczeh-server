@@ -16,15 +16,9 @@ const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 const secure = require('express-force-https');
 
-
-// mongoose.connect("mongodb://localhost/denczechdb");
-// var db = mongoose.connection;
-
 mongoose.Promise = global.Promise;
 const localDbUri = "mongodb://localhost/denczechdb";
 const dbUri = 'mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/densitedb?retryWrites=true'
-//'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10250/densitedb?ssl=true&sslverifycertificate=false';
-//'mongodb://densitedb:l7I44YluKtxHExSdRVjac8a81XP5WrVYdS36TUcsNzp09nG1FerlETNeFBfKUpdWQVZRp2ZkZjQxqqpWPkkaRg==@densitedb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
 
 
 // mongoose.connect(localDbUri,{
@@ -67,7 +61,6 @@ app.listen(1337,() => {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// handle file uploads
 
 app.use(secure)
 
@@ -92,18 +85,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressValidator() );
 
 app.use(flash());
-app.use(function (req, res, next) {
-  //res.locals.messages = expressMessages(req, res);
-  
-  next();
-});
-// app.get('*', function(req, res,next) {  
-//   if(req.secure == false){
-//     res.redirect('https://' + req.headers.host + req.url);
-
-//   }
-//   next();
-// })
 
 app.use('/', indexRouter);
 app.use('/vacancies', usersRouter);
