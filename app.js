@@ -92,11 +92,12 @@ app.use(function (req, res, next) {
   
   next();
 });
-app.get('*', function(req, res) {  
+app.get('*', function(req, res,next) {  
   if(req.protocol == 'http'){
     res.redirect('https://' + req.headers.host + req.url);
 
   }
+  next();
 })
 
 app.use('/', indexRouter);
