@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
   let vacancies = await Vacancy.find({});
   //console.log(vacancies);
 
-  res.render("index", {vacancies:vacancies});
+  res.render("index", {vacancies:vacancies, secure:[req.protocol, req.secure, req.headers.host, req.url]});
 });
 
 module.exports = router;
