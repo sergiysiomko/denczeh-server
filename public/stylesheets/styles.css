@@ -520,23 +520,24 @@ aside img {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
   }
   .tab {
     width: 100%;
-    color: white;
+    color: rgb(53, 53, 53);
     overflow: hidden;
   }
   .tab-label {
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    background: #2c3e50;
+    background: #ffb74d;
     font-weight: bold;
     cursor: pointer;
     /* Icon */
   }
   .tab-label:hover {
-    background: #1a252f;
+    background: #ff9800;
   }
   .tab-label::after {
     content: "\276F";
@@ -544,17 +545,17 @@ aside img {
     height: 1em;
     text-align: center;
     transition: all 0.35s;
+    margin-left: 8px;
   }
   .tab-content {
     max-height: 0;
     padding: 0 1em;
-    color: #2c3e50;
     background: white;
     transition: all 0.35s;
   }
   
   input:checked + .tab-label {
-    background: #1a252f;
+    background: #ff9800;
   }
   input:checked + .tab-label::after {
     transform: rotate(90deg);
@@ -563,7 +564,9 @@ aside img {
     max-height: 100vh;
     padding: 1em;
   }
-  
+  .tab-content a:visited{
+      color:rgb(0, 0, 146);
+  }
   
 /* accordion end */
 
