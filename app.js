@@ -7,15 +7,19 @@ const logger = require('morgan');
 // var session = require('express-session');
 //var favicon = require('serve-favicon');
 //var multer = require('multer');
-const passport = require('passport');
+//const passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 const expressValidator = require('express-validator');
 //var expressMessages = require('express-messages');
 //var mongo = require('mongodb');
 const mongoose = require('mongoose');
+const secure = require('express-force-https');
+
+
 // mongoose.connect("mongodb://localhost/denczechdb");
 // var db = mongoose.connection;
+
 mongoose.Promise = global.Promise;
 const localDbUri = "mongodb://localhost/denczechdb";
 const dbUri = 'mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/densitedb?retryWrites=true'
@@ -65,6 +69,7 @@ app.set('view engine', 'ejs');
 
 // handle file uploads
 
+app.use(secure)
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -80,8 +85,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // }))
 
 // passport
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // validator
 app.use(expressValidator() );

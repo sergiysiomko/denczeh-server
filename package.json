@@ -12,6 +12,7 @@
     "debug": "~2.6.9",
     "ejs": "*",
     "express": "~4.16.0",
+    "express-force-https": "^1.0.0",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
