@@ -93,7 +93,7 @@ app.use(function (req, res, next) {
   next();
 });
 app.get('*', function(req, res,next) {  
-  if(req.protocol == 'http'){
+  if(req.secure){
     res.redirect('https://' + req.headers.host + req.url);
 
   }
