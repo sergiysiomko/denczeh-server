@@ -92,13 +92,13 @@ app.use(function (req, res, next) {
   
   next();
 });
-app.get('*', function(req, res,next) {  
-  if(req.secure == false){
-    res.redirect('https://' + req.headers.host + req.url);
+// app.get('*', function(req, res,next) {  
+//   if(req.secure == false){
+//     res.redirect('https://' + req.headers.host + req.url);
 
-  }
-  next();
-})
+//   }
+//   next();
+// })
 
 app.use('/', indexRouter);
 app.use('/vacancies', usersRouter);
