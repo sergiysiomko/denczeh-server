@@ -273,6 +273,12 @@ main .vacancies-wrapper{
     font-size: 14pt;
 
 }
+#contacts #license a{
+    color:aliceblue;
+}
+#contacts #license a:visited{
+    color:aliceblue;
+}
 #contacts .contact{
     display: flex;
     flex-direction: row;
@@ -483,8 +489,16 @@ aside img {
     height:450px;
     border:0;
 }
-
-
+#contacts-page .license{
+    display:block;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    color:rgb(0, 0, 146);
+    text-shadow:0px 0px 4px #909090;
+}
+#contacts-page .license:visited{
+    color:rgb(0, 0, 146);
+}
 /* accordion start */
 
 #description input {
