@@ -1,18 +1,9 @@
-const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-//var bodyParser = require('body-parser');
-// var session = require('express-session');
-//var favicon = require('serve-favicon');
-//var multer = require('multer');
-//const passport = require('passport');
-//var LocalStrategy = require('passport-local').Strategy;
-const flash = require('connect-flash');
 const expressValidator = require('express-validator');
-//var expressMessages = require('express-messages');
-//var mongo = require('mongodb');
+
 const mongoose = require('mongoose');
 const secure = require('express-force-https');
 
@@ -44,14 +35,9 @@ mongoose.connect(dbUri,{
     console.log('db crash')
   })
   
+let routers = require('./routes/routers');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/vacancies');
-var infoRouter = require('./routes/info');
-var anketRouter = require('./routes/anket');
-var contactsRouter = require('./routes/contacts');
-
-var app = express();
+const app = express();
 // var host = "127.0.0.1"
 // var port = process.env.PORT || 80;
 app.listen(1337,() => {
@@ -62,50 +48,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
-app.use(secure)
+//app.use(secure)
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// handle session
-// app.use(session({
-//   secret:"secret",
-//   saveUninitialized:true,
-//   resave:true
-// }))
-
-// passport
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// validator
 app.use(expressValidator() );
 
-app.use(flash());
+app.use('/', routers)
 
-app.use('/', indexRouter);
-app.use('/vacancies', usersRouter);
-app.use('/info', infoRouter);
-app.use('/anket',anketRouter)
-app.use('/contacts',contactsRouter)
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error',{error:err});
-
-});
 module.exports = app;
