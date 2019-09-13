@@ -3,14 +3,37 @@ var createError = require('http-errors');
 var router = express.Router();
 var Vacancy = require('../dbmodels/vacancy-model');
 
+
 // router.get('/add',async function(req, res, next){
 //   res.render('add')
 // })
+// router.post('/add',async function(req, res, next){
+//   req.body.images=[];
+//   req.body.faceImage='/img/vacancies';
+//   req.body.experience = !!req.body.experience;
+//   req.body.lang = !!req.body.lang;
+//   req.body.link = req.body.link||rus_to_latin(req.body.title)
+//   console.log(req.body)
+//   let newVacancy = new Vacancy(req.body);
+//   await newVacancy.save();
+//   res.redirect('/vacancies/add')
+// })
+
+router.get('/', async function(req, res, next) {
+  let vacancies = await Vacancy.find({})
+  
+  vacancies.reverse()
+  res.render('vacancies',{vacancies})
+})
 router.get('/:link', async function(req, res, next) {
   try {
     let vacancy = await Vacancy.findOne({link:req.params.link})
     if(vacancy){
-      res.render('vacancy', {vacancy:vacancy});
+      //vacancy.faceImage='/img/little/polskaworker.jpg'
+      console.log(vacancy);
+      await vacancy.save()
+
+      res.render('vacancy', {vacancy});
       
     }
     else{
@@ -25,17 +48,7 @@ router.get('/:link', async function(req, res, next) {
 })
 
 
-router.post('/add',async function(req, res, next){
-  req.body.images=[];
-  req.body.faceImage='/img/vacancies';
-  req.body.experience = !!req.body.experience;
-  req.body.lang = !!req.body.lang;
-  req.body.link = req.body.link||rus_to_latin(req.body.title)
-  console.log(req.body)
-  let newVacancy = new Vacancy(req.body);
-  await newVacancy.save();
-  res.redirect('/vacancies/add')
-})
+
 
 
 router.get('/json/:link', async function(req, res, next) {
@@ -67,6 +80,7 @@ router.get('/json/:link', async function(req, res, next) {
   }
 });
 
+
 module.exports = router;
 
 
@@ -78,7 +92,7 @@ function rus_to_latin ( str ) {
       'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 
       'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 
       'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh', 
-      'щ': 'shch', 'ы': 'y', 'э': 'e', 'ю': 'u', 'я': 'ya'
+      'щ': 'shch', 'ы': 'y', 'э': 'e', 'ю': 'u', 'я': 'ya',' ':'-'
   }, n_str = [];
   
   str = str.replace(/[ъь]+/g, '').replace(/й/g, 'i');

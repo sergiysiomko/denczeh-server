@@ -15,7 +15,7 @@ var VacancySchema = new Schema({
         unique:true,
         required:true
     },
-    category: String,
+    category: [String],
     experience:Boolean,
     lang:Boolean
 

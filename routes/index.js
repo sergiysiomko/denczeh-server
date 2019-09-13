@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
   let vacancies = await Vacancy.find({}).limit(16);
   //console.log(vacancies);
 
-  res.render("index", {vacancies:vacancies});
+  res.render("index", {vacancies});
 });
 
 module.exports = router;

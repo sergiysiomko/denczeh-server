@@ -1,6 +1,10 @@
 <%- include('part/header',{title:"Робота за кордоном"})-%>
 <header>
-   <%- include('part/menu')-%>
+    <div>
+            <%- include('part/menu')-%>
+            <a id='services-button' href="info/services">Оформлення документів</a>
+    </div>
+   
     <h1 class="main-title">
         Робота за кордоном
     </h1>
@@ -34,6 +38,7 @@
                     </a>
                  </article>
             <%})%>
+            <a href="/vacancies" class='all-vacancies-button'>Всі вакансії</a>
         </section>
     </div>
     <section id="socialnetwork">
