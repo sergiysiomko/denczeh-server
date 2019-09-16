@@ -239,11 +239,10 @@ main{
 #galery a{
     overflow: hidden;
     width:16%;
-
 }
 #galery img{
     width:100%;
-   transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 #galery img:hover{
@@ -578,6 +577,10 @@ aside img {
 .table-services{
     background-color: rgb(255,192,0);
     border-collapse: collapse;
+    margin-bottom: 30px;
+}
+.dark-orange{
+    background-color: rgb(255,192,0);
 }
 .table-services tbody{
     background-color: rgb(253, 205, 61);
@@ -585,7 +588,14 @@ aside img {
 .table-services td{
     border:1px solid black;
     text-align: center;
+    transition:  background 0.5s ease-in;
 }
+.table-services tbody td:hover:not(.dark-orange){
+    background-color: rgb(255, 220, 115);
+    transition: background 0.5s ease-out;
+
+}
+
 #services-button{
     display:block;
     background-color: #f57200;
@@ -636,7 +646,9 @@ aside img {
     #info-text main{
         width:90%;
     }
-    
+    .table-services{
+        font-size:11pt;
+    }
 }
 @media only screen and (max-width:480px){
     menu{
@@ -665,7 +677,10 @@ aside img {
         width:100%
     }
     .table-services{
-        font-size:12pt;
+        font-size:8pt;
+    }
+    #services-button{
+        font-size: 12pt;
     }
 }
 @media only screen and (max-width:1195px){
