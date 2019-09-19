@@ -663,6 +663,13 @@ aside img {
     color:rgb(255,255,255);
 }
 
+.viber-chat{
+    display:inline;
+}
+.viber-add{
+    display: none;
+}
+
 @media only screen and (max-width:920px){
     menu{
         width:auto;
@@ -742,6 +749,12 @@ aside img {
         margin:5px;
     }
 
+    .viber-chat{
+        display:none;
+    }
+    .viber-add{
+        display: inline;
+    }
 }
 @media only screen and (max-width:1195px){
     #vacancies{
