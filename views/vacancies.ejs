@@ -1,8 +1,15 @@
 <%- include('part/header',{title:"Робота за кордоном"})-%>
 <%- include('part/menu')-%>
 <div class="vacancies-wrapper">
+    <div class='vacancies-ctg-wrapper'>
+        <ul class='vacancies-ctg'>
+            <li><a href="https://denysiukjob.com.ua/vacancies">Всі вакансії</a></li>
+            <li><a href="https://denysiukjob.com.ua/vacancies/type/czech">Чехія</a></li>
+            <li><a href="https://denysiukjob.com.ua/vacancies/type/polska">Польща</a></li>
+            <li><a href="https://denysiukjob.com.ua/vacancies/type/openviza">По відкритим візам</a></li>
+        </ul>
+    </div>
         <section id="vacancies">
-            <h2>Актуальні вакансії</h2>
             <%vacancies.forEach(function(v){%>
                 <article class="vacancy">
                     <div class="vacancy-info">
@@ -15,7 +22,7 @@
                                     <img src="/img/money-icon.png" alt="payment-icon" class="payment-icon">
                                 <span class="payment-text"><%=v.payment%> <%=v.currency%></span>
                             </div>
-                            <a href="localhost:1337/vacancies/<%=v.link%>">Детальніше...</a>
+                            <a href="https://denysiukjob.com.ua/vacancies/<%=v.link%>">Детальніше...</a>
                     </div>
                     
                     <a href="https://denysiukjob.com.ua/vacancies/<%=v.link%>">
@@ -25,4 +32,5 @@
             <%})%>
         </section>
     </div>
+<script src="/javascripts/script.js"></script>    
 <%- include('part/footer')-%>

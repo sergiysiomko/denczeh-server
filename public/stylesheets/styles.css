@@ -195,12 +195,23 @@ main{
 #vacancies .vacancy .vacancy-img{
     border-radius: 0 10px 10px 0; 
 }
+.all-vacancies-button-wrapper{
+    width: 100%;
+}
 .all-vacancies-button{
     display: block;
-    width: 300px;
+    width: max-content;
     margin: 0 auto;
     text-align: center;
-    
+    text-decoration: none;
+    background-color: #f57200;
+    text-transform: uppercase;
+    color: white;    
+    padding: 15px 20px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    text-shadow: #d8af24 2px 2px 2px;
+    font-size: 15pt;
 }
 #socialnetwork{
     display: flex;
@@ -582,6 +593,9 @@ aside img {
 .dark-orange{
     background-color: rgb(255,192,0);
 }
+.blue{
+    background-color:rgb(128,222,234);
+}
 .table-services tbody{
     background-color: rgb(253, 205, 61);
 }
@@ -592,6 +606,11 @@ aside img {
 }
 .table-services tbody td:hover:not(.dark-orange){
     background-color: rgb(255, 220, 115);
+    transition: background 0.5s ease-out;
+
+}
+.table-services tbody tr.blue td:hover{
+    background-color: rgb(188, 231, 236);
     transition: background 0.5s ease-out;
 
 }
@@ -614,6 +633,34 @@ aside img {
     text-shadow: #d8af24 2px 2px 2px;
     font-size:16pt;
     border-radius: 2px;
+}
+
+.vacancies-ctg-wrapper{
+    border-top:10px solid transparent;
+    border-bottom:10px solid transparent;
+}
+.vacancies-ctg{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width:max-content;
+    font-size: 14pt;
+    
+}
+.vacancies-ctg li{
+    display: inline-block;
+}
+.vacancies-ctg li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    width:max-content;
+    padding: 7px 15px;  
+    background-color: #ffe57f;
+}
+.vacancies-ctg li a.selected{
+    background-color: #d36e16;
+    color:rgb(255,255,255);
 }
 
 @media only screen and (max-width:920px){
@@ -649,6 +696,9 @@ aside img {
     .table-services{
         font-size:11pt;
     }
+    .vacancies-ctg{
+        font-size: 12pt;
+    }
 }
 @media only screen and (max-width:480px){
     menu{
@@ -681,6 +731,9 @@ aside img {
     }
     #services-button{
         font-size: 12pt;
+    }
+    .all-vacancies-button{
+        font-size: 13pt;
     }
 }
 @media only screen and (max-width:1195px){

@@ -47,7 +47,15 @@ router.get('/:link', async function(req, res, next) {
   // res.render('vacancy', {vacancy:vacancy});
 })
 
-
+router.get('/type/:category', async (req, res) => {
+  let ctg = req.params.category;
+  let vacancies = await Vacancy.find({category:ctg})
+  if(vacancies.length == 0){
+    res.redirect('/vacancies')
+  }
+  else
+    res.render('vacancies',{vacancies})
+})
 
 
 
