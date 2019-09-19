@@ -20,7 +20,7 @@ router.post('/',(req, res) => {
     });
     let mailOptions = {
         from: 'denjobtech@gmail.com', // sender address
-        to: 'zstu42@gmail.com', // list of receivers
+        to: 'denysiukcz@gmail.com', // list of receivers
         subject: 'Анкета', // Subject line
         // text: `
         // Ім'я: ${data.name}
