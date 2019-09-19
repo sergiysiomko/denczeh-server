@@ -735,6 +735,13 @@ aside img {
     .all-vacancies-button{
         font-size: 13pt;
     }
+    .vacancies-ctg{
+        width: 290px;
+    }
+    .vacancies-ctg a{
+        margin:5px;
+    }
+
 }
 @media only screen and (max-width:1195px){
     #vacancies{
