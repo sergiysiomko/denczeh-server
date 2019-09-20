@@ -14,18 +14,14 @@ router.post('/',(req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'denjobtech@gmail.com',
+            user: 'sergiysiomko@gmail.com',
             pass: 'fsn72YISY'
         }
     });
     let mailOptions = {
-        from: 'denjobtech@gmail.com', // sender address
-        to: 'denysiukcz@gmail.com', // list of receivers
+        from: 'sergiysiomko@gmail.com', // sender address
+        to: 'denysiukcz@gmail.com', // list of receivers//denysiukcz@gmail.com
         subject: 'Анкета', // Subject line
-        // text: `
-        // Ім'я: ${data.name}
-        // Зручний час: ${data.time}
-        // Телефон: ${data.tel}` // plain text body
         html: `
         <b>Ім'я:</b> <br>${data.name}<br><br>
         <b>Побажання:</b><br>${data.description}<br><br>
@@ -35,7 +31,7 @@ router.post('/',(req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            next(error)
+            console.log(error);
         }
         //console.log('Message %s sent: %s', info.messageId, info.response);
             res.redirect('/')
