@@ -4,20 +4,20 @@ var router = express.Router();
 var Vacancy = require('../dbmodels/vacancy-model');
 
 
-router.get('/add',async function(req, res, next){
-  res.render('add')
-})
-router.post('/add',async function(req, res, next){
-  req.body.images=[];
-  req.body.faceImage='/img/vacancies';
-  req.body.experience = !!req.body.experience;
-  req.body.lang = !!req.body.lang;
-  req.body.link = req.body.link||rus_to_latin(req.body.title)
-  console.log(req.body)
-  let newVacancy = new Vacancy(req.body);
-  await newVacancy.save();
-  res.redirect('/vacancies/add')
-})
+// router.get('/add',async function(req, res, next){
+//   res.render('add')
+// })
+// router.post('/add',async function(req, res, next){
+//   req.body.images=[];
+//   req.body.faceImage='/img/vacancies';
+//   req.body.experience = !!req.body.experience;
+//   req.body.lang = !!req.body.lang;
+//   req.body.link = req.body.link||rus_to_latin(req.body.title)
+//   console.log(req.body)
+//   let newVacancy = new Vacancy(req.body);
+//   await newVacancy.save();
+//   res.redirect('/vacancies/add')
+// })
 
 router.get('/', async function(req, res, next) {
   let vacancies = await Vacancy.find({})
