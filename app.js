@@ -30,8 +30,6 @@ mongoose.connect(process.env.DB_CONN_STRING,{
 let routers = require('./routes/routers');
 
 const app = express();
-// var host = "127.0.0.1"
-// var port = process.env.PORT || 80;
 app.listen(() => {
   console.log('Сервер запущено');
 });
