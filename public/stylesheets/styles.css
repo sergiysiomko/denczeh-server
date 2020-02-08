@@ -670,6 +670,27 @@ aside img {
     display: none;
 }
 
+
+#form-login{
+    margin-top: 50px ;
+    margin-bottom: 50px;
+}
+/* label color */
+#form-login .input-field label {
+    color: #ef6c00 ;
+}
+  /* label focus color */
+#form-login .input-field input:focus + label {
+    color: #fb8c00 ;
+}
+  /* label underline focus color */
+#form-login .input-field input:focus {
+    border-bottom: 1px solid #fb8c00 ;
+    box-shadow: 0 1px 0 0 #fb8c00 ;
+  }
+
+
+
 @media only screen and (max-width:920px){
     menu{
         width:auto;

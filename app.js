@@ -13,9 +13,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session)
 
 mongoose.Promise = global.Promise;
-//const localDbUri = "mongodb://localhost/denczechdb";
-const dbUri = 'mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/densitedb?retryWrites=true'
-
 
 // mongoose.connect(localDbUri,{
 //   useNewUrlParser:true
@@ -29,10 +26,10 @@ const dbUri = 'mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/den
 //   })
 
 mongoose.connect(process.env.LOCAL_DB_CONN_STRING,{
-  useNewUrlParser:true
-  //,useMongoClient:true
+  useNewUrlParser:true,
+  useCreateIndex:true
 }).then(() => {
-    console.log("MongoDB has started...");
+    console.log("MongoDB connected...");
   })
   .catch((err) => {
     //throw new Error("db crash");
