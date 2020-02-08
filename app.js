@@ -14,17 +14,6 @@ const MongoStore = require('connect-mongo')(session)
 
 mongoose.Promise = global.Promise;
 
-// mongoose.connect(localDbUri,{
-//   useNewUrlParser:true
-// }).then(() => {
-//     console.log("MongoDB has started...");
-//   })
-//   .catch((err) => {
-//     //throw new Error("db crash");
-//     console.log(err)
-//     console.log('db crash')
-//   })
-
 mongoose.connect(process.env.LOCAL_DB_CONN_STRING,{
   useNewUrlParser:true,
   useCreateIndex:true
@@ -40,9 +29,8 @@ mongoose.connect(process.env.LOCAL_DB_CONN_STRING,{
 let routers = require('./routes/routers');
 
 const app = express();
-// var host = "127.0.0.1"
-// var port = process.env.PORT || 80;
-app.listen(1337,() => {
+
+app.listen(() => {
   console.log('Сервер запущено');
 });
 // view engine setup
