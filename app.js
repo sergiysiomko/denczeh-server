@@ -15,7 +15,7 @@ const MongoStore = require('connect-mongo')(session)
 mongoose.Promise = global.Promise;
 
 
-mongoose.connect(process.env.DB_CONN_STRING,{
+mongoose.connect('mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/densitedb?retryWrites=true',{
   useNewUrlParser:true,
   useCreateIndex:true
 }).then(() => {
@@ -30,9 +30,9 @@ mongoose.connect(process.env.DB_CONN_STRING,{
 let routers = require('./routes/routers');
 
 const app = express();
-// var host = "127.0.0.1"
-// var port = process.env.PORT || 80;
-app.listen(() => {
+var host = "127.0.0.1"
+var port = process.env.PORT || 80;
+app.listen(port, host, () => {
   console.log('Сервер запущено');
 });
 // view engine setup
