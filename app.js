@@ -7,8 +7,13 @@ const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 const secure = require('express-force-https');
 
+require('dotenv').config()
+const passport = require('passport');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session)
+
 mongoose.Promise = global.Promise;
-const localDbUri = "mongodb://localhost/denczechdb";
+//const localDbUri = "mongodb://localhost/denczechdb";
 const dbUri = 'mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/densitedb?retryWrites=true'
 
 
@@ -23,7 +28,7 @@ const dbUri = 'mongodb+srv://user:fsn72YISY@cluster0-eunrh.azure.mongodb.net/den
 //     console.log('db crash')
 //   })
 
-mongoose.connect(dbUri,{
+mongoose.connect(process.env.LOCAL_DB_CONN_STRING,{
   useNewUrlParser:true
   //,useMongoClient:true
 }).then(() => {
@@ -57,6 +62,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressValidator() );
+
+app.use(session({
+  secret:process.env.SESSION_SECRET,
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  resave:false, 
+  saveUninitialized:false,
+  cookie: { maxAge: parseInt(process.env.COOKIE_MAX_AGE)}// 2 weeks
+}));
+
+// passport configuration
+app.use(passport.initialize())
+app.use(passport.session()) 
 
 app.use('/', routers)
 

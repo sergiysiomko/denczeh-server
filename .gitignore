@@ -45,3 +45,4 @@ $RECYCLE.BIN/
 node_modules/*
 матеріали/*
 .vscode/launch.json
+.env
