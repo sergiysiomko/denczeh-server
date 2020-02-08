@@ -123,7 +123,7 @@ header .buttons .header-button a{
     letter-spacing: 1px;
     background-color: #d36e16;
     font-weight: bold;
-    font-size:13pt;
+    font-size:12pt;
 }
 main{
     border-top: 1px solid rgb(175, 175, 175);
@@ -724,6 +724,7 @@ aside img {
     }
     header .buttons .header-button a{
         width: 300px;
+        font-size: 14pt;
     }
     #galery a{
         overflow: hidden;
