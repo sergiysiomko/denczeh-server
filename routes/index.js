@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
   let vacancies = await Vacancy.find({}).limit(16);
   //console.log(vacancies);
 
-  res.render("index", {vacancies});
+  res.render("index", {vacancies, auth:req.isAuthenticated()});
 });
 
 module.exports = router;

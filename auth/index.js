@@ -71,8 +71,8 @@ function(req, login, password, done) { // callback with login and password from 
         // if there are any errors, return the error before anything else
         if (err)
             return done(err);
-        console.log("user",user);
-        console.log("password",password);
+        //console.log("user",user);
+        //console.log("password",password);
         // if no user is found, return the message
         if (!user)
             return done(null, false); 
@@ -94,7 +94,7 @@ passport.isLoggedIn = (req, res, next)=>{
     return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/users/login');
+    res.redirect('/admin/login');
   }
   
 })()

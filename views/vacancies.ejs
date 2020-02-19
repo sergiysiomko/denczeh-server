@@ -3,10 +3,10 @@
 <div class="vacancies-wrapper">
     <div class='vacancies-ctg-wrapper'>
         <ul class='vacancies-ctg'>
-            <li><a href="https://denysiukjob.com.ua/vacancies">Всі вакансії</a></li>
-            <li><a href="https://denysiukjob.com.ua/vacancies/type/czech">Чехія</a></li>
-            <li><a href="https://denysiukjob.com.ua/vacancies/type/polska">Польща</a></li>
-            <li><a href="https://denysiukjob.com.ua/vacancies/type/openviza">По відкритим візам</a></li>
+            <li><a href="<%=process.env.DOMAIN%>/vacancies">Всі вакансії</a></li>
+            <li><a href="<%=process.env.DOMAIN%>/vacancies/type/czech">Чехія</a></li>
+            <li><a href="<%=process.env.DOMAIN%>/vacancies/type/polska">Польща</a></li>
+            <li><a href="<%=process.env.DOMAIN%>/vacancies/type/openviza">По відкритим візам</a></li>
         </ul>
     </div>
         <section id="vacancies">
@@ -22,15 +22,14 @@
                                     <img src="/img/money-icon.png" alt="payment-icon" class="payment-icon">
                                 <span class="payment-text"><%=v.payment%> <%=v.currency%></span>
                             </div>
-                            <a href="https://denysiukjob.com.ua/vacancies/<%=v.link%>">Детальніше...</a>
+                            <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">Детальніше...</a>
                     </div>
                     
-                    <a href="https://denysiukjob.com.ua/vacancies/<%=v.link%>">
+                    <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
                         <img src="<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img">
                     </a>
                  </article>
             <%})%>
         </section>
     </div>
-<script src="/javascripts/script.js"></script>    
 <%- include('part/footer')-%>

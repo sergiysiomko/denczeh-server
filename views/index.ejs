@@ -1,7 +1,7 @@
 <%- include('part/header',{title:"Робота за кордоном"})-%>
 <header>
     <div>
-            <%- include('part/menu')-%>
+            <%-auth? include('part/menu-admin'): include('part/menu')-%>
             
     </div>
    <div id="counter">
@@ -82,24 +82,16 @@
         </div>
     
    </div>
-    <!-- <h1 class="main-title">
-        Робота за кордоном
-    </h1> -->
-    <!-- <div class="buttons">
-        <div class="header-button"><a href="https://denysiukjob.com.ua/anket" >Заповнити анкету</a></div>
-        <div class="header-button"><a href="https://denysiukjob.com.ua/info/services" >Оформлення документів</a></div>
-        <div class="header-button"><a href="https://denysiukjob.com.ua/info/answers" >Запитання - Відповідь</a></div>
-    </div> -->
 </header>
 <main>
     <div class="vacancies-wrapper">
         <section id="vacancies">
-            <h2><a href="https://denysiukjob.com.ua/vacancies">Актуальні вакансії</a></h2>
+            <h2><a href="<%=process.env.DOMAIN%>/vacancies">Актуальні вакансії</a></h2>
             <%vacancies.forEach(function(v){%>
                 <article class="vacancy">
                     <div class="vacancy-info">
                             <h3 class="vacancy-title">
-                                <a href="https://denysiukjob.com.ua/vacancies/<%=v.link%>">
+                                <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
                                     <%=v.title%>
                                 </a>
                             </h3>
@@ -114,13 +106,13 @@
                             
                     </div>
                     
-                    <a href="https://denysiukjob.com.ua/vacancies/<%=v.link%>">
+                    <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
                         <img src="<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img">
                     </a>
                  </article>
             <%})%>
            <div class="all-vacancies-button-wrapper">
-                <a href="https://denysiukjob.com.ua/vacancies" class='all-vacancies-button'>Всі вакансії &gt;&gt;</a>
+                <a href="<%=process.env.DOMAIN%>/vacancies" class='all-vacancies-button'>Всі вакансії &gt;&gt;</a>
            </div>
         </section>
     </div>

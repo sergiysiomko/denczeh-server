@@ -1,72 +1,72 @@
 <%- include('part/header',{title:"Робота за кордоном"})-%>
-<%- include('part/menu')-%>
-<style>
-    .caption{
-        display:inline-block;
-        width: 180px;
-        text-align: right;
-        margin-right: 10px;
-    }
-    input[type="submit"]{
-        color: white;
-        display: block;
-        width: 170px;
-        height: 38px;
-        margin-left: 100px;
-        background: #38ab38;
-    }
-</style>
-<form action='/vacancies/add' method="post">
-    <p>
-        <span class="caption">Назва</span>
-        <input type="text" name="title" value="">
-    </p>
-    <p>
-        <span class="caption">Оплата</span>
-        <input type="number" name="payment" value="">
-    </p>
-    <p>
-        <span class="caption">Валюта</span>
-        <input type="text" name="currency" value="">
-    </p>
-    <p>
-        <span class="caption">Короткий опис</span>
-        <input type="text" name="description" value="">
-    </p>
-    <p>
-        <span class="caption">Головний текст</span>
-        <br>
-        <textarea rows="20" cols="70" name="bigDescription"></textarea>
-    </p>
-    <p>
-        <span class="caption">Місто</span>
-        <input type="text" name="location" value="">
-    </p>
-    <p>
-        <span class="caption">link: /vacancies/</span>
-        <input type="text" name="link" value="">
-    </p>
-    <p>
-        <span class="caption">Категорія</span>  
-        <select name="category">
-            <option value=""></option>
-            <option value="по професії">по професії</option>
-            <option value="різноробочі - склади">різноробочі - склади</option>
-            <option value="різноробочі - заводи">різноробочі - заводи</option>
+<%- include('part/menu-admin')-%>
+<link rel="stylesheet" href="/stylesheets/simditor.css">
 
-        </select>
-    </p>
-    <p>
-        <label for="experience">
-            <span class="caption">Досвід роботи</span>
-            <input type="checkbox" name="experience" value="Досвід роботи" id="experience">
-        </label>
-    </p>
-    <p>
-        <label for="lang">
-            <span class="caption">Знання мови</span>
-            <input type="checkbox" name="lang" value="Знання мови" id="lang">
-        </label>
-    </p>
-    <input type="submit" name="" value="ЗБЕРЕГТИ">
-</form>
+<div class="container">
+    <form action='/vacancies/add' enctype="multipart/form-data" class="add-vacancy" method="post">
+        <p class="input-field">
+            <input type="text" name="title" value="" id="title" autofocus >
+            <label for="title">Назва</label>
+        </p>
+        <p class="input-field">
+            <input type="number" name="payment"  id='payment' value="">
+            <label for="payment">Оплата</label>
+        </p>
+        <p class="input-field">
+            <input type="text" name="currency" id='currency' value="">
+            <label for="currency">Валюта</label>
+        </p>
+        <p class="input-field">
+            <span class="caption">Головний текст</span>
+            <br>
+            <textarea name="bigDescription" id="editor" cols="70" rows="20"></textarea>
+
+        </p>
+        
+        <p class="input-field">
+            
+            <input type="text" name="location" id="location" value="">
+            <label for="location">Місто</label>
+        </p>
+        <p class="input-field">
+            <input type="text" name="link" id="link" value="" >
+            <label for="link">link</label>
+        </p>
+        <!-- photo -->
+        <div class="file-field input-field">
+            <div class="btn amber">
+              <span>Фото (аватар)</span>
+              <input type="file" name='faceImage'>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+        </div>
+
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>Фотографії</span>
+              <input type="file" name='images' multiple>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate"  type="text" placeholder="upload one or more files">
+            </div>
+          </div>
+        <p>
+            <input type="submit" name="" class="btn" value="ЗБЕРЕГТИ">
+        </p>
+    </form>
+    </div>
+
+
+<%- include('part/footer-contacts')-%>
+<script src='/javascripts/module.js'></script>
+<script src='/javascripts/hotkeys.js'></script>
+<script src='/javascripts/uploader.js'></script>
+<script src='/javascripts/simditor.js'></script>
+<script>
+    var editor = new Simditor({
+  textarea: $('#editor')
+  //optional options
+});
+</script>

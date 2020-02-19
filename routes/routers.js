@@ -2,6 +2,8 @@ const express = require('express');
 const createError = require('http-errors');
 const router = express.Router();
 
+
+// auth
 require('../auth');
 
 const indexRouter = require('./index');
@@ -9,15 +11,15 @@ const vacanciesRouter = require('./vacancies');
 const infoRouter = require('./info');
 const anketRouter = require('./anket');
 const contactsRouter = require('./contacts');
-const usersRouter = require('./users');
+const adminRouter = require('./admin');
 
 
 router.use('/', indexRouter);
 router.use('/vacancies', vacanciesRouter);
 router.use('/info', infoRouter);
-router.use('/anket', anketRouter)
-router.use('/contacts', contactsRouter)
-router.use('/users', usersRouter)
+router.use('/anket', anketRouter);
+router.use('/contacts', contactsRouter);
+router.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 router.use(function(req, res, next) {

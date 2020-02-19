@@ -2,7 +2,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(245, 245, 245);
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,77 +14,7 @@ header{
     justify-content: space-between;
     flex-direction: column;
 }
-.menu-wrapper{
-    background-color: #9e9e9e;
-    height: 75px;
-    /* margin-bottom: -18px; */
-}
-menu{
-    
-    display: flex;
-    margin: 0 auto;
-    width:70%;
-    padding: 0;
-    font-size: 16pt;
-    color:#fafafa;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    
-    height: 75px;
-    line-height: 70px;
-    justify-content: center;
-}
- 
-.menu-item.list-menu{
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-}
-.menu-item.list-menu:hover{
-    overflow: visible;
-    height: max-content;/*75+45*5-10*/
-    background-color: #d36e16;
-}
-.menu-item:hover{
-    background-color:#d36e16;
-}
-.menu-item.list-menu ul{
-    list-style: none;
-    line-height: 45px;
-    margin-top: -10px;
-    margin-bottom: 0;
-    padding: 0;
-    font-size: 13pt;
 
-}
-.list-menu .list-item{
-    text-align: center;
-    line-height: 35px;
-    max-width: 144px;
-    border-bottom: 1px solid rgb(150, 87, 0);
-
-
-}
-.list-menu .list-item:last-child{
-    border: none;
-}
-.list-menu .list-item:hover{
-    background-color: #df8a0c;
-}
-.list-menu .list-item a{
-    padding: 0;
-} 
-.menu-item a{
-    display: block;
-    text-decoration: none;
-    color:white;
-}
-.menu-item> a{
-   height: 75px;
-   padding:0 15px;
-}
-.menu-item a:active{
-    color:grey
-}
 
 header .main-title{
     text-transform: uppercase;
@@ -193,19 +123,11 @@ main{
 #vacancies .vacancy .payment-text{
     vertical-align: 5px;
 }
-/* #vacancies .vacancy .vacancy-info a{
-    font-size: 15pt;
-    color:#a0500b;
-    line-height: 40px;
-    text-shadow: #bfa48c  1px 1px 5px;
-}
-#vacancies .vacancy > a{
-    display:block;
-    width: 44%;
-} */
 
 #vacancies .vacancy .vacancy-img{
     border-radius: 0 10px 10px 0; 
+    width: 200px;
+    height: 200px;
 }
 .all-vacancies-button-wrapper{
     width: 100%;
@@ -688,7 +610,7 @@ aside img {
     margin-bottom: 50px;
 }
 /* label color */
-#form-login .input-field label {
+#form-login .input-field label{
     color: #ef6c00 ;
 }
   /* label focus color */
@@ -696,7 +618,7 @@ aside img {
     color: #fb8c00 ;
 }
   /* label underline focus color */
-#form-login .input-field input:focus {
+#form-login .input-field input:focus{
     border-bottom: 1px solid #fb8c00 ;
     box-shadow: 0 1px 0 0 #fb8c00 ;
   }
@@ -760,16 +682,38 @@ svg {
     display: inline-block;
 }
 
-@media only screen and (max-width:920px){
-    menu{
-        width:auto;
-        
-    }
-    .menu-item> a{
-        padding: 0 4.5px;
-    }
- 
+.menu-wrapper nav .phones{
+    font-size: 14pt;
+    margin:-10px 25px 0 0;
 }
+
+.menu-wrapper nav .phones a{
+    display: block;
+    height: 24px;
+}
+.menu-wrapper nav ul a{
+    font-size: 13pt;
+}
+.menu-wrapper .dropdown-content li>a{
+    color:#dda200;
+}
+
+#vacancies-list .collection-item{
+    height: 50px;
+}
+#add-vacancy-btn{
+    margin-top: 15px;
+}
+form.add-vacancy{
+    margin-top: 30px;
+}
+form.add-vacancy input::placeholder{
+    color:#000;
+}
+form.add-vacancy label{
+    color: #000;
+}
+
 @media only screen and (max-width:750px){
     header .main-title{
         font-size: 45pt;
@@ -799,10 +743,6 @@ svg {
     }
 }
 @media only screen and (max-width:480px){
-    menu{
-        font-size:13pt;
-        font-weight: bolder;
-    }
     header .main-title{
         font-size: 35pt;
     }
@@ -845,6 +785,13 @@ svg {
     }
     .viber-add{
         display: inline;
+    }
+
+    .menu-wrapper nav .brand-logo{
+        font-size: 15pt;
+    }
+    .menu-wrapper nav .phones{
+        display: none;
     }
 }
 @media only screen and (max-width:1195px){
@@ -910,12 +857,6 @@ svg {
         -webkit-transform: scale(1.1);
         opacity: 1;
 	}
-	/* 70%{
-		-webkit-transform: scale(1.3);opacity: .85;
-	}
-	80%{
-		-webkit-transform: scale(1.4);opacity: .6;
-	} */
 	100%{
         -webkit-transform: scale(1.3);
         opacity: 1;
