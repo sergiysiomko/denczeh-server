@@ -15,7 +15,7 @@ const MongoStore = require('connect-mongo')(session)
 mongoose.Promise = global.Promise;
 
 
-mongoose.connect(process.env.LOCAL_DB_CONN_STRING,{
+mongoose.connect(process.env.DB_CONN_STRING,{
   useNewUrlParser:true,
   useCreateIndex:true
 }).then(() => {
