@@ -20,15 +20,19 @@ header .main-title{
     text-transform: uppercase;
     font-size: 75pt;
     text-align: center;
-    background-color: rgba(200,200,200,0.85);
-    width: 70%;
+    background-color: rgba(200,200,200,0.3);
+    width: 100%;
     align-self: center;
     padding: 20px;
     margin: 0;
-    font-family: Playfair;
+    font-family: 'CharlemagneC', arial;
     min-width: 560px;
+    color:#fff;
 }
-
+.arsenal-font{
+    
+    font-family: 'Arsenal-Regular', arial;
+}
 header .buttons{
     display: flex;
     flex-direction: row;
@@ -248,7 +252,7 @@ main{
    
 aside{
     width: 45px;
-    height: 135px;
+    height: 90px;
     position: fixed;
     top: 45%;
     left: 0;
@@ -681,10 +685,13 @@ svg {
     margin: 20px;
     display: inline-block;
 }
-
+.menu-wrapper nav{
+    background-color: transparent;
+    box-shadow: none;
+}
 .menu-wrapper nav .phones{
     font-size: 14pt;
-    margin:-10px 25px 0 0;
+    margin:-10px 150px 0 0;
 }
 
 .menu-wrapper nav .phones a{
@@ -697,7 +704,21 @@ svg {
 .menu-wrapper .dropdown-content li>a{
     color:#dda200;
 }
-
+.nav-wrapper{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.nav-wrapper .brand-logo{
+    font-size: 13pt;
+    border: 3px solid #fff;
+    height: 45px;
+    line-height: 25px;
+    margin-top: 10px;
+    padding: 9px;
+}
+nav a{
+    color: #fff;
+  
+}
 #vacancies-list .collection-item{
     height: 50px;
 }
@@ -713,7 +734,32 @@ form.add-vacancy input::placeholder{
 form.add-vacancy label{
     color: #000;
 }
+#mobile-demo{
+    background-color: #263238;
+}
+#mobile-demo .divider{
+    background-color: #aaa;
+}
 
+#mobile-demo .contacts li a,
+#mobile-demo .contacts .sub-title,
+#mobile-demo .contacts a,
+#mobile-demo li i,
+#mobile-demo li a{
+    color:#fff;
+    font-size: 14pt;
+}
+#mobile-demo li a:hover{
+    background-color: rgba(150, 150, 150, 0.75);
+}
+
+#mobile-demo .contacts .sub-title{
+    font-size: 14pt;
+    margin: 5px 0;
+}
+#selected-menu-item{
+    color:rgb(255, 168, 168);
+}
 @media only screen and (max-width:750px){
     header .main-title{
         font-size: 45pt;
@@ -788,9 +834,12 @@ form.add-vacancy label{
     }
 
     .menu-wrapper nav .brand-logo{
-        font-size: 15pt;
+        font-size: 12pt;
     }
     .menu-wrapper nav .phones{
+        display: none;
+    }
+    aside{
         display: none;
     }
 }
@@ -834,6 +883,37 @@ form.add-vacancy label{
     font-style: normal; 
     font-weight: normal; 
 } 
+@font-face {
+    font-family: "Simplifica"; 
+    src: url("/fonts/SIMPLIFICA Typeface.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "MonAmour"; 
+    src: url("/fonts/mon-amour-one-medium_1431732b118ed534ff171d6bd3f1b4d8.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "Uni Sans Thin"; 
+    src: url("/fonts/Uni Sans Thin.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "Arsenal-Regular"; 
+    src: url("/fonts/Arsenal-Regular.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "CharlemagneC"; 
+    src: url("/fonts/CharlemagneC.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
 @keyframes radial-pulse {
     0% {
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.712);
