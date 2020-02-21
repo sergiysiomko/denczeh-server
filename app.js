@@ -29,7 +29,7 @@ mongoose.connect(process.env.DB_CONN_STRING,{
 let routers = require('./routes/routers');
 
 const app = express();
-app.listen(() => {
+app.listen(3000, '192.168.1.7', () => {
   console.log('Сервер запущено');
 });
 // view engine setup

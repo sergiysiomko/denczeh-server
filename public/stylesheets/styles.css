@@ -9,6 +9,9 @@ body{
 header{
     background-image: url("/img/header-bg-euro2.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #003398;
     height: 650px;
     display: flex;
     justify-content: space-between;
@@ -714,6 +717,7 @@ svg {
     line-height: 25px;
     margin-top: 10px;
     padding: 9px;
+    width: max-content;
 }
 nav a{
     color: #fff;
@@ -760,6 +764,53 @@ form.add-vacancy label{
 #selected-menu-item{
     color:rgb(255, 168, 168);
 }
+#mobile-demo.sidenav .contacts a i,
+#mobile-demo.sidenav .contacts a{
+    height: 30px;
+    line-height: 30px;
+}
+#mobile-demo .contacts .network{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+#mobile-demo .contacts .network a{
+    margin: 0 15px;
+}
+@media only screen and (max-width:1195px){
+    #vacancies{
+        width:100%;
+    }
+    #vacancy .vacancy-galary{
+        display: flex;
+        width:100%;
+        flex-wrap: wrap;
+        /* align-items: center; */
+    }
+    #vacancy .vacancy-galary a{
+        width: 350px;
+        margin: 5px;
+    }
+    .nav-wrapper .brand-logo{
+        margin-left: 100px;
+    }
+    .menu-wrapper nav .phones{
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (max-width:955px){
+    #vacancies{
+        justify-content: center;
+    }
+    .nav-wrapper .phones{
+        display:none;
+    }
+    .nav-wrapper .brand-logo{
+        margin-left: 0;
+        border: 2px solid #fff;;
+    }
+}
 @media only screen and (max-width:750px){
     header .main-title{
         font-size: 45pt;
@@ -786,6 +837,11 @@ form.add-vacancy label{
     }
     .vacancies-ctg{
         font-size: 12pt;
+    }
+    .nav-wrapper  .brand-logo{
+        
+        padding:9px 3px;
+        width: 330px;
     }
 }
 @media only screen and (max-width:480px){
@@ -833,8 +889,11 @@ form.add-vacancy label{
         display: inline;
     }
 
-    .menu-wrapper nav .brand-logo{
-        font-size: 12pt;
+    .nav-wrapper  .brand-logo{
+        font-size: 11pt;
+        margin-top: 5px;
+        margin-left: 21px;
+        width: 275px;
     }
     .menu-wrapper nav .phones{
         display: none;
@@ -843,27 +902,6 @@ form.add-vacancy label{
         display: none;
     }
 }
-@media only screen and (max-width:1195px){
-    #vacancies{
-        width:100%;
-    }
-    #vacancy .vacancy-galary{
-        display: flex;
-        width:100%;
-        flex-wrap: wrap;
-        /* align-items: center; */
-    }
-    #vacancy .vacancy-galary a{
-        width: 350px;
-        margin: 5px;
-    }
-}
-@media only screen and (max-width:955px){
-    #vacancies{
-        justify-content: center;
-    }
-}
-
 
 @font-face {
     font-family: "Playfair"; 

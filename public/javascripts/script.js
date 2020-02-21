@@ -20,19 +20,18 @@ function vacanciesCategoriesCheck() {
 function menu() {
   // sidenav
   $('.sidenav').sidenav();
+  
+  // menu highlight
 
   let items = $('#mobile-demo li')
+  const color = 'rgb(255, 168, 168)'
   for (let i = 0; i < items.length; i++) {
     let a = $(items[i]).children('a');
-    console.log(window.location.href);
-    console.log(a.attr('href'));
     if(window.location.href == a.attr('href')){
-      console.log(a[0].innerText);
-      a.css('color', '#f00')
-      $(a).children().css('color', '#f00')
+      a.css('color', color)
+      $(a).children().css('color', color)
       return;
     }
-
     
   }
 }
