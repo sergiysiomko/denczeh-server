@@ -31,7 +31,7 @@ mongoose
 let routers = require("./routes/routers");
 
 const app = express();
-app.listen(3000, "192.168.1.7", () => {
+app.listen(() => {
   console.log("Сервер запущено");
 });
 // view engine setup
