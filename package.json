@@ -30,5 +30,8 @@
     "passport-http": "*",
     "passport-local": "*",
     "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }

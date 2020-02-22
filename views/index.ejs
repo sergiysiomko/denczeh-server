@@ -1,137 +1,68 @@
 <%- include('part/header',{title:"Робота за кордоном"})-%>
 <header>
-    <div>
-            <%-auth? include('part/menu-admin'): include('part/menu')-%>
-            
-    </div>
-    <h1 class="main-title">
-        Робота в Європі
-    </h1>
-   <div id="counter">
-        <div class="counter col_fourth">
-            <div class="icon">
-                <svg version="1.1" id="L1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                    <circle fill="none" stroke="#02339a" stroke-width="6" stroke-miterlimit="15" stroke-dasharray="14.2472,14.2472" cx="50" cy="50" r="47" >
-                    <animateTransform 
-                        attributeName="transform" 
-                        attributeType="XML" 
-                        type="rotate"
-                        dur="8s" 
-                        from="0 50 50"
-                        to="360 50 50" 
-                        repeatCount="indefinite" />
-                </circle>
-                </svg>
-            </div>
-          <h2 class="timer count-title count-number" data-to="2" data-speed="1000"></h2>
-           <p class="count-text ">Роки на ринку</p>
-        </div>
-    
-        <div class="counter col_fourth">
-            <div class="icon">
-                <svg version="1.1" id="L1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                    <circle fill="none" stroke="#02339a" stroke-width="6" stroke-miterlimit="15" stroke-dasharray="14.2472,14.2472" cx="50" cy="50" r="47" >
-                    <animateTransform 
-                        attributeName="transform" 
-                        attributeType="XML" 
-                        type="rotate"
-                        dur="8s" 
-                        from="0 50 50"
-                        to="360 50 50" 
-                        repeatCount="indefinite" />
-                </circle>
-                </svg>
-            </div>
-          <h2 class="timer count-title count-number" data-to="600" data-speed="1500"></h2>
-          <p class="count-text ">Працевлаштовано людей</p>
-        </div>
-    
-        <div class="counter col_fourth">
-          <div class="icon">
-                <svg version="1.1" id="L1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                    <circle fill="none" stroke="#02339a" stroke-width="6" stroke-miterlimit="15" stroke-dasharray="14.2472,14.2472" cx="50" cy="50" r="47" >
-                    <animateTransform 
-                        attributeName="transform" 
-                        attributeType="XML" 
-                        type="rotate"
-                        dur="8s" 
-                        from="0 50 50"
-                        to="360 50 50" 
-                        repeatCount="indefinite" />
-                </circle>
-                </svg>
-            </div>
-          <h2 class="timer count-title count-number" data-to="400" data-speed="1500"></h2>
-          <p class="count-text ">Відкритих віз</p>
-        </div>
-    
-        <div class="counter col_fourth end">
-            <div class="icon">
-                <svg version="1.1" id="L1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-                    <circle fill="none" stroke="#02339a" stroke-width="6" stroke-miterlimit="15" stroke-dasharray="14.2472,14.2472" cx="50" cy="50" r="47" >
-                    <animateTransform 
-                        attributeName="transform" 
-                        attributeType="XML" 
-                        type="rotate"
-                        dur="8s" 
-                        from="0 50 50"
-                        to="360 50 50" 
-                        repeatCount="indefinite" />
-                </circle>
-                </svg>
-            </div>
-          <h2 class="timer count-title count-number" data-to="900" data-speed="1500"></h2>
-          <p class="count-text ">Надано консультацій</p>
-        </div>
-    
-   </div>
+  <div>
+    <%-auth? include('part/menu-admin'): include('part/menu')-%>
+  </div>
+  <h1 class="main-title">
+    Робота в Європі
+  </h1>
+  <%- include('part/counter') %>
 </header>
 <main>
-    <div class="vacancies-wrapper">
-        <section id="vacancies">
-            <h2><a href="<%=process.env.DOMAIN%>/vacancies">Актуальні вакансії</a></h2>
-            <%vacancies.forEach(function(v){%>
-                <article class="vacancy">
-                    <div class="vacancy-info">
-                            <h3 class="vacancy-title">
-                                <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
-                                    <%=v.title%>
-                                </a>
-                            </h3>
-                            <div class="location">
-                                <img src="/img/location-icon.png" alt="location-icon" class="location-icon">
-                                <span class="location-text"><%=v.location%></span>
-                            </div>
-                            <div class="vacancy-payment">
-                                    <img src="/img/money-icon.png" alt="payment-icon" class="payment-icon">
-                                <span class="payment-text"><%=v.payment%> <%=v.currency%></span>
-                            </div>
-                            
-                    </div>
-                    
-                    <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
-                        <img src="<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img">
-                    </a>
-                 </article>
-            <%})%>
-           <div class="all-vacancies-button-wrapper">
-                <a href="<%=process.env.DOMAIN%>/vacancies" class='all-vacancies-button'>Всі вакансії &gt;&gt;</a>
-           </div>
-        </section>
-    </div>
-    <section id="socialnetwork">
-            <h2>
-                Ми в соціальних мережах
-            </h2>
-            <a href="https://www.instagram.com/denisyuk.czjob/">
-                <img src="/img/instagram-logo.png" alt="instagram">
+  <div class="vacancies-wrapper">
+    <section id="vacancies">
+      <h2>
+        <a href="<%=process.env.DOMAIN%>/vacancies">Актуальні вакансії</a>
+      </h2>
+      <%vacancies.forEach(function(v){%>
+      <article class="vacancy">
+        <div class="vacancy-info">
+          <h3 class="vacancy-title">
+            <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
+              <%=v.title%>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100030753322152">
-                <img src="/img/facebook-logo.png" alt="facebook">
-            </a>
-            
-        </section>
-</main>
+          </h3>
+          <div class="location">
+            <img
+              src="/img/location-icon.png"
+              alt="location-icon"
+              class="location-icon"
+            />
+            <span class="location-text"><%=v.location%></span>
+          </div>
+          <div class="vacancy-payment">
+            <img
+              src="/img/money-icon.png"
+              alt="payment-icon"
+              class="payment-icon"
+            />
+            <span class="payment-text"><%=v.payment%> <%=v.currency%></span>
+          </div>
+        </div>
 
+        <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
+          <img src="<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img" />
+        </a>
+      </article>
+      <%})%>
+      <div class="all-vacancies-button-wrapper">
+        <a href="<%=process.env.DOMAIN%>/vacancies" class="all-vacancies-button"
+          >Всі вакансії &gt;&gt;</a
+        >
+      </div>
+    </section>
+  </div>
+  <section id="socialnetwork">
+    <h2>
+      Ми в соціальних мережах
+    </h2>
+    <a href="https://www.instagram.com/denisyuk.czjob/">
+      <img src="/img/instagram-logo.png" alt="instagram" />
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=100030753322152">
+      <img src="/img/facebook-logo.png" alt="facebook" />
+    </a>
+  </section>
+</main>
 
 <%- include('part/footer')-%>
