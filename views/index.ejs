@@ -6,52 +6,11 @@
   <h1 class="main-title">
     Робота в Європі
   </h1>
-  <%- include('part/counter') %>
+  <div></div>
 </header>
 <main>
-  <div class="vacancies-wrapper">
-    <section id="vacancies">
-      <h2>
-        <a href="<%=process.env.DOMAIN%>/vacancies">Актуальні вакансії</a>
-      </h2>
-      <%vacancies.forEach(function(v){%>
-      <article class="vacancy">
-        <div class="vacancy-info">
-          <h3 class="vacancy-title">
-            <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
-              <%=v.title%>
-            </a>
-          </h3>
-          <div class="location">
-            <img
-              src="/img/location-icon.png"
-              alt="location-icon"
-              class="location-icon"
-            />
-            <span class="location-text"><%=v.location%></span>
-          </div>
-          <div class="vacancy-payment">
-            <img
-              src="/img/money-icon.png"
-              alt="payment-icon"
-              class="payment-icon"
-            />
-            <span class="payment-text"><%=v.payment%> <%=v.currency%></span>
-          </div>
-        </div>
+  <%- include('part/counter') %>
 
-        <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
-          <img src="<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img" />
-        </a>
-      </article>
-      <%})%>
-      <div class="all-vacancies-button-wrapper">
-        <a href="<%=process.env.DOMAIN%>/vacancies" class="all-vacancies-button"
-          >Всі вакансії &gt;&gt;</a
-        >
-      </div>
-    </section>
-  </div>
   <section id="socialnetwork">
     <h2>
       Ми в соціальних мережах
