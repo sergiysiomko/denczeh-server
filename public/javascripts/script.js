@@ -3,9 +3,11 @@ init();
 function init() {
   menu();
   counter();
+  $(document).ready(function() {
+    $(".tabs").tabs();
+  });
   vacanciesCategoriesCheck();
   gtag();
-  modal();
 }
 function vacanciesCategoriesCheck() {
   var categories = { vacancies: 0, czech: 1, polska: 2, openviza: 3 };
@@ -14,9 +16,6 @@ function vacanciesCategoriesCheck() {
   var ctg = window.location.href.split("/").reverse()[0];
 
   buttons[categories[ctg]].classList.add("selected");
-}
-function modal() {
-  $(".modal").modal();
 }
 function menu() {
   // sidenav

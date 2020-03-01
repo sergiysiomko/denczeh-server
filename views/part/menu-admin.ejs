@@ -1,72 +1,124 @@
 <div class="menu-wrapper">
-    <nav>
-        <div class="nav-wrapper yellow darken-3">
-          <!-- mobile button -->
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          
-          <!-- menu -->
-          <ul class="left hide-on-med-and-down">
-            <li><a href="<%=process.env.DOMAIN%>">Головна</a></li>
-            <li><a href="<%=process.env.DOMAIN%>/vacancies">Вакансії</a></li>
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-services">
-              Інформація<i class="material-icons right">arrow_drop_down</i>
-            </a></li>
-            
-            <li><a href="<%=process.env.DOMAIN%>/contacts">Контакти</a></li>
+  <nav>
+    <div class="nav-wrapper">
+      <!-- mobile button -->
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+        ><i class="material-icons">menu</i></a
+      >
 
-          </ul>
-          
-          <!-- logo -->
-          <a href="<%=process.env.DOMAIN%>" class="brand-logo center">Робота в Європі</a>
+      <!-- menu -->
+      <ul class="left hide-on-med-and-down">
+        <li><a href="<%=process.env.DOMAIN%>">Головна</a></li>
+        <li><a href="<%=process.env.DOMAIN%>/vacancies">Вакансії</a></li>
+        <li><a href="<%=process.env.DOMAIN%>">Послуги</a></li>
+        <li><a href="<%=process.env.DOMAIN%>">Відгуки</a></li>
+        <li><a href="<%=process.env.DOMAIN%>/contacts">Контакти</a></li>
+      </ul>
 
-          <!-- phones -->
-          <div class="right ">
-            <ul>
-                <li>
-                    <a class="waves-effect waves-light btn" href="/vacancies/list">
-                        Вакансії <i class="material-icons right">work</i>           
-                    </a>
-                </li>
-                <li>
-                     <a class="waves-effect waves-light btn" href="/admin/logout">
-                         Вийти <i class="material-icons right">exit_to_app</i>
-                    </a>
-                </li>
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
+      <!-- logo -->
+      <a href="#!" class="brand-logo center"
+        >Всі вакансії перевірені, безкоштовні</a
+      >
+      <!-- phones -->
+      <div class="right ">
+        <ul>
+          <li>
+            <a class="waves-effect waves-light btn" href="/vacancies/list">
+              Вакансії <i class="material-icons right">work</i>
+            </a>
+          </li>
+          <li>
+            <a class="waves-effect waves-light btn" href="/admin/logout">
+              Вийти <i class="material-icons right">exit_to_app</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+</div>
+</nav>
 
-    <!-- Dropdown Structure -->
-    <ul id="dropdown-services" class="dropdown-content">
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/twoYear">Двохрічні візи</a></li>
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/pratsevlashtuvannya">Працевла- штування до 90 днів</a></li>
-      <li class="divider"></li>
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/aboutCzech">Про Чехію</a></li>
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/perspectiva">Перспектива для Українців</a></li>
-    </ul> 
-    <!-- Dropdown Nav Structure -->
-    <ul id="dropdown-nav-services" class="dropdown-content">
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/twoYear">Двохрічні візи</a></li>
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/pratsevlashtuvannya">Працевла- штування до 90 днів</a></li>
-      
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/aboutCzech">Про Чехію</a></li>
-      <li class="list-item"><a href="<%=process.env.DOMAIN%>/info/perspectiva">Перспектива для Українців</a></li>
-    </ul> 
+<!-- sidenav -->
+<ul class="sidenav" id="mobile-demo">
+  <div>
+    <h2 class="title">Робота в Європі</h2>
+  </div>
+  <li>
+    <a href="<%=process.env.DOMAIN%>/">
+      Головна
+      <i class="material-icons left">home</i>
+    </a>
+  </li>
 
-    <!-- sidenav -->
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="<%=process.env.DOMAIN%>">Головна</a></li>
-            <li><a href="<%=process.env.DOMAIN%>/vacancies">Вакансії</a></li>
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown-nav-services">
-              Інформація <i class="material-icons right">arrow_drop_down</i>
-            </a></li>
-            
-            <li><a href="<%=process.env.DOMAIN%>/contacts">Контакти</a></li>
-    </ul>
+  <li>
+    <a href="<%=process.env.DOMAIN%>/vacancies">
+      Вакансії
+      <i class="material-icons left">description</i>
+    </a>
+  </li>
+  <li>
+    <a href="<%=process.env.DOMAIN%>/vacancies">
+      Послуги
+      <i class="material-icons left">card_travel</i>
+    </a>
+  </li>
 
-      
+  <li>
+    <a href="<%=process.env.DOMAIN%>">
+      Відгуки
+      <i class="material-icons left">message</i>
+    </a>
+  </li>
+
+  <li>
+    <a href="<%=process.env.DOMAIN%>/contacts">
+      Контакти
+      <i class="material-icons left">perm_contact_calendar</i>
+    </a>
+  </li>
+
+  <li class="divider"></li>
+
+  <!-- <li><a href="<%=process.env.DOMAIN%>/contacts">
+        Ми на YouTube
+        <i class="material-icons left">videocam</i>
+      </a></li> -->
+  <div class="contacts">
+    <p class="center sub-title">Завжди на зв'язку</p>
+    <li>
+      <a href="tel:+380961781115">
+        +38 096 178 11 15
+        <i class="material-icons left">phone_in_talk</i>
+      </a>
+    </li>
+    <li>
+      <a href="tel:+380978560219">
+        +38 097 856 02 19
+        <i class="material-icons left">phone_in_talk</i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:denisyukjob@ukr.net"
+        >denisyukjob@ukr.net
+        <i class="material-icons left">mail</i>
+      </a>
+    </li>
+    <div class="network">
+      <a href="#!"><img src="/img/youtube-logo.png" alt="youtube-logo"/></a>
+      <a href="viber://chat/?number=+380978560219"
+        ><img src="/img/viber-logo.png" alt="viber-logo"
+      /></a>
+    </div>
+    <div>
+      <h6 class="license">
+        Ми працюємо за
+        <a href="<%=process.env.DOMAIN%>/docs/license.pdf" target="_blank"
+          >ліцензією</a
+        >
+      </h6>
+    </div>
+  </div>
+</ul>
 </div>
