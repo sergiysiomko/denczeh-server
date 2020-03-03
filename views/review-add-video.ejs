@@ -1,0 +1,31 @@
+<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
+include('part/menu-admin') %>
+
+<form
+  action="/reviews/add/video"
+  method="post"
+  class="col s12 l4 offset-l4 m6 offset-m3"
+  id="form-login"
+>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="title" id="title" placeholder="назва" required />
+      <label for="title">Назва</label>
+    </div>
+    <div class="input-field col s12">
+      <textarea name="iframe" id="iframe" cols="30" rows="10"></textarea>
+      <label for="iframe">iframe</label>
+    </div>
+    <div class=" col s12">
+      <button
+        class="btn waves-effect waves-light amber darken-4"
+        type="submit"
+        name="action"
+      >
+        Надіслати
+      </button>
+    </div>
+  </div>
+</form>
+
+<%- include('part/footer-contacts') %>

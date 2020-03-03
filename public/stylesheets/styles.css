@@ -702,7 +702,7 @@ input:checked ~ .tab-content {
   color: #4ad1e5;
 }
 
-svg {
+.counter svg {
   width: 100px;
   height: 100px;
   margin: 20px;
@@ -1012,6 +1012,9 @@ form.add-vacancy label {
 #phones .phone a {
   font-size: 32px;
   color: #000;
+}
+
+#video {
 }
 
 @media only screen and (max-width: 1195px) {

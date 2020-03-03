@@ -1,4 +1,124 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
-include('part/menu')-%>
+<%- include('part/header',{title:"Робота за кордоном | Відгуки"})-%>
+<!--  -->
+<%- include('part/menu')-%>
 <h1>Відгуки</h1>
+
+<!-- <img
+  class="card-img-top img-fluid"
+  src="http://img.youtube.com/vi/_sI_Ps7JSEk/mqdefault.jpg"
+/> -->
+<!-- .container -->
+<section id="video" class="container">
+  <!-- .gallery-slider -->
+  <div class="gallery-slider">
+    <!-- __images -->
+    <div class="gallery-slider__images">
+      <div>
+        <% videos.forEach(video => {%>
+          <!-- .item -->
+          <div class="item">
+            <div class="img-fill">
+              <h5><%= video.title %> </h5>
+              <div><%- video.iframe %></div>
+            </div>
+          </div>
+          <!-- /.item -->   
+          <%}) %>
+        <% videos.forEach(video => {%>
+          <!-- .item -->
+          <div class="item">
+            <div class="img-fill">
+              <h5><%= video.title %> </h5>
+              <div><%- video.iframe %></div>
+            </div>
+          </div>
+          <!-- /.item -->   
+          <%}) %>
+        
+        <!-- .item -->
+        <div class="item">
+          <div class="img-fill">
+            <img src="https://placekitten.com/545/321" alt="Kitten 8" />
+          </div>
+        </div>
+        <!-- /.item -->
+      </div>
+      <button class="prev-arrow slick-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+          <path
+            fill="#fff"
+            d="M1171 301L640 832l531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19L173 877q-19-19-19-45t19-45L915 45q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"
+          />
+        </svg>
+      </button>
+      <button class="next-arrow slick-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+          <path
+            fill="#fff"
+            d="M1107 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45L275 45q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+          />
+        </svg>
+      </button>
+      <!-- <span class="caption">&nbsp;</span> -->
+    </div>
+    <!-- /__images -->
+
+    <!-- __thumbnails -->
+    <div class="gallery-slider__thumbnails">
+      <div>
+        <% videos.forEach(video => {%>
+            <!-- .item -->
+            <div class="item">
+              <div class="img-fill">
+                <img src="<%= video.img %>" alt="Kitten 8" />
+              </div>
+            </div>
+            
+
+          <%}) %>
+        <% videos.forEach(video => {%>
+            <!-- .item -->
+            <div class="item">
+              <div class="img-fill">
+                <img src="<%= video.img %>" alt="Kitten 8" />
+              </div>
+            </div>
+            
+
+          <%}) %>
+        
+        <!-- .item -->
+        <div class="item">
+          <div class="img-fill">
+            <img src="https://placekitten.com/200/770" alt="Kitten 7" />
+          </div>
+        </div>
+        <!-- /.item -->
+      </div>
+
+      <button class="prev-arrow slick-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+          <path
+            fill="#fff"
+            d="M1171 301L640 832l531 531q19 19 19 45t-19 45l-166 166q-19 19-45 19t-45-19L173 877q-19-19-19-45t19-45L915 45q19-19 45-19t45 19l166 166q19 19 19 45t-19 45z"
+          />
+        </svg>
+      </button>
+      <button class="next-arrow slick-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1792">
+          <path
+            fill="#fff"
+            d="M1107 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45L275 45q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- /__thumbnails -->
+  </div>
+  <!-- /.gallery-slider -->
+</section>
+<!-- /.container -->
+
+<!--  -->
+
 <%- include('part/footer')-%>
