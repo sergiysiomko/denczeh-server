@@ -12,12 +12,16 @@ const storage = multer.diskStorage({
     dir = dir.join("\\");
     dir = dir + "\\public\\img\\vacancies";
     console.log(dir);
-    fs.exists(dir, exist => {
-      if (!exist) {
-        return fs.mkdir(dir, error => cb(error, dir));
-      }
-      return cb(null, dir);
-    });
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+    return cb(null, dir);
+    // fs.exists(dir, exist => {
+    //   if (!exist) {
+    //     return fs.mkdir(dir, error => cb(error, dir));
+    //   }
+    //   return cb(null, dir);
+    // });
   },
   filename: function(req, file, cb) {
     let filename = file.originalname.split(".");
@@ -68,7 +72,7 @@ router.post("/add", passport.isLoggedIn, cpUpload, async function(req, res) {
       req.body.category.push(country);
     }
     let newVacancy = new Vacancies(req.body);
-    await newVacancy.save();
+    //await newVacancy.save();
     res.redirect("/vacancies/add");
   } catch (error) {
     res.render("error", { error });
