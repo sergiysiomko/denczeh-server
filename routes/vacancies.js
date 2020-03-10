@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
     let dir = __dirname.split("\\");
     dir.length = dir.length - 1;
     dir = dir.join("\\");
-    cb(null, dir + "\\public\\img\\vacancies");
+    cb(null, dir + "/public/img/vacancies");
   },
   filename: function(req, file, cb) {
     let filename = file.originalname.split(".");
