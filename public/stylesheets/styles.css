@@ -190,6 +190,8 @@ main {
 }
 #vacancy h1 {
   text-align: center;
+  color: #0300ad;
+  font-size: 32pt;
 }
 #vacancy ul li::before,
 #vacancy ol li::before {
