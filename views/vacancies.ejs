@@ -20,7 +20,7 @@ include('part/menu')-%>
       <% vacancies.forEach(v => {%>
       <div class="vacancy">
         <div class="photo">
-          <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"></a>
+          <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
             <img src="<%=v.faceImage%>" alt="avatar" />
           </a>
         </div>

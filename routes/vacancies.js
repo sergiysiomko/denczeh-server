@@ -4,13 +4,20 @@ const router = express.Router();
 const Vacancies = require("../dbmodels/vacancy-model");
 const passport = require("passport");
 const multer = require("multer");
-
+const fs = require("fs");
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     let dir = __dirname.split("\\");
     dir.length = dir.length - 1;
     dir = dir.join("\\");
-    cb(null, dir + "/public/img/vacancies");
+    dir = dir + "\\public\\img\\vacancies";
+    console.log(dir);
+    fs.exists(dir, exist => {
+      if (!exist) {
+        return fs.mkdir(dir, error => cb(error, dir));
+      }
+      return cb(null, dir);
+    });
   },
   filename: function(req, file, cb) {
     let filename = file.originalname.split(".");
