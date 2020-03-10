@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
     let dir = __dirname.split("\\");
     dir.length = dir.length - 1;
     dir = dir.join("\\");
-    dir = dir + "/public/img/vacancies";
+    dir = dir + "./public/img/vacancies";
     console.log(dir);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
