@@ -72,7 +72,7 @@ router.post("/add", passport.isLoggedIn, cpUpload, async function(req, res) {
       req.body.category.push(country);
     }
     let newVacancy = new Vacancies(req.body);
-    //await newVacancy.save();
+    await newVacancy.save();
     res.redirect("/vacancies/add");
   } catch (error) {
     res.render("error", { error });
