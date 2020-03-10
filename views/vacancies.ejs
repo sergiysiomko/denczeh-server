@@ -1,35 +1,84 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%>
-<%- include('part/menu')-%>
+<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
+include('part/menu')-%>
 <div class="vacancies-wrapper">
-    <div class='vacancies-ctg-wrapper'>
-        <ul class='vacancies-ctg'>
-            <li><a href="<%=process.env.DOMAIN%>/vacancies">Всі вакансії</a></li>
-            <li><a href="<%=process.env.DOMAIN%>/vacancies/type/czech">Чехія</a></li>
-            <li><a href="<%=process.env.DOMAIN%>/vacancies/type/polska">Польща</a></li>
-            <li><a href="<%=process.env.DOMAIN%>/vacancies/type/openviza">По відкритим візам</a></li>
-        </ul>
+  <div class="vacancies-ctg-wrapper">
+    <ul class="vacancies-ctg">
+      <li><a href="<%=process.env.DOMAIN%>/vacancies">Всі вакансії</a></li>
+      <li><a href="<%=process.env.DOMAIN%>/vacancies/type/czech">Чехія</a></li>
+      <li>
+        <a href="<%=process.env.DOMAIN%>/vacancies/type/polska">Польща</a>
+      </li>
+      <li>
+        <a href="<%=process.env.DOMAIN%>/vacancies/type/openviza"
+          >По відкритим візам</a
+        >
+      </li>
+    </ul>
+  </div>
+  <section id="vacancies">
+    <div class="wrapper">
+      <% vacancies.forEach(v => {%>
+      <div class="vacancy">
+        <div class="photo">
+          <img src="<%=v.faceImage%>" alt="avatar" />
+          <!-- <div class="photo-caption">вакансія безкоштовна</div> -->
+        </div>
+        <div class="content">
+          <div class="title">
+            <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
+              ><h2><%=v.title%></h2></a
+            >
+          </div>
+          <div class="info">
+            <div class="terms">
+              <div class="term">
+                <i class="material-icons">location_on</i>
+                <span class="category">Регіон</span>
+                <span class="value"
+                  ><%=v.country? v.country+': ': ''%> <%=v.location%></span
+                >
+              </div>
+              <div class="term">
+                <i class="material-icons">insert_invitation</i>
+                <span class="category">Графік</span>
+                <span class="value"><%=v.shchedule%></span>
+              </div>
+              <div class="term">
+                <i class="material-icons">house</i>
+                <span class="category">Житло</span>
+                <span class="value"><%=v.habitation%></span>
+              </div>
+              <div class="term">
+                <i class="material-icons">verified_user</i>
+                <!-- <i class="material-icons">thumb_up</i> -->
+                <span class="category">Вакасія</span>
+                <span class="value">Перевірена та безкоштовна</span>
+              </div>
+              <!-- .terms end -->
+            </div>
+            <div class="photo mobile">
+              <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
+                ><img src="<%=v.faceImage%>" alt="avatar"
+              /></a>
+              <!-- <div class="photo-caption">вакансія безкоштовна</div> -->
+            </div>
+            <div class="payment">
+              <div class="payment-mounth">
+                <%= v.paymentMounth %>
+              </div>
+              <div class="payment-hour">
+                <%= v.payment %>
+              </div>
+              <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
+                ><div class="button">Переглянути</div></a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- content end -->
+      </div>
+      <%}) %>
     </div>
-        <section id="vacancies">
-            <%vacancies.forEach(function(v){%>
-                <article class="vacancy">
-                    <div class="vacancy-info">
-                            <h3 class="vacancy-title"><%=v.title%></h3>
-                            <div class="location">
-                                <img src="/img/location-icon.png" alt="location-icon" class="location-icon">
-                                <span class="location-text"><%=v.location%></span>
-                            </div>
-                            <div class="vacancy-payment">
-                                    <img src="/img/money-icon.png" alt="payment-icon" class="payment-icon">
-                                <span class="payment-text"><%=v.payment%> <%=v.currency%></span>
-                            </div>
-                            <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">Детальніше...</a>
-                    </div>
-                    
-                    <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>">
-                        <img src="<%=v.faceImage%>" alt="vacancy photo" class="vacancy-img">
-                    </a>
-                 </article>
-            <%})%>
-        </section>
-    </div>
+  </section>
+</div>
 <%- include('part/footer')-%>

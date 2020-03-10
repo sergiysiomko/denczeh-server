@@ -2,8 +2,9 @@
 include('part/menu-admin') %>
 
 <form
-  action="/reviews/add/video"
+  action="/reviews/add/image"
   method="post"
+  enctype="multipart/form-data"
   class="col s12 l4 offset-l4 m6 offset-m3"
   id="form-login"
 >
@@ -12,10 +13,20 @@ include('part/menu-admin') %>
       <input type="text" name="title" id="title" placeholder="назва" required />
       <label for="title">Назва</label>
     </div>
-    <div class="input-field col s12">
-      <textarea name="link" id="link" cols="30" rows="10"></textarea>
-      <label for="link">коротке посилання</label>
+  </div>
+  <div class="row">
+    <!-- photo -->
+    <div class="file-field input-field">
+      <div class="btn amber">
+        <span>Фото</span>
+        <input type="file" name="image" required />
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" id="input" />
+      </div>
     </div>
+  </div>
+  <div class="row">
     <div class=" col s12">
       <button
         class="btn waves-effect waves-light amber darken-4"

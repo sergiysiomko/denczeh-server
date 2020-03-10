@@ -2,11 +2,14 @@
 #video * {
   box-sizing: border-box;
 }
-body {
-  font-family: Helevetica, Arial, sans-serif;
-}
-.container {
+#image-reviews.container,
+#video.container {
   max-width: 770px;
+}
+#image-reviews.container .title,
+#video.container .title {
+  text-align: center;
+  font-size: 16pt;
 }
 .gallery-slider {
   position: relative;

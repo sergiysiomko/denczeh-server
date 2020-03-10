@@ -7,6 +7,12 @@ function init() {
   vacanciesCategoriesCheck();
   gtag();
   videoGalary();
+  select();
+}
+function select() {
+  $(document).ready(function() {
+    $("select").formSelect();
+  });
 }
 function vacanciesCategoriesCheck() {
   var categories = { vacancies: 0, czech: 1, polska: 2, openviza: 3 };

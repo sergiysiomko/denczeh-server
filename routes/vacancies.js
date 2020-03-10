@@ -46,8 +46,7 @@ router.post("/add", passport.isLoggedIn, cpUpload, async function(req, res) {
     req.body.faceImage = faceImage
       ? "/img/vacancies/" + req.files["faceImage"][0].filename
       : "";
-    req.body.experience = !!req.body.experience;
-    req.body.lang = !!req.body.lang;
+
     req.body.link = req.body.link || rus_to_latin(req.body.title);
 
     let newVacancy = new Vacancies(req.body);

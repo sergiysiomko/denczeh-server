@@ -3,11 +3,15 @@ var Schema = mongoose.Schema;
 
 var VacancySchema = new Schema({
   title: String,
-  payment: Number,
+  payment: String,
+  paymentMounth: String,
   currency: String,
+  shchedule: String,
+  habitation: String,
   faceImage: String,
   description: String,
   bigDescription: String,
+  country: String,
   location: String,
   images: [String],
   link: {

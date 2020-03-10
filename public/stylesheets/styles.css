@@ -60,71 +60,111 @@ main {
   border-top: 1px solid rgb(9, 7, 169);
 }
 .vacancies-wrapper {
-  background-image: url("/img/background.png");
+  /* background-image: url("/img/background.png"); */
 }
 #vacancies {
-  height: auto;
-  min-height: 350px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 1100px;
-  justify-content: space-between;
-  padding-bottom: 10px;
 }
-#vacancies h2 {
-  text-align: center;
-  font-size: 24pt;
-  margin: 0;
-  padding: 20px 0px;
-  width: 100%;
-}
-
-#vacancies h2 a {
-  color: #e65100;
-  text-decoration: underline;
-  display: inline-block;
-  background-color: #fff;
-  padding: 15px 25px;
-}
-#vacancies .vacancy {
-  /* border:1px solid grey; */
-  width: 450px;
-  height: 200px;
-  display: flex;
-  background-color: white;
-  border-radius: 10px;
-  font-size: 12pt;
-  margin: 15px 10px;
-}
-
-#vacancies .vacancy .vacancy-info {
-  width: 56%;
-  padding: 8px 0px 0px 20px;
+#vacancies .wrapper {
+  width: 850px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  margin: 0 auto;
 }
-#vacancies .vacancy .vacancy-title {
-  margin: 0 9px;
-  font-size: 22pt;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+#vacancies .vacancy {
+  height: 220px;
+  display: flex;
+  box-shadow: 0 0 3px #b7b7b7;
+  margin-bottom: 20px;
+  background-color: #fff;
+  align-items: center;
 }
-#vacancies .vacancy .vacancy-title a {
-  color: #455a64;
-  /* text-decoration: underline; */
+#vacancies .vacancy .photo {
+  padding: 10px 0 10px 10px;
 }
-#vacancies .vacancy .location-text,
-#vacancies .vacancy .payment-text {
-  vertical-align: 5px;
+#vacancies .vacancy .photo img {
+  width: 170px;
+  height: 170px;
+
+  border-radius: 3px;
+}
+#vacancies .vacancy .photo.mobile {
+  display: none;
 }
 
-#vacancies .vacancy .vacancy-img {
-  border-radius: 0 10px 10px 0;
-  width: 200px;
-  height: 200px;
+#vacancies .vacancy .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
+#vacancies .vacancy .title h2 {
+  text-align: center;
+  font-size: 14pt;
+  text-transform: uppercase;
+  margin: 10px 0;
+  color: #0300ad;
+  font-weight: bold;
+}
+#vacancies .vacancy .info {
+  display: flex;
+}
+#vacancies .vacancy .info .terms {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 15px;
+}
+#vacancies .vacancy .info .term {
+  margin: 5px 0;
+}
+#vacancies .vacancy .info .term .material-icons {
+  color: rgb(67, 113, 240);
+}
+#vacancies .vacancy .info .term .category {
+  margin-left: 5px;
+  margin-right: 25px;
+}
+#vacancies .vacancy .info .term .value {
+  display: flex;
+}
+#vacancies .vacancy .info .term {
+  display: flex;
+}
+#vacancies .vacancy .info .payment {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 150px;
+  border-left: 2px solid #6b6b6b;
+  margin-left: 18px;
+  align-items: center;
+  padding: 10px 0 10px 20px;
+}
+#vacancies .vacancy .info .payment-mounth {
+  font-size: 18pt;
+  color: #4371f0;
+  font-weight: bold;
+  text-align: center;
+}
+#vacancies .vacancy .info .payment-hour {
+  color: rgb(82, 82, 82);
+  font-size: 14pt;
+  font-weight: bold;
+}
+#vacancies .vacancy .button {
+  background-color: #22abf5;
+  width: 130px;
+  height: 40px;
+  /* vertical-align: middle; */
+  text-align: center;
+  line-height: 35px;
+  margin-top: 20px;
+  color: #ffffff;
+  border-radius: 3px;
+}
+#vacancies .vacancy .button:hover {
+  background-color: rgb(82, 82, 82);
+}
+
 .all-vacancies-button-wrapper {
   width: 100%;
 }
@@ -249,31 +289,6 @@ aside {
 }
 aside img {
   display: block;
-}
-
-#vacancy {
-  padding: 1px 30px 0px 52px;
-  background-color: #fff3e0;
-  /* width: 70%; */
-  margin: 0 auto;
-  font-family: OpenSans;
-  font-size: 14pt;
-  display: flex;
-  flex-wrap: wrap;
-  /* justify-content: space-between; */
-}
-#vacancy .main-text {
-  width: 780px;
-  flex-grow: 1;
-  padding-right: 15px;
-  text-align: justify;
-}
-#vacancy .vacancy-galary {
-  margin-top: 20px;
-  width: 300px;
-}
-#vacancy .vacancy-galary img {
-  width: 100%;
 }
 
 #info-text {
@@ -671,7 +686,7 @@ input:checked ~ .tab-content {
 }
 /* Column Grids End */
 
-.wrapper {
+#counter .wrapper {
   width: 980px;
   margin: 30px auto;
   position: relative;
@@ -927,18 +942,19 @@ form.add-vacancy label {
   padding: 10px 15px 10px 10px;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
 }
 #lists .list h5 {
-  border: 3px solid #0c0a5e;
-  padding: 15px 65px;
+  border: 3px solid #2196f3;
+  padding: 15px 0;
   cursor: pointer;
   color: #000;
-  width: 80%;
   text-align: center;
   margin: 10px auto;
+  border-radius: 5px;
 }
 #lists .list h5:hover {
-  background-color: #0c0a5e;
+  background-color: #2196f3;
   color: #eee;
   transition: all 0.35s ease-out;
 }
@@ -948,6 +964,10 @@ form.add-vacancy label {
   flex-direction: column;
   justify-content: flex-end;
   margin: 20px;
+}
+#lists .list .button a {
+  width: 80%;
+  margin: 0 auto;
 }
 #lists .list .item {
   display: flex;
@@ -991,6 +1011,7 @@ form.add-vacancy label {
 #lists .list .left-sub-title h2 {
   margin-left: -10px;
 }
+
 #phones {
 }
 #phones .title h3 {
@@ -1014,23 +1035,7 @@ form.add-vacancy label {
   color: #000;
 }
 
-#video {
-}
-
 @media only screen and (max-width: 1195px) {
-  #vacancies {
-    width: 100%;
-  }
-  #vacancy .vacancy-galary {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    /* align-items: center; */
-  }
-  #vacancy .vacancy-galary a {
-    width: 350px;
-    margin: 5px;
-  }
   .nav-wrapper .brand-logo {
     margin-left: 100px;
   }
@@ -1040,15 +1045,45 @@ form.add-vacancy label {
 }
 
 @media only screen and (max-width: 955px) {
-  #vacancies {
-    justify-content: center;
-  }
   .nav-wrapper .phones {
     display: none;
   }
   .nav-wrapper .brand-logo {
     margin-left: 0;
     border: 2px solid #fff;
+  }
+
+  #vacancies .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 480px;
+  }
+  #vacancies .vacancy {
+    height: initial;
+  }
+  #vacancies .vacancy .photo {
+    display: none;
+  }
+  #vacancies .vacancy .photo.mobile {
+    display: block;
+    padding-left: 0;
+  }
+  #vacancies .vacancy .info {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  #vacancies .vacancy .info .terms {
+    width: 100%;
+  }
+  #vacancies .vacancy .info .payment {
+    width: unset;
+    height: 175px;
+    border: 2px solid #6b6b6b;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
   }
 }
 @media only screen and (max-width: 750px) {
@@ -1124,24 +1159,7 @@ form.add-vacancy label {
     width: 100%;
     margin: 14px 8px;
   }
-  #vacancies .vacancy {
-    height: 135px;
-    margin: 10px 0;
-    font-size: 10pt;
-    width: 100%;
-  }
-  #vacancies .vacancy .vacancy-title {
-    font-size: 13pt;
-  }
-  #vacancies .vacancy .vacancy-info {
-    padding: 8px 0 0 5px;
-  }
-  #vacancies .vacancy > a {
-    overflow: hidden;
-  }
-  #vacancies .vacancy .vacancy-img {
-    width: 100%;
-  }
+
   .table-services {
     font-size: 8pt;
   }
@@ -1198,6 +1216,17 @@ form.add-vacancy label {
   .col_three_fourth,
   .col_fifth {
     margin: 8px 0;
+  }
+  #vacancies .vacancy .info .payment {
+    padding: 10px;
+    width: min-content;
+    margin-left: 4px;
+    border: none;
+  }
+  #vacancies .vacancy .photo img {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 0px 2px 0px rgb(51, 51, 51);
   }
 }
 
