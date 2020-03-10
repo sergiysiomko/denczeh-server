@@ -24,6 +24,7 @@ var VacancySchema = new Schema({
     default: true
   },
   category: [String],
+  videocode: String,
   experience: Boolean,
   lang: Boolean
 });

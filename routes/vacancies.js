@@ -49,6 +49,17 @@ router.post("/add", passport.isLoggedIn, cpUpload, async function(req, res) {
 
     req.body.link = req.body.link || rus_to_latin(req.body.title);
 
+    // youtube code
+    let { youtube } = req.body;
+    let code = youtube.split("/").reverse()[0];
+    req.body.videocode = code;
+
+    // country
+    let { country } = req.body;
+    if (country) {
+      req.body.category = [];
+      req.body.category.push(country);
+    }
     let newVacancy = new Vacancies(req.body);
     await newVacancy.save();
     res.redirect("/vacancies/add");

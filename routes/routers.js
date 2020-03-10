@@ -11,6 +11,7 @@ const infoRouter = require("./info");
 const anketRouter = require("./anket");
 const contactsRouter = require("./contacts");
 const reviewRouter = require("./review");
+const servicesRouter = require("./services");
 const adminRouter = require("./admin");
 
 router.use("/", indexRouter);
@@ -19,6 +20,7 @@ router.use("/info", infoRouter);
 router.use("/anket", anketRouter);
 router.use("/contacts", contactsRouter);
 router.use("/reviews", reviewRouter);
+router.use("/services", servicesRouter);
 router.use("/admin", adminRouter);
 
 router.use((req, res, next) => {
