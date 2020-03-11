@@ -1,6 +1,6 @@
 <%- include('part/header',{title:"Робота за кордоном | Відгуки"})-%>
 <!--  -->
-<%- include('part/menu')-%>
+<%-auth? include('part/menu-admin'): include('part/menu')-%>
 <h1>Відгуки</h1>
 
 <!-- .container -->

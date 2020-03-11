@@ -8,7 +8,7 @@ module.exports.root = async (req, res) => {
 
   videos.reverse();
   images.reverse();
-  res.render("review", { videos, images });
+  res.render("review", { videos, images, auth: req.isAuthenticated() });
 };
 
 module.exports.getList = (req, res) => {

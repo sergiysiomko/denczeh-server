@@ -1,5 +1,7 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
-include('part/menu')-%>
+<%- include('part/header',{title:"Робота за кордоном"})-%>
+<!--  -->
+<%-auth? include('part/menu-admin'): include('part/menu')-%>
+
 <div class="vacancies-wrapper">
   <div class="vacancies-ctg-wrapper">
     <ul class="vacancies-ctg">

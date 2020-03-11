@@ -16,12 +16,6 @@ const storage = multer.diskStorage({
       fs.mkdirSync(dir);
     }
     return cb(null, dir);
-    // fs.exists(dir, exist => {
-    //   if (!exist) {
-    //     return fs.mkdir(dir, error => cb(error, dir));
-    //   }
-    //   return cb(null, dir);
-    // });
   },
   filename: function(req, file, cb) {
     let filename = file.originalname.split(".");
@@ -37,7 +31,7 @@ router.get("/", async function(req, res, next) {
   let vacancies = await Vacancies.find({ isActive: true });
 
   vacancies.reverse();
-  res.render("vacancies", { vacancies });
+  res.render("vacancies", { vacancies, auth: req.isAuthenticated() });
 });
 
 router.get("/add", passport.isLoggedIn, async function(req, res, next) {
@@ -114,6 +108,7 @@ router.get("/list", passport.isLoggedIn, function(req, res) {
       res.render("error", { error });
       return;
     }
+    vacancies.reverse();
     vacancies.sort((a, b) => b.isActive - a.isActive);
     res.render("vacancies-list", { vacancies });
   });
