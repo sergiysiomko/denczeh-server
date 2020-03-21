@@ -1,5 +1,24 @@
 <%- include('part/header',{title:"Робота за кордоном | Послуги"})-%>
 <!--  -->
-<%-include('part/menu')-%>
+<%-auth? include('part/menu-admin'): include('part/menu')-%>
+
+<div class="services-wrapper">
+  <h1>Послуги</h1>
+  <div id="services">
+    <% services.forEach(s => { %>
+    <div class="service">
+      <h2 class="title"><%= s.title %></h2>
+      <p class="description"><%= s.description %></p>
+      <div class="info">
+        <span class="price"><%= s.price %> </span>
+        <span class="term"><%= s.term %> </span>
+        <button>Замовити</button>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</div>
+
 <!--  -->
 <%- include('part/footer-contacts')-%>

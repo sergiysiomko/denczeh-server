@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     dir.length = dir.length - 1;
     dir = dir.join("\\");
     dir = dir + "./public/img/vacancies";
-    console.log(dir);
+
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }

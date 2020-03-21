@@ -1053,8 +1053,6 @@ form.add-vacancy label {
   margin-left: -10px;
 }
 
-#phones {
-}
 #phones .title h3 {
   font-size: 20pt;
   text-align: center;
@@ -1075,7 +1073,80 @@ form.add-vacancy label {
   font-size: 32px;
   color: #000;
 }
+.services-wrapper {
+  background-color: rgb(245, 245, 245);
+}
+#services {
+  margin: 0 auto;
+  width: 850px;
+  display: flex;
+  flex-direction: column;
+}
+.service {
+  box-shadow: 0 0 3px #b7b7b7;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+.services-wrapper h1 {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 35pt;
+}
+.service .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.service .title {
+  font-size: 14pt;
+  text-transform: uppercase;
+  margin: 10px 0;
+  color: #0300ad;
+  font-weight: bold;
+  width: 100%;
+  text-indent: 20px;
+}
+.service .description {
+  width: 650px;
+  text-align: justify;
+  margin: 0 0 0 20px;
+}
+.service .price {
+  font-size: 18pt;
+  color: #4371f0;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.service .term {
+  color: rgb(82, 82, 82);
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.service button {
+  cursor: pointer;
+  outline: none;
+  background-color: #22abf5;
+  border: none;
+  width: 130px;
+  height: 40px;
+  border-radius: 3px;
+  line-height: 35px;
+  color: #fff;
+}
+.service button:hover {
+  background-color: rgb(82, 82, 82);
+}
 
+.reviews-wrapper h1 {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 35pt;
+}
 @media only screen and (max-width: 1195px) {
   .nav-wrapper .brand-logo {
     margin-left: 100px;

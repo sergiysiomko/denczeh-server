@@ -1,0 +1,28 @@
+<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
+include('part/menu-admin')-%>
+<div class="container">
+  <h3>Послуги</h3>
+  <a
+    href="<%=process.env.DOMAIN%>/services/add"
+    class="waves-effect waves-light btn-large  green darken-2"
+    id="add-vacancy-btn"
+    >Додати<i class="material-icons right">add</i></a
+  >
+  <ul class="collection" id="vacancies-list">
+    <% services.forEach(function(s){%>
+    <li class="collection-item">
+      <a href="!#"><%=s.title%></a>
+      <div class="right">
+        <a
+          class="waves-effect waves-light btn  red modal-triger"
+          style="margin-left: 35px;"
+          href="/services/remove/<%= s.id %> "
+        >
+          <i class="material-icons">delete </i>
+        </a>
+      </div>
+    </li>
+    <%}) %>
+  </ul>
+</div>
+<%- include('part/footer-contacts')-%>

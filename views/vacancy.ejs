@@ -32,6 +32,16 @@
       <!-- .terms end -->
     </div>
     <div id="description"><%-vacancy.bigDescription%></div>
+    <% if (vacancy.videocode) { %>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/<%= vacancy.videocode %> "
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <% } %>
   </div>
   <div class="vacancy-galary">
     <%vacancy.images.forEach((image)=>{%>
