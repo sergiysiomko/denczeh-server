@@ -1073,12 +1073,71 @@ form.add-vacancy label {
   font-size: 32px;
   color: #000;
 }
+.profile {
+  width: 415px;
+  height: 300px;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  /* display: inline-block; */
+  background-color: #cbdbe0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.profile > * {
+  width: 200px;
+  margin-left: 15px;
+}
+.profile img {
+  margin-left: 0;
+  height: 100%;
+}
+
+.profile .name {
+  margin-top: 10px;
+  font-size: 26pt;
+  text-align: center;
+}
+.profile .subtitle {
+  font-size: 15pt;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.profile .contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+.profile .phone {
+  color: #000;
+  width: 100%;
+  font-size: 14pt;
+  text-align: center;
+  margin-top: 15px;
+}
+.profile .contacts img {
+  width: 50px;
+  height: 50px;
+}
+.profile .contacts a {
+  font-size: 16pt;
+  cursor: pointer;
+  color: #0095ff;
+  font-weight: bolder;
+}
+.profile .contacts a:hover {
+  text-decoration: underline;
+}
 .services-wrapper {
   background-color: rgb(245, 245, 245);
-}
-#services {
   margin: 0 auto;
-  width: 850px;
+  width: 90%;
+}
+
+#services {
+  max-width: 950px;
   display: flex;
   flex-direction: column;
 }
@@ -1086,7 +1145,7 @@ form.add-vacancy label {
   box-shadow: 0 0 3px #b7b7b7;
   background-color: #fff;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row-reverse wrap;
   margin-bottom: 15px;
   padding-bottom: 10px;
 }
@@ -1094,12 +1153,22 @@ form.add-vacancy label {
   text-align: center;
   margin: 15px 0;
   font-size: 35pt;
+  width: 100%;
+  letter-spacing: 5px;
+  font-weight: bold;
 }
 .service .info {
+  flex-grow: 1;
+}
+.service .info .info-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: 1;
+  border-left: 2px solid #6b6b6b;
+  width: 190px;
+  margin: 0 auto;
+  padding: 5px 0px 5px 20px;
+  text-align: center;
 }
 .service .title {
   font-size: 14pt;
@@ -1111,9 +1180,10 @@ form.add-vacancy label {
   text-indent: 20px;
 }
 .service .description {
-  width: 650px;
+  flex: 1 1 520px;
   text-align: justify;
   margin: 0 0 0 20px;
+  font-size: 14px;
 }
 .service .price {
   font-size: 18pt;
@@ -1141,11 +1211,15 @@ form.add-vacancy label {
 .service button:hover {
   background-color: rgb(82, 82, 82);
 }
-
+.service button.mobile {
+  display: none;
+}
 .reviews-wrapper h1 {
   text-align: center;
   margin: 15px 0;
   font-size: 35pt;
+  font-weight: bold;
+  letter-spacing: 5px;
 }
 @media only screen and (max-width: 1195px) {
   .nav-wrapper .brand-logo {
@@ -1258,6 +1332,24 @@ form.add-vacancy label {
   }
   #advantages .advantage .main-text {
     text-align: justify;
+  }
+  .service .info {
+    flex-flow: row nowrap;
+    margin-left: 20px;
+  }
+  .service .info > * {
+    min-width: 100px;
+  }
+  .service .description {
+    width: 100%;
+    margin: 5px 20px 10px 20px;
+  }
+  .service button.desctop {
+    display: none;
+  }
+  .service button.mobile {
+    display: block;
+    margin: 0 auto;
   }
 }
 @media only screen and (max-width: 480px) {
