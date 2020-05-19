@@ -1,7 +1,15 @@
 <%- include('part/header',{title:"Робота за кордоном"})-%> <%-
 include('part/menu-admin')-%>
 <div class="container">
-  <ul>
+  <style>
+    .buttons {
+      min-height: 400px;
+    }
+    .buttons li {
+      margin: 10px;
+    }
+  </style>
+  <ul class="buttons">
     <li>
       <a class="waves-effect waves-light btn" href="/vacancies/list">
         Вакансії <i class="material-icons right">work</i>

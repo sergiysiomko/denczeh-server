@@ -1,4 +1,3 @@
-const express = require("express");
 const VideoReviewModel = require("../dbmodels/video-review-model");
 const ImageReviewModel = require("../dbmodels/image-review-model");
 
@@ -21,7 +20,7 @@ module.exports.addVideo = async (req, res) => {
 
   let vr = new VideoReviewModel({
     title,
-    code
+    code,
   });
   await vr.save();
   res.redirect("/reviews/add/video");

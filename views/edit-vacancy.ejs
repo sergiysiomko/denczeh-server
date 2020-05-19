@@ -1,0 +1,105 @@
+<%- include('part/header',{title:"Редагування вакансії"})-%> <%-
+include('part/menu-admin')-%>
+<!-- <link rel="stylesheet" href="/stylesheets/sim ditor.css" /> -->
+
+<div class="container">
+  <h3>Редагування вакансії</h3>
+  <form
+    action="/vacancies/edit/<%= vacancy.id %>"
+    class="add-vacancy"
+    method="post"
+  >
+    <p class="input-field">
+      <input
+        type="text"
+        name="title"
+        value="<%= vacancy.title %>"
+        id="title"
+        autofocus
+      />
+      <label for="title">Назва</label>
+    </p>
+    <p class="input-field">
+      <input
+        type="text"
+        name="payment"
+        id="payment"
+        value="<%= vacancy.payment %>"
+      />
+      <label for="payment">Оплата - погодинна</label>
+    </p>
+    <p class="input-field">
+      <input
+        type="text"
+        name="paymentMounth"
+        id="paymentMounth"
+        value="<%= vacancy.paymentMounth%>"
+      />
+      <label for="paymentMounth">Оплата - місячна</label>
+    </p>
+    <p class="input-field">
+      <input
+        type="text"
+        name="shchedule"
+        id="shchedule"
+        value="<%= vacancy.shchedule %>"
+      />
+      <label for="shchedule">Графік роботи</label>
+    </p>
+    <p class="input-field">
+      <input
+        type="text"
+        name="habitation"
+        id="habitation"
+        value="<%= vacancy.habitation %>"
+      />
+      <label for="habitation">Житло</label>
+    </p>
+
+    <p class="input-field">
+      <input
+        type="text"
+        name="location"
+        id="location"
+        value="<%= vacancy.location %>"
+      />
+      <label for="location">Місто</label>
+    </p>
+    <p class="input-field">
+      <% if (vacancy.videocode) { %>
+      <input
+        type="text"
+        name="youtube"
+        id="youtube"
+        value="https://youtu.be/<%= vacancy.videocode %>"
+      />
+      <% } else { %>
+      <input type="text" name="youtube" id="youtube" value="" />
+      <% } %>
+      <label for="youtube">Посилання на ютуб</label>
+    </p>
+    <p class="input-field">
+      <span class="caption">Головний текст </span
+      ><a
+        href="https://wordhtml.com/"
+        target="_blank"
+        class="waves-effect waves-light btn"
+        >word to html</a
+      >
+      <br />
+      <textarea name="bigDescription" id="editor" cols="70" rows="20">
+<%= vacancy.bigDescription %></textarea
+      >
+    </p>
+
+    <p>
+      <input type="submit" name="" class="btn" value="ЗБЕРЕГТИ ЗМІНИ" />
+    </p>
+  </form>
+</div>
+
+<%- include('part/footer-contacts')-%>
+<!-- <script src="/javascripts/module.js"></script>
+<script src="/javascripts/hotkeys.js"></script>
+<script src="/javascripts/uploader.js"></script>
+<script src="/javascripts/simditor.js"></script> -->

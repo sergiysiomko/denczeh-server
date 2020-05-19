@@ -1,4 +1,4 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
+<%- include('part/header',{title:"Список вакансій"})-%> <%-
 include('part/menu-admin')-%>
 <div class="container">
   <h3>Вакансії</h3>
@@ -30,8 +30,15 @@ include('part/menu-admin')-%>
         <%}%>
 
         <a
+          class="waves-effect waves-light btn  blue lighten-1 modal-triger"
+          style="margin-left: 15px;"
+          href="/vacancies/edit/<%= v.id %> "
+        >
+          <i class="material-icons">edit </i>
+        </a>
+        <a
           class="waves-effect waves-light btn  red modal-triger"
-          style="margin-left: 35px;"
+          style="margin-left: 27px;"
           href="/vacancies/remove/<%= v.id %> "
         >
           <i class="material-icons">delete </i>
