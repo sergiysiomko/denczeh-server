@@ -5,7 +5,6 @@ const passport = require("passport");
 const multer = require("multer");
 const fs = require("fs");
 const controller = require("../controllers/vacancies.controller");
-const Vacancies = require("../dbmodels/vacancy-model");
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -42,7 +41,7 @@ router.post("/add", passport.isLoggedIn, cpUpload, controller.addVacancy);
 
 router.get("/edit/:id", passport.isLoggedIn, controller.editVacancyPage);
 
-router.post("/edit/:id", passport.isLoggedIn, controller.editVacancy);
+router.post("/edit/:id", passport.isLoggedIn, cpUpload, controller.editVacancy);
 
 router.get("/remove/:id", passport.isLoggedIn, controller.removeVacancy);
 

@@ -57,6 +57,10 @@ async function editVacancy(req, res) {
     const { id } = req.params;
     let vacancy = await Vacancies.findById(id);
     let { youtube } = req.body;
+    let faceImage = null;
+    if (req.files["faceImage"]) {
+      faceImage = "/img/vacancies/" + req.files["faceImage"][0].filename;
+    }
     req.body.youtube = undefined;
     const videocode = getVideocode(youtube);
 
@@ -68,6 +72,8 @@ async function editVacancy(req, res) {
     vacancy.location = req.body.location;
     vacancy.videocode = videocode;
     vacancy.bigDescription = req.body.bigDescription;
+    vacancy.faceImage = faceImage || vacancy.faceImage;
+
     await vacancy.save();
     res.redirect("/vacancies/list");
   } catch (err) {
