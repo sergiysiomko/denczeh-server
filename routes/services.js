@@ -8,6 +8,8 @@ router.get("/add", passport.isLoggedIn, (req, res) => {
   res.render("add-service");
 });
 router.post("/add", passport.isLoggedIn, controller.add);
+router.get("/edit/:id", passport.isLoggedIn, controller.editPage);
+router.post("/edit/:id", passport.isLoggedIn, controller.edit);
 router.get("/list", passport.isLoggedIn, controller.list);
 router.get("/remove/:id", passport.isLoggedIn, controller.remove);
 

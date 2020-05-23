@@ -11,6 +11,27 @@ module.exports.add = (req, res) => {
   serv.save(() => res.render("add-service"));
 };
 
+module.exports.editPage = async (req, res) => {
+  let service = await ServiceModel.findById(req.params.id);
+  res.render("edit-service", { service });
+};
+
+module.exports.edit = async (req, res) => {
+  try {
+    let service = await ServiceModel.findById(req.params.id);
+    const { title, price, term, description } = req.body;
+    service.title = title;
+    service.price = price;
+    service.term = term;
+    service.description = description;
+    await service.save();
+    res.redirect("/services/list");
+  } catch (err) {
+    console.log(err);
+    res.redirect("/services/list");
+  }
+};
+
 module.exports.remove = async (req, res) => {
   let { id } = req.params;
   let s = await ServiceModel.deleteOne({ _id: id });

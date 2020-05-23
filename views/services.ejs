@@ -6,7 +6,7 @@
   <h1>Наші послуги</h1>
   <div id="services">
     <% services.forEach(s => { %>
-    <div class="service">
+    <div class="service" id="<%= s.id %>">
       <h2 class="title"><%= s.title %></h2>
       <div class="info">
         <div class="info-wrapper">
