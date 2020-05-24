@@ -27,7 +27,7 @@ module.exports.addVideo = async (req, res) => {
 };
 module.exports.addImage = (req, res) => {
   let { title } = req.body;
-  let src = "/img/reviews/" + req.file.filename;
+  let src = req.file.location;
   let ri = new ImageReviewModel({ title, src });
   ri.save(() => res.render("review-add-image"));
 };

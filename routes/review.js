@@ -2,23 +2,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const controller = require("../controllers/review.controller");
-const multer = require("multer");
-const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    let dir = __dirname.split("\\");
-    dir.length = dir.length - 1;
-    dir = dir.join("\\");
-    cb(null, dir + "\\public\\img\\reviews");
-  },
-  filename: function(req, file, cb) {
-    let filename = file.originalname.split(".");
-    filename.reverse();
-    let type = filename.shift();
-    filename.reverse();
-    cb(null, `${filename}-${Date.now()}.${type}`);
-  }
-});
-const upload = multer({ storage });
+const { upload } = require("./utils");
 
 router.get("/", controller.root);
 

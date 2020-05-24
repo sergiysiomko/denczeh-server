@@ -2,31 +2,9 @@ const express = require("express");
 const createError = require("http-errors");
 const router = express.Router();
 const passport = require("passport");
-const multer = require("multer");
-const fs = require("fs");
+const { upload } = require("./utils");
+
 const controller = require("../controllers/vacancies.controller");
-
-const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    let dir = __dirname.split("\\");
-    dir.length = dir.length - 1;
-    dir = dir.join("\\");
-    dir = dir + "./public/img/vacancies";
-
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
-    return cb(null, dir);
-  },
-  filename: function(req, file, cb) {
-    let filename = file.originalname.split(".");
-    filename.reverse();
-    let type = filename.shift();
-    filename.reverse();
-    cb(null, `${filename}-${Date.now()}.${type}`);
-  },
-});
-const upload = multer({ storage });
 
 router.get("/", controller.getActiveVacancies);
 
