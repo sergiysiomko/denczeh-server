@@ -51,14 +51,22 @@ async function editVacancy(req, res) {
   try {
     const { id } = req.params;
     let vacancy = await Vacancies.findById(id);
-    let { youtube } = req.body;
+
+    // images
     let faceImage = null;
     if (req.files["faceImage"]) {
-      faceImage = "/img/vacancies/" + req.files["faceImage"][0].filename;
+      faceImage = req.files["faceImage"][0].location;
     }
+    if (req.files.images) {
+      vacancy.images = req.files["images"].map((img) => img.location);
+    }
+
+    // youtube
+    let { youtube } = req.body;
     req.body.youtube = undefined;
     const videocode = getVideocode(youtube);
 
+    // fields
     vacancy.title = req.body.title;
     vacancy.payment = req.body.payment;
     vacancy.paymentMounth = req.body.paymentMounth;
@@ -125,7 +133,6 @@ async function getVacancy(req, res, next) {
   try {
     let vacancy = await Vacancies.findOne({
       link: req.params.link,
-      isActive: true,
     });
     if (vacancy) {
       res.render("vacancy", { vacancy });
@@ -136,8 +143,6 @@ async function getVacancy(req, res, next) {
   } catch (error) {
     next(error);
   }
-  // let vacancy = await Vacancy.findOne({link:req.params.link})
-  // res.render('vacancy', {vacancy:vacancy});
 }
 
 async function getCategory(req, res) {
