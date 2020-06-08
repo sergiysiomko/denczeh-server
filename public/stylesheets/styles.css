@@ -62,8 +62,8 @@ header .buttons .header-button a {
 main {
   border-top: 1px solid rgb(9, 7, 169);
 }
-.vacancies-wrapper {
-  /* background-image: url("/img/background.png"); */
+.vacancies-wrapper h1 {
+  text-align: center;
 }
 #vacancies {
 }
@@ -412,19 +412,24 @@ aside img {
 }
 
 .contacts-page-wrapper {
-  background-color: #fff3e0;
+  background-color: rgb(250, 250, 250);
   font-family: OpenSans;
   overflow-y: hidden;
+}
+
+.contacts-page-wrapper .image img {
+  width: 100%;
+  height: auto;
 }
 #contacts-page {
   border: 0;
   margin: 0 auto;
   width: 82%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: white 0px 5px 4px 4px;
 }
-
+#contacts-page h2 {
+  font-size: 24pt;
+}
 #contacts-page .office-img {
   width: 87%;
   max-width: 550px;
@@ -489,6 +494,14 @@ aside img {
 #contacts-page .license:visited {
   color: rgb(0, 0, 146);
 }
+
+#contacts-page .block-info.text strong {
+  font-weight: 600;
+}
+#contacts-page .block-info.text li {
+  list-style: inside;
+}
+
 /* accordion start */
 
 #description input {
@@ -627,10 +640,11 @@ input:checked ~ .tab-content {
   display: inline-block;
   width: max-content;
   padding: 7px 15px;
-  background-color: #ffe57f;
+  background-color: #22abf563;
+  margin-right: 20px;
 }
 .vacancies-ctg li a.selected {
-  background-color: #d36e16;
+  background-color: #98c7a6;
   color: rgb(255, 255, 255);
 }
 
@@ -793,9 +807,9 @@ input:checked ~ .tab-content {
   height: 45px;
   line-height: 25px;
   margin-top: 10px;
+  margin-left: 180px;
   padding: 9px;
   width: max-content;
-  /* background-color: #345bad; */
 }
 nav a {
   color: #fff;
@@ -803,7 +817,7 @@ nav a {
 #vacancies-list .collection-item {
   height: 50px;
 }
-#add-vacancy-btn {
+#add-btn {
   margin-top: 15px;
 }
 form.add-vacancy {
@@ -1073,9 +1087,14 @@ form.add-vacancy label {
   font-size: 32px;
   color: #000;
 }
+#profiles {
+  display: flex;
+  flex-wrap: wrap;
+}
 .profile {
   width: 415px;
   height: 300px;
+  margin-bottom: 20px;
   border: 1px solid #c3c3c3;
   border-radius: 5px;
   /* display: inline-block; */
@@ -1085,13 +1104,23 @@ form.add-vacancy label {
   justify-content: space-between;
   overflow: hidden;
 }
+.profile:first-of-type {
+  margin-right: 50px;
+}
 .profile > * {
   width: 200px;
   margin-left: 15px;
 }
-.profile img {
+.profile .img {
   margin-left: 0;
   height: 100%;
+  background-size: cover;
+}
+.profile .img.photo1 {
+  background-image: url("/img/123.jpg");
+}
+.profile .img.photo2 {
+  background-image: url("/img/1232.jpg");
 }
 
 .profile .name {
@@ -1173,17 +1202,17 @@ form.add-vacancy label {
 .service .title {
   font-size: 14pt;
   text-transform: uppercase;
-  margin: 10px 0;
+  margin: 10px 0 0 20px;
   color: #0300ad;
   font-weight: bold;
   width: 100%;
-  text-indent: 20px;
 }
 .service .description {
-  flex: 1 1 520px;
+  flex: 1 1 560px;
   text-align: justify;
   margin: 0 0 0 20px;
   font-size: 14px;
+  color: #000;
 }
 .service .price {
   font-size: 18pt;
@@ -1197,7 +1226,7 @@ form.add-vacancy label {
   font-weight: bold;
   margin-bottom: 8px;
 }
-.service button {
+.service .button {
   cursor: pointer;
   outline: none;
   background-color: #22abf5;
@@ -1206,12 +1235,13 @@ form.add-vacancy label {
   height: 40px;
   border-radius: 3px;
   line-height: 35px;
+  text-align: center;
   color: #fff;
 }
-.service button:hover {
+.service .button:hover {
   background-color: rgb(82, 82, 82);
 }
-.service button.mobile {
+.service .button.mobile {
   display: none;
 }
 .reviews-wrapper h1 {
@@ -1222,9 +1252,6 @@ form.add-vacancy label {
   letter-spacing: 5px;
 }
 @media only screen and (max-width: 1195px) {
-  .nav-wrapper .brand-logo {
-    margin-left: 100px;
-  }
   .menu-wrapper nav .phones {
     margin-right: 50px;
   }
@@ -1235,10 +1262,12 @@ form.add-vacancy label {
     display: none;
   }
   .nav-wrapper .brand-logo {
-    margin-left: 0;
     border: 2px solid #fff;
+    margin-left: 0;
   }
-
+  .service .info .info-wrapper {
+    border: none;
+  }
   #vacancies .wrapper {
     width: 100%;
     margin: 0 auto;
@@ -1344,12 +1373,24 @@ form.add-vacancy label {
     width: 100%;
     margin: 5px 20px 10px 20px;
   }
-  .service button.desctop {
+  .service a.button.desktop {
     display: none;
   }
-  .service button.mobile {
+  .service a.button.mobile {
     display: block;
     margin: 0 auto;
+  }
+  .services-wrapper h1 {
+    font-size: 20pt;
+  }
+  #profiles {
+    justify-content: center;
+  }
+  .profile:first-of-type {
+    margin-right: 0;
+  }
+  #contacts-page {
+    width: 95%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1366,6 +1407,9 @@ form.add-vacancy label {
 
   .table-services {
     font-size: 8pt;
+  }
+  .services-wrapper {
+    width: 100%;
   }
   #services-button {
     font-size: 12pt;
@@ -1434,6 +1478,16 @@ form.add-vacancy label {
   }
   #vacancy {
     width: 90%;
+  }
+  .profile {
+    width: 60%;
+    min-width: 230px;
+    height: initial;
+    align-items: center;
+  }
+  .profile .img {
+    height: 200px;
+    width: 100%;
   }
 }
 

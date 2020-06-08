@@ -1,6 +1,8 @@
 const { getVideocode, rus_to_latin } = require("./utils");
-
+const passport = require("passport");
 const Vacancies = require("../dbmodels/vacancy-model");
+
+const CATEGORIES = { czech: "Чехія", polska: "Польща" };
 
 async function getActiveVacancies(req, res) {
   let vacancies = await Vacancies.find({ isActive: true });
@@ -86,10 +88,14 @@ async function editVacancy(req, res) {
 }
 
 async function removeVacancy(req, res) {
-  let { id } = req.params;
-  let d = await Vacancies.deleteOne({ _id: id });
-
-  res.redirect("/vacancies/list");
+  try {
+    let { id } = req.params;
+    let d = await Vacancies.deleteOne({ _id: id });
+    res.redirect("/vacancies/list");
+  } catch (error) {
+    console.log(error);
+    res.redirect("/vacancies/list");
+  }
 }
 
 async function activateVacancy(req, res) {
@@ -147,10 +153,12 @@ async function getVacancy(req, res, next) {
 
 async function getCategory(req, res) {
   let ctg = req.params.category;
-  let vacancies = await Vacancies.find({ category: ctg, isActive: true });
+  const category = CATEGORIES[ctg];
+  let vacancies = await Vacancies.find({ category, isActive: true });
+
   if (vacancies.length == 0) {
     res.redirect("/vacancies");
-  } else res.render("vacancies", { vacancies });
+  } else res.render("vacancies", { vacancies, auth: req.isAuthenticated() });
 }
 
 module.exports = {

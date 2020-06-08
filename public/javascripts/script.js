@@ -5,7 +5,7 @@ function init() {
   counter();
   tabs();
   vacanciesCategoriesCheck();
-  gtag();
+  //gtag();
   videoGalary();
   select();
 }
@@ -15,7 +15,7 @@ function select() {
   });
 }
 function vacanciesCategoriesCheck() {
-  var categories = { vacancies: 0, czech: 1, polska: 2, openviza: 3 };
+  var categories = { vacancies: 0, czech: 1, polska: 2 };
   var buttons = document.querySelectorAll(".vacancies-ctg a");
   if (buttons.length == 0) return;
   var ctg = window.location.href.split("/").reverse()[0];
@@ -79,7 +79,7 @@ sliders
     draggable: false,
     asNavFor: ".gallery-slider__thumbnails>div",
     prevArrow: ".gallery-slider__images .prev-arrow",
-    nextArrow: ".gallery-slider__images .next-arrow"
+    nextArrow: ".gallery-slider__images .next-arrow",
   });
 
   // thumbnails options
@@ -99,24 +99,24 @@ sliders
         breakpoint: 720,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 4
-        }
+          slidesToScroll: 4,
+        },
       },
       {
         breakpoint: 576,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3
-        }
+          slidesToScroll: 3,
+        },
       },
       {
         breakpoint: 350,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      }
-    ]
+          slidesToScroll: 2,
+        },
+      },
+    ],
   });
 
   /* 
@@ -174,7 +174,7 @@ function counter() {
             to: $(this).data("to"),
             speed: $(this).data("speed"),
             refreshInterval: $(this).data("refresh-interval"),
-            decimals: $(this).data("decimals")
+            decimals: $(this).data("decimals"),
           },
           options
         );
@@ -238,7 +238,7 @@ function counter() {
       decimals: 0, // the number of decimal places to show
       formatter: formatter, // handler for formatting the value before rendering
       onUpdate: null, // callback method for every time the element is updated
-      onComplete: null // callback method for when the element finishes updating
+      onComplete: null, // callback method for when the element finishes updating
     };
 
     function formatter(value, settings) {
@@ -253,7 +253,7 @@ function counter() {
         return value
           .toFixed(options.decimals)
           .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
-      }
+      },
     });
 
     // start all the timers

@@ -12,12 +12,13 @@
         <li><a href="<%=process.env.DOMAIN%>/vacancies">Вакансії</a></li>
         <li><a href="<%=process.env.DOMAIN%>/services">Послуги</a></li>
         <li><a href="<%=process.env.DOMAIN%>/reviews">Відгуки</a></li>
+        <li><a href="<%=process.env.DOMAIN%>/news">Новини</a></li>
         <li><a href="<%=process.env.DOMAIN%>/contacts">Контакти</a></li>
       </ul>
 
       <!-- logo -->
-      <a href="#!" class="brand-logo center"
-        >Всі вакансії перевірені, безкоштовні</a
+      <a href="<%=process.env.DOMAIN%>/vacancies" class="brand-logo center"
+        >Всі вакансії безкоштовні</a
       >
 
       <!-- phones -->
@@ -60,7 +61,12 @@
         <i class="material-icons left">message</i>
       </a>
     </li>
-
+    <li>
+      <a href="<%=process.env.DOMAIN%>/news">
+        Новини
+        <i class="material-icons left">receipt_long</i>
+      </a>
+    </li>
     <li>
       <a href="<%=process.env.DOMAIN%>/contacts">
         Контакти

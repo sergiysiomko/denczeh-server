@@ -1,0 +1,37 @@
+<%- include('../part/header',{title:"Робота за кордоном | Новини"})-%>
+<!--  -->
+<%-auth? include('../part/menu-admin'): include('../part/menu')-%>
+
+<div class="vacancies-wrapper">
+  <h1>Новини</h1>
+  <section id="vacancies">
+    <div class="wrapper">
+      <% news.forEach(n => {%>
+      <div class="vacancy" id="<%=n.id%>">
+        <div class="photo">
+          <a href="<%=process.env.DOMAIN%>/news/<%=n.link%>">
+            <img src="<%=n.faceImage%>" alt="avatar" />
+          </a>
+        </div>
+        <div class="content">
+          <div class="title">
+            <a href="<%=process.env.DOMAIN%>/news/<%=n.link%>"
+              ><h2><%=n.title%></h2></a
+            >
+          </div>
+          <div class="info">
+            <p>
+              <%=n.description%>
+            </p>
+          </div>
+        </div>
+        <!-- content end -->
+      </div>
+      <%}) %>
+    </div>
+  </section>
+</div>
+
+<!--  -->
+
+<%- include('../part/footer-contacts')-%>

@@ -1,0 +1,29 @@
+<%- include('../part/header',{title:"Робота за кордоном - " + news.title})-%>
+<%- include('../part/menu')-%>
+
+<div id="vacancy">
+  <div class="main-text">
+    <h1><%=news.title%></h1>
+
+    <div id="description"><%-news.bigDescription%></div>
+    <% if (news.videocode) { %>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/<%= news.videocode %> "
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <% } %>
+  </div>
+  <div class="vacancy-galary">
+    <%news.images.forEach((image)=>{%>
+    <a href="<%=image%>" data-fancybox="galery">
+      <img src="<%=image%>" alt="" />
+    </a>
+    <%})%>
+  </div>
+</div>
+
+<%- include('../part/footer')-%>

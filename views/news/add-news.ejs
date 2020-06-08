@@ -1,0 +1,78 @@
+<%- include('../part/header',{title:"Додавання новини"})-%> <%-
+include('../part/menu-admin')-%>
+
+<div class="container">
+  <h3>Додавання новини</h3>
+  <form
+    action="/news/add"
+    enctype="multipart/form-data"
+    class="add-vacancy"
+    method="post"
+  >
+    <p class="input-field">
+      <input type="text" name="title" value="" id="title" autofocus />
+      <label for="title">Назва</label>
+    </p>
+
+    <p class="input-field">
+      <input type="text" name="youtube" id="youtube" value="" />
+      <label for="youtube">Посилання на ютуб-відео</label>
+    </p>
+    <p class="input-field">
+      <span class="caption">Короткий опис</span>
+      <br />
+      <textarea name="description" cols="70" rows="16"></textarea>
+    </p>
+    <p class="input-field">
+      <span class="caption">Головний текст </span
+      ><a
+        href="https://wordhtml.com/"
+        target="_blank"
+        class="waves-effect waves-light btn"
+        >word to html</a
+      >
+      <br />
+      <textarea
+        name="bigDescription"
+        id="editor"
+        cols="70"
+        rows="20"
+      ></textarea>
+    </p>
+
+    <p class="input-field">
+      <input type="text" name="link" id="link" value="" />
+      <label for="link">link</label>
+    </p>
+    <!-- photo -->
+    <div class="file-field input-field">
+      <div class="btn amber">
+        <span>Фото (аватар)</span>
+        <input type="file" name="faceImage" />
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" />
+      </div>
+    </div>
+
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Фотографії</span>
+        <input type="file" name="images" multiple />
+      </div>
+      <div class="file-path-wrapper">
+        <input
+          class="file-path validate"
+          type="text"
+          placeholder="upload one or more files"
+        />
+      </div>
+    </div>
+
+    <p>
+      <input type="submit" name="" class="btn" value="ЗБЕРЕГТИ" />
+    </p>
+  </form>
+</div>
+
+<%- include('../part/footer-contacts')-%>

@@ -1,0 +1,88 @@
+<%- include('../part/header',{title:"Редагування новини"})-%> <%-
+include('../part/menu-admin')-%>
+
+<div class="container">
+  <h3>Редагування новини</h3>
+  <form
+    action="/news/edit/<%= news.id %>"
+    enctype="multipart/form-data"
+    class="add-vacancy"
+    method="post"
+  >
+    <p class="input-field">
+      <input
+        type="text"
+        name="title"
+        value="<%= news.title %>"
+        id="title"
+        autofocus
+      />
+      <label for="title">Назва</label>
+    </p>
+
+    <p class="input-field">
+      <% if (news.videocode) { %>
+      <input
+        type="text"
+        name="youtube"
+        id="youtube"
+        value="https://youtu.be/<%= news.videocode %>"
+      />
+      <% } else { %>
+      <input type="text" name="youtube" id="youtube" value="" />
+      <% } %>
+      <label for="youtube">Посилання на ютуб</label>
+    </p>
+    <p class="input-field">
+      <span class="caption">Короткий опис</span>
+      <br />
+      <textarea name="description" cols="70" rows="16">
+<%= news.description %></textarea
+      >
+    </p>
+    <p class="input-field">
+      <span class="caption">Головний текст </span
+      ><a
+        href="https://wordhtml.com/"
+        target="_blank"
+        class="waves-effect waves-light btn"
+        >word to html</a
+      >
+      <br />
+      <textarea name="bigDescription" id="editor" cols="70" rows="20">
+<%= news.bigDescription %></textarea
+      >
+    </p>
+
+    <!-- photo -->
+    <div class="file-field input-field">
+      <div class="btn amber">
+        <span>Фото (аватар)</span>
+        <input type="file" name="faceImage" />
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" />
+      </div>
+    </div>
+
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Фотографії</span>
+        <input type="file" name="images" multiple />
+      </div>
+      <div class="file-path-wrapper">
+        <input
+          class="file-path validate"
+          type="text"
+          placeholder="upload one or more files"
+        />
+      </div>
+    </div>
+
+    <p>
+      <input type="submit" name="" class="btn" value="ЗБЕРЕГТИ" />
+    </p>
+  </form>
+</div>
+
+<%- include('../part/footer-contacts')-%>

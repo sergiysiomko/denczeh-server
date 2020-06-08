@@ -3,7 +3,7 @@
 <%-auth? include('part/menu-admin'): include('part/menu')-%>
 
 <div class="services-wrapper">
-  <h1>Наші послуги</h1>
+  <h1>Послуги компанії "DENISYUKJOB"</h1>
   <div id="services">
     <% services.forEach(s => { %>
     <div class="service" id="<%= s.id %>">
@@ -12,53 +12,16 @@
         <div class="info-wrapper">
           <span class="price"><%= s.price %> </span>
           <span class="term"><%= s.term %> </span>
-          <button class="desctop">Замовити</button>
+          <a class="desktop button" href="#profiles">Замовити</a>
         </div>
       </div>
       <p class="description"><%= s.description %></p>
-      <button class="mobile">Замовити</button>
+      <a class="mobile button" href="tel:+380961781115">Замовити</a>
     </div>
 
     <% }) %>
   </div>
-  <div class="profiles">
-    <div class="profile z-depth-1">
-      <img src="/img/team.jpg" alt="" />
-      <div>
-        <h3 class="name">Ігор Денисюк</h3>
-      </div>
-      <div class="contacts">
-        <div class="subtitle">Зв'язатися зі мною</div>
-        <a href="http://">
-          <img src="/img/viber-logo.png" alt="" />
-        </a>
-        <a href="http://">
-          <img src="/img/telegram-logo.png" alt="" />
-        </a>
-        <a href="http://" class="phone">
-          380 435 34 5 45
-        </a>
-      </div>
-    </div>
-    <div class="profile z-depth-1">
-      <img src="/img/team.jpg" alt="" />
-      <div>
-        <h3 class="name">Ігор Денисюк</h3>
-      </div>
-      <div class="contacts">
-        <div class="subtitle">Зв'язатися зі мною</div>
-        <a href="http://">
-          <img src="/img/viber-logo.png" alt="" />
-        </a>
-        <a href="http://">
-          <img src="/img/telegram-logo.png" alt="" />
-        </a>
-        <a href="http://" class="phone">
-          380 435 34 5 45
-        </a>
-      </div>
-    </div>
-  </div>
+  <%- include('part/profiles') -%>
 </div>
 
 <!--  -->

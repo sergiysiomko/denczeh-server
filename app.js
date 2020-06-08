@@ -17,12 +17,12 @@ mongoose.Promise = global.Promise;
 mongoose
   .connect(process.env.DB_CONN_STRING, {
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
   })
   .then(() => {
     console.log("MongoDB connected...");
   })
-  .catch(err => {
+  .catch((err) => {
     //throw new Error("db crash");
     console.log(err);
     console.log("db crash");
@@ -31,7 +31,7 @@ mongoose
 let routers = require("./routes/routers");
 
 const app = express();
-app.listen(() => {
+app.listen(3000, () => {
   console.log("Сервер запущено");
 });
 // view engine setup
@@ -52,7 +52,7 @@ app.use(
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: parseInt(process.env.COOKIE_MAX_AGE) } // 2 weeks
+    cookie: { maxAge: parseInt(process.env.COOKIE_MAX_AGE) }, // 2 weeks
   })
 );
 

@@ -13,6 +13,7 @@ const contactsRouter = require("./contacts");
 const reviewRouter = require("./review");
 const servicesRouter = require("./services");
 const adminRouter = require("./admin");
+const newsRouter = require("./news");
 
 router.use("/", indexRouter);
 router.use("/vacancies", vacanciesRouter);
@@ -21,6 +22,7 @@ router.use("/anket", anketRouter);
 router.use("/contacts", contactsRouter);
 router.use("/reviews", reviewRouter);
 router.use("/services", servicesRouter);
+router.use("/news", newsRouter);
 router.use("/admin", adminRouter);
 
 router.use((req, res, next) => {

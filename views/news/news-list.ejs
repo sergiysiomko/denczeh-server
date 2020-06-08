@@ -1,22 +1,22 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
-include('part/menu-admin')-%>
+<%- include('../part/header',{title:"Список новин"})-%> <%-
+include('../part/menu-admin')-%>
 <div class="container">
-  <h3>Послуги</h3>
+  <h3>Новини</h3>
   <a
-    href="<%=process.env.DOMAIN%>/services/add"
+    href="<%=process.env.DOMAIN%>/news/add"
     class="waves-effect waves-light btn-large  green darken-2"
     id="add-btn"
     >Додати<i class="material-icons right">add</i></a
   >
   <ul class="collection" id="vacancies-list">
-    <% services.forEach(function(s){%>
+    <% news.forEach(function(n){%>
     <li class="collection-item">
-      <a href="/services#<%=s.id%>"><%=s.title%></a>
+      <a href="/news/<%=n.link%>"><%=n.title%></a>
       <div class="right">
         <a
           class="waves-effect waves-light btn  blue lighten-1 modal-triger"
           style="margin-left: 5px;"
-          href="/services/edit/<%= s.id %> "
+          href="/news/edit/<%= n.id %> "
         >
           <i class="material-icons">edit </i>
         </a>
@@ -24,7 +24,7 @@ include('part/menu-admin')-%>
         <a
           class="waves-effect waves-light btn  red modal-triger"
           style="margin-left: 35px;"
-          href="/services/remove/<%= s.id %> "
+          href="/news/remove/<%= n.id %> "
         >
           <i class="material-icons">delete </i>
         </a>
@@ -33,4 +33,4 @@ include('part/menu-admin')-%>
     <%}) %>
   </ul>
 </div>
-<%- include('part/footer-contacts')-%>
+<%- include('../part/footer-contacts')-%>
