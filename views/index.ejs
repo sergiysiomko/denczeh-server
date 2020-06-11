@@ -1,7 +1,7 @@
 <%- include('part/header',{title:"Робота за кордоном"})-%>
 <header>
   <div>
-    <%-auth? include('part/menu-admin'): include('part/menu')-%>
+    <%-include('part/menu/menu', {auth})-%>
   </div>
   <h1 class="main-title">
     Робота в Європі

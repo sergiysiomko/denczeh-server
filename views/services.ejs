@@ -1,6 +1,6 @@
 <%- include('part/header',{title:"Робота за кордоном | Послуги"})-%>
 <!--  -->
-<%-auth? include('part/menu-admin'): include('part/menu')-%>
+<%-include('part/menu/menu', {auth})-%>
 
 <div class="services-wrapper">
   <h1>Послуги компанії "DENISYUKJOB"</h1>
@@ -25,4 +25,4 @@
 </div>
 
 <!--  -->
-<%- include('part/footer-contacts')-%>
+<%- include('part/footer')-%>

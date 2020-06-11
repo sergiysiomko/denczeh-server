@@ -1,6 +1,6 @@
 <%- include('part/header',{title:"Робота за кордоном | Вакансії"})-%>
 <!--  -->
-<%-auth? include('part/menu-admin'): include('part/menu')-%>
+<%-include('part/menu/menu', {auth})-%>
 
 <div class="vacancies-wrapper">
   <div class="vacancies-ctg-wrapper">
@@ -76,6 +76,9 @@
         <!-- content end -->
       </div>
       <%}) %>
+    </div>
+    <div class="profiles">
+      <%- include('part/profiles') -%>
     </div>
   </section>
 </div>

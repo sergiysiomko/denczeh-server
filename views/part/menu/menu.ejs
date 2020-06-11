@@ -1,0 +1,14 @@
+<div class="menu-wrapper">
+  <nav>
+    <div class="nav-wrapper">
+      <!-- mobile button -->
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+        ><i class="material-icons">menu</i></a
+      >
+
+      <%-include('desktop', {auth})-%>
+  </nav>
+
+  <%-include('mobile', {auth})-%>
+  
+</div>

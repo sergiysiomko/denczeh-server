@@ -1,46 +1,3 @@
-<div class="menu-wrapper">
-  <nav>
-    <div class="nav-wrapper">
-      <!-- mobile button -->
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-        ><i class="material-icons">menu</i></a
-      >
-
-      <!-- menu -->
-      <ul class="left hide-on-med-and-down">
-        <li><a href="<%=process.env.DOMAIN%>">Головна</a></li>
-        <li><a href="<%=process.env.DOMAIN%>/vacancies">Вакансії</a></li>
-        <li><a href="<%=process.env.DOMAIN%>/services">Послуги</a></li>
-        <li><a href="<%=process.env.DOMAIN%>/reviews">Відгуки</a></li>
-        <li><a href="<%=process.env.DOMAIN%>/news">Новини</a></li>
-        <li><a href="<%=process.env.DOMAIN%>/contacts">Контакти</a></li>
-      </ul>
-
-      <!-- logo -->
-      <a href="#!" class="brand-logo center"
-        >Всі вакансії перевірені, безкоштовні</a
-      >
-      <!-- phones -->
-      <div class="right ">
-        <ul>
-          <li>
-            <a class="waves-effect waves-light btn" href="/admin/cabinet">
-              admin <i class="material-icons right">work</i>
-            </a>
-          </li>
-          <li>
-            <a class="waves-effect waves-light btn" href="/admin/logout">
-              Вийти <i class="material-icons right">exit_to_app</i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-</div>
-</nav>
-
 <!-- sidenav -->
 <ul class="sidenav" id="mobile-demo">
   <div>
@@ -52,7 +9,14 @@
       <i class="material-icons left">home</i>
     </a>
   </li>
-
+  <% if (auth) { %>
+  <li>
+    <a href="<%=process.env.DOMAIN%>/admin/cabinet">
+      Кабінет
+      <i class="material-icons left">work</i>
+    </a>
+  </li>
+  <% } %>
   <li>
     <a href="<%=process.env.DOMAIN%>/vacancies">
       Вакансії
@@ -72,14 +36,12 @@
       <i class="material-icons left">message</i>
     </a>
   </li>
-
   <li>
     <a href="<%=process.env.DOMAIN%>/news">
       Новини
       <i class="material-icons left">receipt_long</i>
     </a>
   </li>
-
   <li>
     <a href="<%=process.env.DOMAIN%>/contacts">
       Контакти
@@ -89,10 +51,6 @@
 
   <li class="divider"></li>
 
-  <!-- <li><a href="<%=process.env.DOMAIN%>/contacts">
-        Ми на YouTube
-        <i class="material-icons left">videocam</i>
-      </a></li> -->
   <div class="contacts">
     <p class="center sub-title">Завжди на зв'язку</p>
     <li>
@@ -115,7 +73,7 @@
     </li>
     <div class="network">
       <a href="#!"><img src="/img/youtube-logo.png" alt="youtube-logo"/></a>
-      <a href="Приєднуйся у Viber до РОБОТА в ЄВРОПІ https://invite.viber.com/?g2=AQBL1pZUCHdMakodmzutzcE0Bn7UzKkpQTmx8JmqOvOLcpbeAh0Opy9S8%2Bs892tN"
+      <a href="viber://chat/?number=+380978560219"
         ><img src="/img/viber-logo.png" alt="viber-logo"
       /></a>
     </div>
@@ -129,4 +87,3 @@
     </div>
   </div>
 </ul>
-</div>

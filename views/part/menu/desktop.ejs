@@ -1,0 +1,39 @@
+<!-- menu -->
+<ul class="left hide-on-med-and-down">
+    <li><a href="<%=process.env.DOMAIN%>">Головна</a></li>
+    <li><a href="<%=process.env.DOMAIN%>/vacancies">Вакансії</a></li>
+    <li><a href="<%=process.env.DOMAIN%>/services">Послуги</a></li>
+    <li><a href="<%=process.env.DOMAIN%>/reviews">Відгуки</a></li>
+    <li><a href="<%=process.env.DOMAIN%>/news">Новини</a></li>
+    <li><a href="<%=process.env.DOMAIN%>/contacts">Контакти</a></li>
+  </ul>
+
+  <!-- logo -->
+  <a href="<%=process.env.DOMAIN%>/vacancies" class="brand-logo center"
+    >Всі вакансії безкоштовні</a
+  >
+
+  <!-- phones -->
+  <div class="right">
+    <% if (auth) { %>
+    <ul>
+      <li>
+        <a class="waves-effect waves-light btn" href="/admin/cabinet">
+          admin <i class="material-icons right">work</i>
+        </a>
+      </li>
+      <li>
+        <a class="waves-effect waves-light btn" href="/admin/logout">
+          Вийти <i class="material-icons right">exit_to_app</i>
+        </a>
+      </li>
+    </ul>
+    <% } else { %>
+    <div class="phones">
+      <a href="tel:+380961781115">+38 096 178 11 15</a>
+
+      <a href="tel:+380978560219">+38 097 856 02 19</a>
+    </div>
+    <% } %>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-const { getVideocode, rus_to_latin } = require("./utils");
+const { getVideocode, rus_to_latin, render } = require("./utils");
 const passport = require("passport");
 const Vacancies = require("../dbmodels/vacancy-model");
 
@@ -141,7 +141,7 @@ async function getVacancy(req, res, next) {
       link: req.params.link,
     });
     if (vacancy) {
-      res.render("vacancy", { vacancy });
+      render(req, res, "vacancy", { vacancy });
     } else {
       //next(createError(404))
       res.redirect("/");

@@ -23,6 +23,12 @@ const storage = multerS3({
 });
 const upload = multer({ storage });
 
+function render(req, res, page, params) {
+  const auth = !!req.isAuthenticated();
+  res.render(page, { auth, ...params });
+}
+
 module.exports = {
   upload,
+  render,
 };

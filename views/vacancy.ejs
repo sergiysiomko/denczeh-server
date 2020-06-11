@@ -1,36 +1,40 @@
 <%- include('part/header',{title:"Робота за кордоном - " + vacancy.title})-%>
-<%- include('part/menu')-%>
+<%- include('part/menu/menu',{auth})-%>
 
 <div id="vacancy">
   <div class="main-text">
     <h1><%=vacancy.title%></h1>
-    <div class="terms">
-      <div class="term">
-        <i class="material-icons">location_on</i>
-        <span class="category">Регіон</span>
-        <span class="value"
-          ><%=vacancy.country? vacancy.country+': ': ''%>
-          <%=vacancy.location%></span
-        >
+    <div class="info">
+      <div class="terms">
+        <div class="term">
+          <i class="material-icons">location_on</i>
+          <span class="category">Регіон</span>
+          <span class="value"
+            ><%=vacancy.country? vacancy.country+': ': ''%>
+            <%=vacancy.location%></span
+          >
+        </div>
+        <div class="term">
+          <i class="material-icons">insert_invitation</i>
+          <span class="category">Графік</span>
+          <span class="value"><%=vacancy.shchedule%></span>
+        </div>
+        <div class="term">
+          <i class="material-icons">house</i>
+          <span class="category">Житло</span>
+          <span class="value"><%=vacancy.habitation%></span>
+        </div>
+        <div class="term">
+          <i class="material-icons">verified_user</i>
+          <!-- <i class="material-icons">thumb_up</i> -->
+          <span class="category">Вакасія</span>
+          <span class="value">Перевірена та безкоштовна</span>
+        </div>
+        <!-- .terms end -->
       </div>
-      <div class="term">
-        <i class="material-icons">insert_invitation</i>
-        <span class="category">Графік</span>
-        <span class="value"><%=vacancy.shchedule%></span>
-      </div>
-      <div class="term">
-        <i class="material-icons">house</i>
-        <span class="category">Житло</span>
-        <span class="value"><%=vacancy.habitation%></span>
-      </div>
-      <div class="term">
-        <i class="material-icons">verified_user</i>
-        <!-- <i class="material-icons">thumb_up</i> -->
-        <span class="category">Вакасія</span>
-        <span class="value">Перевірена та безкоштовна</span>
-      </div>
-      <!-- .terms end -->
+      <img src="<%=vacancy.faceImage%>" alt="" />
     </div>
+
     <div id="description"><%-vacancy.bigDescription%></div>
     <% if (vacancy.videocode) { %>
     <iframe

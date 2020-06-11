@@ -1,5 +1,6 @@
-<%- include('../part/header',{title:"Редагування новини"})-%> <%-
-include('../part/menu-admin')-%>
+<%- include('../part/header',{title:"Редагування новини"})-%>
+<!--  -->
+<%-include('part/menu/menu', {auth:true})-%>
 
 <div class="container">
   <h3>Редагування новини</h3>
@@ -33,13 +34,7 @@ include('../part/menu-admin')-%>
       <% } %>
       <label for="youtube">Посилання на ютуб</label>
     </p>
-    <p class="input-field">
-      <span class="caption">Короткий опис</span>
-      <br />
-      <textarea name="description" cols="70" rows="16">
-<%= news.description %></textarea
-      >
-    </p>
+
     <p class="input-field">
       <span class="caption">Головний текст </span
       ><a

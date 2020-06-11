@@ -5,7 +5,7 @@ function init() {
   counter();
   tabs();
   vacanciesCategoriesCheck();
-  gtag();
+  //gtag();
   videoGalary();
   select();
 }

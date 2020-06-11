@@ -1,5 +1,6 @@
-<%- include('part/header',{title:"Додавання послуги"})-%> <%-
-include('part/menu-admin')-%>
+<%- include('part/header',{title:"Додавання послуги"})-%>
+<!--  -->
+<%-include('part/menu/menu', {auth: true})-%>
 
 <form
   action="/services/add"
@@ -48,4 +49,4 @@ include('part/menu-admin')-%>
   </div>
 </form>
 
-<%- include('part/footer-contacts')-%>
+<%- include('part/footer')-%>

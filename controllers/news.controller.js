@@ -1,10 +1,11 @@
 const Vacancies = require("../dbmodels/vacancy-model");
 const News = require("../dbmodels/news-model");
-const { rus_to_latin, getVideocode } = require("./utils");
+const { rus_to_latin, getVideocode, render } = require("./utils");
 
 function root(req, res) {
   News.find({}, (err, news) => {
-    res.render("news/news", { news, auth: req.isAuthenticated });
+    // res.render("news/news", { news, auth: req.isAuthenticated });
+    render(req, res, "news/news", { news });
   });
 }
 function getNewsPage(req, res) {
@@ -15,7 +16,7 @@ function getNewsPage(req, res) {
     if (error) {
       res.render("error", { error });
     }
-    res.render("news/news-page", { news });
+    render(req, res, "news/news-page", { news });
   });
 }
 async function addNews(req, res) {
@@ -68,7 +69,6 @@ async function editNews(req, res) {
     news.title = req.body.title;
     news.videocode = videocode;
     news.bigDescription = req.body.bigDescription;
-    news.description = req.body.description;
     news.faceImage = faceImage || news.faceImage;
 
     await news.save();

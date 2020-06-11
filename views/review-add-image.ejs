@@ -1,5 +1,6 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
-include('part/menu-admin') %>
+<%- include('part/header',{title:"Робота за кордоном"})-%>
+<!--  -->
+<%-include('part/menu/menu', {auth:true})-%>
 
 <form
   action="/reviews/add/image"

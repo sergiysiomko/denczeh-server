@@ -1,5 +1,7 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
-include('part/menu-admin')-%>
+<%- include('part/header',{title:"Робота за кордоном"})-%>
+<!--  -->
+<%-include('part/menu/menu', {auth: true})-%>
+
 <!-- <link rel="stylesheet" href="/stylesheets/sim ditor.css" /> -->
 
 <div class="container">
@@ -98,7 +100,7 @@ include('part/menu-admin')-%>
   </form>
 </div>
 
-<%- include('part/footer-contacts')-%>
+<%- include('part/footer')-%>
 <!-- <script src="/javascripts/module.js"></script>
 <script src="/javascripts/hotkeys.js"></script>
 <script src="/javascripts/uploader.js"></script>

@@ -1,6 +1,6 @@
 <%- include('part/header',{title:"Робота за кордоном | Відгуки"})-%>
 <!--  -->
-<%-auth? include('part/menu-admin'): include('part/menu')-%>
+<%-include('part/menu/menu', {auth})-%>
 
 <div class="reviews-wrapper">
   <h1>Відгуки про компанію "DENISYUKJOB"</h1>
@@ -175,4 +175,4 @@
 
 <!--  -->
 
-<%- include('part/footer-contacts')-%>
+<%- include('part/footer')-%>

@@ -62,8 +62,13 @@ function getVideocode(link) {
   }
   return "";
 }
+function render(req, res, page, params) {
+  const auth = !!req.isAuthenticated();
+  res.render(page, { auth, ...params });
+}
 
 module.exports = {
   rus_to_latin,
   getVideocode,
+  render,
 };

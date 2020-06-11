@@ -1,5 +1,6 @@
-<%- include('part/header',{title:"Робота за кордоном"})-%> <%-
-include('part/menu-admin')-%>
+<%- include('part/header',{title:"Робота за кордоном"})-%>
+<!--  -->
+<%-include('part/menu/menu', {auth:true})-%>
 <div class="container">
   <h3>Послуги</h3>
   <a
@@ -33,4 +34,4 @@ include('part/menu-admin')-%>
     <%}) %>
   </ul>
 </div>
-<%- include('part/footer-contacts')-%>
+<%- include('part/footer')-%>

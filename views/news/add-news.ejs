@@ -1,6 +1,6 @@
-<%- include('../part/header',{title:"Додавання новини"})-%> <%-
-include('../part/menu-admin')-%>
-
+<%- include('../part/header',{title:"Додавання новини"})-%>
+<!--  -->
+<%-include('part/menu/menu', {auth:true})-%>
 <div class="container">
   <h3>Додавання новини</h3>
   <form
@@ -18,11 +18,7 @@ include('../part/menu-admin')-%>
       <input type="text" name="youtube" id="youtube" value="" />
       <label for="youtube">Посилання на ютуб-відео</label>
     </p>
-    <p class="input-field">
-      <span class="caption">Короткий опис</span>
-      <br />
-      <textarea name="description" cols="70" rows="16"></textarea>
-    </p>
+
     <p class="input-field">
       <span class="caption">Головний текст </span
       ><a
