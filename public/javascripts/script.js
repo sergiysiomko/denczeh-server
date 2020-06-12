@@ -19,7 +19,7 @@ function vacanciesCategoriesCheck() {
   var buttons = document.querySelectorAll(".vacancies-ctg a");
   if (buttons.length == 0) return;
   var ctg = window.location.href.split("/").reverse()[0];
-
+  ctg = ctg.split("#")[0];
   buttons[categories[ctg]].classList.add("selected");
 }
 function menu() {

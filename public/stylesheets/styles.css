@@ -1286,6 +1286,10 @@ form.add-vacancy label {
   font-weight: bold;
   letter-spacing: 5px;
 }
+.vacancies-wrapper .profiles-link {
+  display: none;
+}
+
 @media only screen and (max-width: 1195px) {
   .menu-wrapper nav .phones {
     margin-right: 50px;
@@ -1426,6 +1430,33 @@ form.add-vacancy label {
   }
   #contacts-page {
     width: 95%;
+  }
+  #vacancies {
+    display: block;
+  }
+  #vacancies .profiles {
+    margin: 0 auto;
+  }
+  #vacancies .profiles .profiles {
+    position: initial;
+  }
+  .vacancies-wrapper .profiles-link {
+    display: block;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 45px;
+    background-color: #355cae;
+    text-align: center;
+  }
+  .vacancies-wrapper .profiles-link a {
+    color: #fff;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
   }
 }
 @media only screen and (max-width: 480px) {
