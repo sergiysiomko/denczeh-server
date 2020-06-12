@@ -1,5 +1,6 @@
-<%- include('../part/header',{title:"Список новин"})-%> <%-
-include('../part/menu-admin')-%>
+<%- include('../part/header',{title:"Список новин"})-%>
+<!--  -->
+<%-include('../part/menu/menu', {auth:true})-%>
 <div class="container">
   <h3>Новини</h3>
   <a
@@ -33,4 +34,4 @@ include('../part/menu-admin')-%>
     <%}) %>
   </ul>
 </div>
-<%- include('../part/footer-contacts')-%>
+<%- include('../part/footer')-%>

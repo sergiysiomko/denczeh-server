@@ -11,8 +11,6 @@ function root(req, res) {
 function getNewsPage(req, res) {
   const { link } = req.params;
   News.findOne({ link }, (error, news) => {
-    console.log(news);
-
     if (error) {
       res.render("error", { error });
     }

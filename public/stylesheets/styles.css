@@ -1289,7 +1289,37 @@ form.add-vacancy label {
 .vacancies-wrapper .profiles-link {
   display: none;
 }
+.news-wrapper h1 {
+  text-align: center;
+}
+#news-block {
+  margin: 0 auto;
+  width: max-content;
+}
+#news-block .wrapper {
+  width: 950px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+#news-block .news {
+  width: 300px;
+  background-color: #fff;
+  margin: 5px;
+}
+#news-block .news img {
+  width: 100%;
+}
+#news-block .news .title h2 {
+  color: #000;
+  font-size: 15pt;
+  margin: 10px;
+}
+#news-block .news:hover .title h2 {
+  color: #555;
+  text-decoration: underline;
+}
 @media only screen and (max-width: 1195px) {
   .menu-wrapper nav .phones {
     margin-right: 50px;
@@ -1338,6 +1368,9 @@ form.add-vacancy label {
     border-radius: 4px;
     padding: 10px 20px;
     margin-bottom: 10px;
+  }
+  #news-block .wrapper {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 750px) {
@@ -1555,51 +1588,18 @@ form.add-vacancy label {
     height: 200px;
     width: 100%;
   }
+  #news-block .wrapper {
+    justify-content: center;
+  }
 }
 
-@font-face {
-  font-family: "Playfair";
-  src: url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: "PlayfairBold";
-  src: url("/fonts/PlayfairDisplay-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
 @font-face {
   font-family: "OpenSans";
   src: url("/fonts/opensans.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
-@font-face {
-  font-family: "Simplifica";
-  src: url("/fonts/SIMPLIFICA Typeface.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: "MonAmour";
-  src: url("/fonts/mon-amour-one-medium_1431732b118ed534ff171d6bd3f1b4d8.ttf")
-    format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Uni Sans Thin";
-  src: url("/fonts/Uni Sans Thin.otf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Arsenal-Regular";
-  src: url("/fonts/Arsenal-Regular.otf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
+
 @font-face {
   font-family: "CharlemagneC";
   src: url("/fonts/CharlemagneC.ttf") format("truetype");
@@ -1614,23 +1614,5 @@ form.add-vacancy label {
 
   100% {
     box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
-  }
-}
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale(0.8);
-    opacity: 0.7;
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-    opacity: 0.7;
-  }
-  60% {
-    -webkit-transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1.3);
-    opacity: 1;
   }
 }
