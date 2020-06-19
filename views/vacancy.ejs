@@ -47,6 +47,8 @@
     ></iframe>
     <% } %>
   </div>
+  <% if (vacancy.images.length) { %>
+
   <div class="vacancy-galary">
     <!-- images -->
     <!-- .container -->
@@ -127,6 +129,7 @@
     </section>
     <!-- /.container -->
   </div>
+  <% } %>
 </div>
 
 <%- include('part/footer')-%>

@@ -6,7 +6,10 @@ function init() {
   tabs();
   vacanciesCategoriesCheck();
   //gtag();
-  videoGalary();
+
+  gallery("#video");
+  gallery("#image-reviews");
+
   select();
 }
 function select() {
@@ -56,14 +59,15 @@ function tabs() {
     $(".tabs").tabs();
   });
 }
-function videoGalary() {
+function gallery(selector = "") {
   //  Set caption from card text
   /*
 		variables
-	*/
-
-  var $imagesSlider = $(".gallery-slider .gallery-slider__images>div"),
-    $thumbnailsSlider = $(".gallery-slider__thumbnails>div");
+  */
+  var $imagesSlider = $(
+      `${selector} .gallery-slider .gallery-slider__images>div`
+    ),
+    $thumbnailsSlider = $(`${selector} .gallery-slider__thumbnails>div`);
 
   /*
 sliders
@@ -77,9 +81,9 @@ sliders
     cssEase: "linear",
     fade: true,
     draggable: false,
-    asNavFor: ".gallery-slider__thumbnails>div",
-    prevArrow: ".gallery-slider__images .prev-arrow",
-    nextArrow: ".gallery-slider__images .next-arrow",
+    asNavFor: `${selector} .gallery-slider__thumbnails>div`,
+    prevArrow: `${selector} .gallery-slider__images .prev-arrow`,
+    nextArrow: `${selector} .gallery-slider__images .next-arrow`,
   });
 
   // thumbnails options
@@ -91,9 +95,9 @@ sliders
     centerMode: true,
     draggable: false,
     focusOnSelect: true,
-    asNavFor: ".gallery-slider .gallery-slider__images>div",
-    prevArrow: ".gallery-slider__thumbnails .prev-arrow",
-    nextArrow: ".gallery-slider__thumbnails .next-arrow",
+    asNavFor: `${selector} .gallery-slider .gallery-slider__images>div`,
+    prevArrow: `${selector} .gallery-slider__thumbnails .prev-arrow`,
+    nextArrow: `${selector} .gallery-slider__thumbnails .next-arrow`,
     responsive: [
       {
         breakpoint: 720,
@@ -123,10 +127,12 @@ sliders
 captions
 */
 
-  var $caption = $(".gallery-slider .caption");
+  var $caption = $(`${selector} .gallery-slider .caption`);
 
   // get the initial caption text
-  var captionText = $(".gallery-slider__images .slick-current img").attr("alt");
+  var captionText = $(
+    `${selector} .gallery-slider__images .slick-current img`
+  ).attr("alt");
   updateCaption(captionText);
 
   // hide the caption before the image is changed
@@ -146,7 +152,9 @@ captions
     currentSlide,
     nextSlide
   ) {
-    captionText = $(".gallery-slider__images .slick-current img").attr("alt");
+    captionText = $(
+      `${selector} .gallery-slider__images .slick-current img`
+    ).attr("alt");
     updateCaption(captionText);
   });
 
