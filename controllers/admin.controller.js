@@ -17,7 +17,7 @@ function registerPage(req, res) {
 }
 
 function logout(req, res) {
-  res.logout();
+  req.logout();
   res.redirect("/");
 }
 
