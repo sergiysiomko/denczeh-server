@@ -76,6 +76,7 @@ async function editVacancy(req, res) {
     vacancy.habitation = req.body.habitation;
     vacancy.location = req.body.location;
     vacancy.videocode = videocode;
+    vacancy.workers_count = req.body.workers_count;
     vacancy.bigDescription = req.body.bigDescription;
     vacancy.faceImage = faceImage || vacancy.faceImage;
 

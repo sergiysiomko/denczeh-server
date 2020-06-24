@@ -13,6 +13,10 @@ var VacancySchema = new Schema({
   bigDescription: String,
   country: String,
   location: String,
+  workers_count: {
+    type: Number,
+    default: 0,
+  },
   images: [String],
   link: {
     type: String,

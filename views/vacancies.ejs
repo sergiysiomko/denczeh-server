@@ -28,31 +28,7 @@
             >
           </div>
           <div class="info">
-            <div class="terms">
-              <div class="term">
-                <i class="material-icons">location_on</i>
-                <span class="category">Регіон</span>
-                <span class="value"
-                  ><%=v.country? v.country+': ': ''%> <%=v.location%></span
-                >
-              </div>
-              <div class="term">
-                <i class="material-icons">insert_invitation</i>
-                <span class="category">Графік</span>
-                <span class="value"><%=v.shchedule%></span>
-              </div>
-              <div class="term">
-                <i class="material-icons">house</i>
-                <span class="category">Житло</span>
-                <span class="value"><%=v.habitation%></span>
-              </div>
-              <div class="term">
-                <i class="material-icons">verified_user</i>
-                <span class="category">Вакасія</span>
-                <span class="value">Перевірена та безкоштовна</span>
-              </div>
-              <!-- .terms end -->
-            </div>
+            <%- include("part/terms.ejs", {vacancy: v}) -%>
             <div class="photo mobile">
               <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
                 ><img src="<%=v.faceImage%>" alt="avatar"

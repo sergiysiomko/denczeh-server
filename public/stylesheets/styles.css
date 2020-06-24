@@ -51,7 +51,7 @@ main {
   flex-direction: column;
 }
 #vacancies .vacancy {
-  height: 220px;
+  height: 230px;
   display: flex;
   box-shadow: 0 0 3px #b7b7b7;
   margin-bottom: 20px;
@@ -94,6 +94,13 @@ main {
   width: 400px;
   margin-left: 15px;
 }
+#vacancy .info img {
+  max-width: 250px;
+}
+#vacancy .vacancy-video {
+  width: 100%;
+  max-width: 600px;
+}
 .terms .term,
 #vacancies .vacancy .info .term {
   margin: 5px 0;
@@ -106,6 +113,7 @@ main {
 #vacancies .vacancy .info .term .category {
   margin-left: 5px;
   margin-right: 25px;
+  width: 65px;
 }
 .terms .term .value,
 #vacancies .vacancy .info .term .value {
@@ -1222,6 +1230,7 @@ form.add-vacancy label {
   #vacancy {
     width: 90%;
   }
+
   .profile {
     width: 60%;
     min-width: 230px;

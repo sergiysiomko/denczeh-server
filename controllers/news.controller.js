@@ -4,7 +4,7 @@ const { rus_to_latin, getVideocode, render } = require("./utils");
 
 function root(req, res) {
   News.find({}, (err, news) => {
-    // res.render("news/news", { news, auth: req.isAuthenticated });
+    news.reverse();
     render(req, res, "news/news", { news });
   });
 }

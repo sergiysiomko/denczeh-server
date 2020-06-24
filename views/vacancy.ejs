@@ -5,40 +5,14 @@
   <div class="main-text">
     <h1><%=vacancy.title%></h1>
     <div class="info">
-      <div class="terms">
-        <div class="term">
-          <i class="material-icons">location_on</i>
-          <span class="category">Регіон</span>
-          <span class="value"
-            ><%=vacancy.country? vacancy.country+': ': ''%>
-            <%=vacancy.location%></span
-          >
-        </div>
-        <div class="term">
-          <i class="material-icons">insert_invitation</i>
-          <span class="category">Графік</span>
-          <span class="value"><%=vacancy.shchedule%></span>
-        </div>
-        <div class="term">
-          <i class="material-icons">house</i>
-          <span class="category">Житло</span>
-          <span class="value"><%=vacancy.habitation%></span>
-        </div>
-        <div class="term">
-          <i class="material-icons">verified_user</i>
-          <!-- <i class="material-icons">thumb_up</i> -->
-          <span class="category">Вакасія</span>
-          <span class="value">Перевірена та безкоштовна</span>
-        </div>
-        <!-- .terms end -->
-      </div>
+      <%- include("part/terms", {vacancy})-%>
       <img src="<%=vacancy.faceImage%>" alt="" />
     </div>
 
     <div id="description"><%-vacancy.bigDescription%></div>
     <% if (vacancy.videocode) { %>
     <iframe
-      width="560"
+      class="vacancy-video"
       height="315"
       src="https://www.youtube.com/embed/<%= vacancy.videocode %> "
       frameborder="0"
@@ -53,7 +27,7 @@
     <!-- images -->
     <!-- .container -->
     <section id="image-reviews" class="container">
-      <div class="title"><h2>Фото</h2></div>
+      <div class="title"></div>
       <!-- .gallery-slider -->
       <div class="gallery-slider">
         <!-- __images -->
