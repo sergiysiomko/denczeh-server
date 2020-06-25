@@ -15,11 +15,11 @@ router.post(
 );
 
 router.get("/add/video", passport.isLoggedIn, (req, res) =>
-  res.render("review-add-video")
+  res.render("review/review-add-video")
 );
 
 router.get("/add/image", passport.isLoggedIn, (req, res) =>
-  res.render("review-add-image")
+  res.render("review/review-add-image")
 );
 router.get("/list", passport.isLoggedIn, controller.getList);
 

@@ -1,6 +1,6 @@
-<%- include('part/header',{title:"Редагування послуги"})-%>
+<%- include('../part/header',{title:"Редагування послуги"})-%>
 <!--  -->
-<%-include('part/menu/menu', {auth:true})-%>
+<%-include('../part/menu/menu', {auth:true})-%>
 <form
   action="/services/edit/<%= service.id %>"
   method="post"
@@ -60,4 +60,4 @@
   </div>
 </form>
 
-<%- include('part/footer')-%>
+<%- include('../part/footer')-%>

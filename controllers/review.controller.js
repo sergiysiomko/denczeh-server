@@ -7,11 +7,11 @@ module.exports.root = async (req, res) => {
 
   videos.reverse();
   images.reverse();
-  res.render("review", { videos, images, auth: req.isAuthenticated() });
+  res.render("review/review", { videos, images, auth: req.isAuthenticated() });
 };
 
 module.exports.getList = (req, res) => {
-  res.render("review");
+  res.render("review/review");
 };
 module.exports.addVideo = async (req, res) => {
   let { link } = req.body;
@@ -29,5 +29,5 @@ module.exports.addImage = (req, res) => {
   let { title } = req.body;
   let src = req.file.location;
   let ri = new ImageReviewModel({ title, src });
-  ri.save(() => res.render("review-add-image"));
+  ri.save(() => res.render("review/review-add-image"));
 };

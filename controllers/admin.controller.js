@@ -4,16 +4,16 @@ const { NotExtended } = require("http-errors");
 
 function userPage(req, res) {
   let { login } = req.user;
-  render(req, res, "user", { login });
+  render(req, res, "admin/user", { login });
 }
 function adminPage(req, res) {
-  render(req, res, "admin");
+  render(req, res, "admin/admin");
 }
 function loginPage(req, res) {
-  render(req, res, "login");
+  render(req, res, "admin/login");
 }
 function registerPage(req, res) {
-  render(req, res, "register");
+  render(req, res, "admin/register");
 }
 
 function logout(req, res) {

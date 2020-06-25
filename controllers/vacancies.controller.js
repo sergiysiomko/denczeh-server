@@ -8,7 +8,10 @@ async function getActiveVacancies(req, res) {
   let vacancies = await Vacancies.find({ isActive: true });
 
   vacancies.reverse();
-  res.render("vacancies", { vacancies, auth: req.isAuthenticated() });
+  res.render("vacancy/vacancies", { vacancies, auth: req.isAuthenticated() });
+}
+function addVacancyPage(req, res) {
+  res.render("vacancy/add-vacancy");
 }
 async function addVacancy(req, res) {
   try {
@@ -45,7 +48,7 @@ function editVacancyPage(req, res) {
       res.render("error", { error });
     }
 
-    res.render("edit-vacancy", { vacancy: v });
+    res.render("vacancy/edit-vacancy", { vacancy: v });
   });
 }
 
@@ -132,7 +135,7 @@ function getList(req, res) {
     }
     vacancies.reverse();
     vacancies.sort((a, b) => b.isActive - a.isActive);
-    res.render("vacancies-list", { vacancies });
+    res.render("vacancy/vacancies-list", { vacancies });
   });
 }
 
@@ -142,7 +145,7 @@ async function getVacancy(req, res, next) {
       link: req.params.link,
     });
     if (vacancy) {
-      render(req, res, "vacancy", { vacancy });
+      render(req, res, "vacancy/vacancy", { vacancy });
     } else {
       //next(createError(404))
       res.redirect("/");
@@ -173,4 +176,5 @@ module.exports = {
   getCategory,
   editVacancy,
   editVacancyPage,
+  addVacancyPage,
 };

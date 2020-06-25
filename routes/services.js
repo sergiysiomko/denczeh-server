@@ -5,7 +5,7 @@ const controller = require("../controllers/services.controller");
 
 router.get("/", controller.root);
 router.get("/add", passport.isLoggedIn, (req, res) => {
-  res.render("add-service");
+  res.render("services/add-service");
 });
 router.post("/add", passport.isLoggedIn, controller.add);
 router.get("/edit/:id", passport.isLoggedIn, controller.editPage);

@@ -1,6 +1,6 @@
-<%- include('part/header',{title:"Робота за кордоном | Вакансії"})-%>
+<%- include('../part/header',{title:"Робота за кордоном | Вакансії"})-%>
 <!--  -->
-<%-include('part/menu/menu', {auth})-%>
+<%-include('../part/menu/menu', {auth})-%>
 
 <div class="vacancies-wrapper">
   <div class="vacancies-ctg-wrapper">
@@ -28,12 +28,11 @@
             >
           </div>
           <div class="info">
-            <%- include("part/terms.ejs", {vacancy: v}) -%>
+            <%- include("../part/terms.ejs", {vacancy: v}) -%>
             <div class="photo mobile">
               <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
                 ><img src="<%=v.faceImage%>" alt="avatar"
               /></a>
-              <!-- <div class="photo-caption">вакансія безкоштовна</div> -->
             </div>
             <div class="payment">
               <div class="payment-mounth">
@@ -53,12 +52,12 @@
       <%}) %>
     </div>
     <div class="profiles">
-      <%- include('part/profiles') -%>
+      <%- include('../part/profiles') -%>
     </div>
   </section>
   <div class="profiles-link">
     <a href="#profiles">Замовити</a>
   </div>
 </div>
-<%- include('part/footer')-%>
+<%- include('../part/footer')-%>
 <script src="/javascripts/vacancies.script.js"></script>

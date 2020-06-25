@@ -8,9 +8,7 @@ const controller = require("../controllers/vacancies.controller");
 
 router.get("/", controller.getActiveVacancies);
 
-router.get("/add", passport.isLoggedIn, async function(req, res, next) {
-  res.render("add-vacancy");
-});
+router.get("/add", passport.isLoggedIn, controller.addVacancyPage);
 const cpUpload = upload.fields([
   { name: "faceImage", maxCount: 1 },
   { name: "images", maxCount: 20 },

@@ -4,16 +4,16 @@ const ServiceModel = require("../dbmodels/services-model");
 module.exports.root = async (req, res) => {
   let services = await ServiceModel.find({});
   services.reverse();
-  res.render("services", { services, auth: req.isAuthenticated() });
+  res.render("services/services", { services, auth: req.isAuthenticated() });
 };
 module.exports.add = (req, res) => {
   let serv = new ServiceModel(req.body);
-  serv.save(() => res.render("add-service"));
+  serv.save(() => res.render("services/add-service"));
 };
 
 module.exports.editPage = async (req, res) => {
   let service = await ServiceModel.findById(req.params.id);
-  res.render("edit-service", { service });
+  res.render("services/edit-service", { service });
 };
 
 module.exports.edit = async (req, res) => {
@@ -42,5 +42,5 @@ module.exports.remove = async (req, res) => {
 module.exports.list = async (req, res) => {
   let services = await ServiceModel.find({});
   services.reverse();
-  res.render("services-list", { services });
+  res.render("services/services-list", { services });
 };

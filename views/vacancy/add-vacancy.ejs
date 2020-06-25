@@ -1,91 +1,53 @@
-<%- include('part/header',{title:"Редагування вакансії"})-%>
+<%- include('../part/header',{title:"Робота за кордоном"})-%>
 <!--  -->
-<%-include('part/menu/menu', {auth:true})-%>
+<%-include('../part/menu/menu', {auth: true})-%>
 
 <div class="container">
-  <h3>Редагування вакансії</h3>
+  <h3>Додавання вакансії</h3>
   <form
-    action="/vacancies/edit/<%= vacancy.id %>"
+    action="/vacancies/add"
+    enctype="multipart/form-data"
     class="add-vacancy"
     method="post"
-    enctype="multipart/form-data"
   >
     <p class="input-field">
-      <input
-        type="text"
-        name="title"
-        value="<%= vacancy.title %>"
-        id="title"
-        autofocus
-      />
+      <input type="text" name="title" value="" id="title" autofocus />
       <label for="title">Назва</label>
     </p>
     <p class="input-field">
-      <input
-        type="number"
-        name="workers_count"
-        id="workers_count"
-        value="<%= vacancy.workers_count %>"
-      />
-      <label for="payment">Необхідно працівників</label>
+      <input type="number" name="workers_count" id="workers_count" value="0" />
+      <label for="workers_count">Необхідно працівників</label>
     </p>
     <p class="input-field">
-      <input
-        type="text"
-        name="payment"
-        id="payment"
-        value="<%= vacancy.payment %>"
-      />
+      <input type="text" name="payment" id="payment" value="" />
       <label for="payment">Оплата - погодинна</label>
     </p>
     <p class="input-field">
-      <input
-        type="text"
-        name="paymentMounth"
-        id="paymentMounth"
-        value="<%= vacancy.paymentMounth%>"
-      />
+      <input type="text" name="paymentMounth" id="paymentMounth" value="" />
       <label for="paymentMounth">Оплата - місячна</label>
     </p>
     <p class="input-field">
-      <input
-        type="text"
-        name="shchedule"
-        id="shchedule"
-        value="<%= vacancy.shchedule %>"
-      />
+      <input type="text" name="shchedule" id="shchedule" value="" />
       <label for="shchedule">Графік роботи</label>
     </p>
     <p class="input-field">
-      <input
-        type="text"
-        name="habitation"
-        id="habitation"
-        value="<%= vacancy.habitation %>"
-      />
+      <input type="text" name="habitation" id="habitation" value="" />
       <label for="habitation">Житло</label>
     </p>
-
+    <div class="input-field col s12">
+      <select name="country">
+        <option value="" disabled selected>вибрати</option>
+        <option value="Польща">Польща</option>
+        <option value="Чехія">Чехія</option>
+      </select>
+      <label>Країна</label>
+    </div>
     <p class="input-field">
-      <input
-        type="text"
-        name="location"
-        id="location"
-        value="<%= vacancy.location %>"
-      />
+      <input type="text" name="location" id="location" value="" />
       <label for="location">Місто</label>
     </p>
     <p class="input-field">
-      <% if (vacancy.videocode) { %>
-      <input
-        type="text"
-        name="youtube"
-        id="youtube"
-        value="https://youtu.be/<%= vacancy.videocode %>"
-      />
-      <% } else { %>
       <input type="text" name="youtube" id="youtube" value="" />
-      <% } %>
       <label for="youtube">Посилання на ютуб</label>
     </p>
     <p class="input-field">
@@ -97,11 +59,18 @@
         >word to html</a
       >
       <br />
-      <textarea name="bigDescription" id="editor" cols="70" rows="20">
-<%= vacancy.bigDescription %></textarea
-      >
+      <textarea
+        name="bigDescription"
+        id="editor"
+        cols="70"
+        rows="20"
+      ></textarea>
     </p>
 
+    <p class="input-field">
+      <input type="text" name="link" id="link" value="" />
+      <label for="link">link</label>
+    </p>
     <!-- photo -->
     <div class="file-field input-field">
       <div class="btn amber">
@@ -128,9 +97,9 @@
     </div>
 
     <p>
-      <input type="submit" name="" class="btn" value="ЗБЕРЕГТИ ЗМІНИ" />
+      <input type="submit" name="" class="btn" value="ЗБЕРЕГТИ" />
     </p>
   </form>
 </div>
 
-<%- include('part/footer')-%>
+<%- include('../part/footer')-%>

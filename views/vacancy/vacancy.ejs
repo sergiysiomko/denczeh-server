@@ -1,11 +1,11 @@
-<%- include('part/header',{title:"Робота за кордоном - " + vacancy.title})-%>
-<%- include('part/menu/menu',{auth})-%>
+<%- include('../part/header',{title:"Робота за кордоном - " + vacancy.title})-%>
+<%- include('../part/menu/menu',{auth})-%>
 
 <div id="vacancy">
   <div class="main-text">
     <h1><%=vacancy.title%></h1>
     <div class="info">
-      <%- include("part/terms", {vacancy})-%>
+      <%- include("../part/terms", {vacancy})-%>
       <img src="<%=vacancy.faceImage%>" alt="" />
     </div>
 
@@ -106,4 +106,4 @@
   <% } %>
 </div>
 
-<%- include('part/footer')-%>
+<%- include('../part/footer')-%>
