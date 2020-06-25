@@ -1,0 +1,191 @@
+#video,
+#video * {
+  box-sizing: border-box;
+}
+#image-reviews.container,
+#video.container {
+  max-width: 770px;
+}
+#image-reviews.container .title,
+#video.container .title {
+  text-align: center;
+  font-size: 16pt;
+}
+.gallery-slider {
+  position: relative;
+  overflow: hidden;
+  background-color: #e6e6e6;
+}
+.gallery-slider__images {
+  margin: 0;
+  position: relative;
+}
+.gallery-slider__images .item {
+  padding: 0;
+}
+.gallery-slider__images .item .img-fill {
+  text-align: center;
+  padding: 10px;
+  height: 200px;
+}
+.reviews-wrapper .gallery-slider__images .item .img-fill {
+  height: 400px;
+}
+.reviews-wrapper .gallery-slider__images .item .img-fill iframe {
+  width: 100%;
+  max-width: 600px;
+}
+@media screen and (min-width: 576px) {
+  .gallery-slider__images .item .img-fill {
+    height: 300px;
+  }
+}
+.gallery-slider__images .item .img-fill img {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+}
+.gallery-slider__images .next-arrow,
+.gallery-slider__images .prev-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 0 none;
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+  opacity: 0;
+  transition: all 0.5s;
+  outline: 0;
+}
+.gallery-slider__images .next-arrow svg,
+.gallery-slider__images .prev-arrow svg {
+  top: 4px;
+}
+.gallery-slider__images .next-arrow {
+  right: 25px;
+}
+.gallery-slider__images .prev-arrow {
+  left: 25px;
+}
+.gallery-slider__images:hover .next-arrow,
+.gallery-slider__images:hover .prev-arrow {
+  opacity: 1;
+}
+.gallery-slider__images .caption {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+.gallery-slider__images .caption.hide {
+  opacity: 0;
+}
+.gallery-slider__thumbnails {
+  position: relative;
+  top: auto;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  transition: all 0.8s;
+  margin: 0;
+  padding: 13px 0;
+}
+.gallery-slider__thumbnails:after,
+.gallery-slider__thumbnails:before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+.gallery-slider__thumbnails:before {
+  left: 0;
+  background: linear-gradient(to right, #e6e6e6 0, rgba(230, 230, 230, 0) 100%);
+}
+.gallery-slider__thumbnails:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(230, 230, 230, 0) 0, #e6e6e6 100%);
+}
+.gallery-slider__thumbnails .item .img-fill {
+  height: 70px;
+  background: #fff;
+  cursor: pointer;
+  border: 5px solid #fff;
+  text-align: center;
+}
+.gallery-slider__thumbnails .item .img-fill img {
+  opacity: 0.5;
+  transition: all 0.5s;
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gallery-slider__thumbnails .item:hover .img-fill img {
+  opacity: 1;
+}
+.gallery-slider__thumbnails .item.slick-center img {
+  opacity: 1;
+}
+.gallery-slider__thumbnails .next-arrow,
+.gallery-slider__thumbnails .prev-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 0 none;
+  z-index: 15;
+}
+.gallery-slider__thumbnails .next-arrow svg,
+.gallery-slider__thumbnails .prev-arrow svg {
+  top: 2px;
+}
+.gallery-slider__thumbnails .next-arrow {
+  right: 0;
+}
+.gallery-slider__thumbnails .prev-arrow {
+  left: 0;
+}
+.gallery-slider .next-arrow,
+.gallery-slider .prev-arrow {
+  cursor: pointer;
+}
+.gallery-slider .next-arrow svg,
+.gallery-slider .prev-arrow svg {
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+.gallery-slider .img-fill {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+.gallery-slider .slick-slider {
+  margin: 0 -7.5px;
+  padding: 0 !important;
+}
+.gallery-slider .slick-slide {
+  float: left;
+  padding: 0 7.5px;
+  outline: 0;
+}
