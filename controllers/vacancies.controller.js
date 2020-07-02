@@ -162,7 +162,7 @@ async function getCategory(req, res) {
 
   if (vacancies.length == 0) {
     res.redirect("/vacancies");
-  } else res.render("vacancies", { vacancies, auth: req.isAuthenticated() });
+  } else res.render("vacancy/vacancies", { vacancies, auth: req.isAuthenticated() });
 }
 
 module.exports = {
