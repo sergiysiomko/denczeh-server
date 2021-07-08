@@ -48,3 +48,4 @@ public/img/vacancies/
 public/img/vacancies/reviews/
 .vscode/launch.json
 .env
+*.css.map

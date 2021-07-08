@@ -7,66 +7,69 @@ function init() {
   vacanciesCategoriesCheck();
   //gtag();
 
-  gallery("#video");
-  gallery("#image-reviews");
+  gallery('#video');
+  gallery('#image-reviews');
 
   select();
 }
 function select() {
   $(document).ready(function() {
-    $("select").formSelect();
+    $('select').formSelect();
   });
 }
 function vacanciesCategoriesCheck() {
-  var categories = { vacancies: 0, czech: 1, polska: 2 };
-  var buttons = document.querySelectorAll(".vacancies-ctg a");
+  var categories = {vacancies: 0, czech: 1, polska: 2};
+  var buttons = document.querySelectorAll('.vacancies-ctg a');
+
   if (buttons.length == 0) return;
-  var ctg = window.location.href.split("/").reverse()[0];
-  ctg = ctg.split("#")[0];
-  buttons[categories[ctg]].classList.add("selected");
+
+  var ctg = window.location.href.split('/').reverse()[0];
+  ctg = ctg.split('#')[0];
+  buttons[categories[ctg]].classList.add('selected');
 }
+
 function menu() {
   // sidenav
-  $(".sidenav").sidenav();
+  $('.sidenav').sidenav();
 
   // menu highlight
 
-  let items = $("#mobile-demo li");
-  const color = "rgb(255, 168, 168)";
+  let items = $('#mobile-demo li');
+  const color = 'rgb(255, 168, 168)';
   for (let i = 0; i < items.length; i++) {
-    let a = $(items[i]).children("a");
-    if (window.location.href == a.attr("href")) {
-      a.css("color", color);
+    let a = $(items[i]).children('a');
+    if (window.location.href == a.attr('href')) {
+      a.css('color', color);
       $(a)
         .children()
-        .css("color", color);
+        .css('color', color);
       return;
     }
   }
 }
+
 function gtag() {
   // google gtag
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
   }
-  gtag("js", new Date());
+  gtag('js', new Date());
 
-  gtag("config", "UA-113291240-2");
+  gtag('config', 'UA-113291240-2');
 }
 function tabs() {
   $(document).ready(function() {
-    $(".tabs").tabs();
+    $('.tabs').tabs();
   });
 }
-function gallery(selector = "") {
+
+function gallery(selector = '') {
   //  Set caption from card text
   /*
 		variables
   */
-  var $imagesSlider = $(
-      `${selector} .gallery-slider .gallery-slider__images>div`
-    ),
+  var $imagesSlider = $(`${selector} .gallery-slider .gallery-slider__images>div`),
     $thumbnailsSlider = $(`${selector} .gallery-slider__thumbnails>div`);
 
   /*
@@ -78,7 +81,7 @@ sliders
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    cssEase: "linear",
+    cssEase: 'linear',
     fade: true,
     draggable: false,
     asNavFor: `${selector} .gallery-slider__thumbnails>div`,
@@ -91,7 +94,7 @@ sliders
     speed: 300,
     slidesToShow: 5,
     slidesToScroll: 1,
-    cssEase: "linear",
+    cssEase: 'linear',
     centerMode: true,
     draggable: false,
     focusOnSelect: true,
@@ -130,41 +133,27 @@ captions
   var $caption = $(`${selector} .gallery-slider .caption`);
 
   // get the initial caption text
-  var captionText = $(
-    `${selector} .gallery-slider__images .slick-current img`
-  ).attr("alt");
+  var captionText = $(`${selector} .gallery-slider__images .slick-current img`).attr('alt');
   updateCaption(captionText);
 
   // hide the caption before the image is changed
-  $imagesSlider.on("beforeChange", function(
-    event,
-    slick,
-    currentSlide,
-    nextSlide
-  ) {
-    $caption.addClass("hide");
+  $imagesSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    $caption.addClass('hide');
   });
 
   // update the caption after the image is changed
-  $imagesSlider.on("afterChange", function(
-    event,
-    slick,
-    currentSlide,
-    nextSlide
-  ) {
-    captionText = $(
-      `${selector} .gallery-slider__images .slick-current img`
-    ).attr("alt");
+  $imagesSlider.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+    captionText = $(`${selector} .gallery-slider__images .slick-current img`).attr('alt');
     updateCaption(captionText);
   });
 
   function updateCaption(text) {
     // if empty, add a no breaking space
-    if (text === "") {
-      text = "&nbsp;";
+    if (text === '') {
+      text = '&nbsp;';
     }
     $caption.html(text);
-    $caption.removeClass("hide");
+    $caption.removeClass('hide');
   }
 }
 function counter() {
@@ -178,11 +167,11 @@ function counter() {
           {},
           $.fn.countTo.defaults,
           {
-            from: $(this).data("from"),
-            to: $(this).data("to"),
-            speed: $(this).data("speed"),
-            refreshInterval: $(this).data("refresh-interval"),
-            decimals: $(this).data("decimals"),
+            from: $(this).data('from'),
+            to: $(this).data('to'),
+            speed: $(this).data('speed'),
+            refreshInterval: $(this).data('refresh-interval'),
+            decimals: $(this).data('decimals'),
           },
           options
         );
@@ -196,9 +185,9 @@ function counter() {
           $self = $(this),
           loopCount = 0,
           value = settings.from,
-          data = $self.data("countTo") || {};
+          data = $self.data('countTo') || {};
 
-        $self.data("countTo", data);
+        $self.data('countTo', data);
 
         // if an existing interval can be found, clear it first
         if (data.interval) {
@@ -215,17 +204,17 @@ function counter() {
 
           render(value);
 
-          if (typeof settings.onUpdate == "function") {
+          if (typeof settings.onUpdate == 'function') {
             settings.onUpdate.call(self, value);
           }
 
           if (loopCount >= loops) {
             // remove the interval
-            $self.removeData("countTo");
+            $self.removeData('countTo');
             clearInterval(data.interval);
             value = settings.to;
 
-            if (typeof settings.onComplete == "function") {
+            if (typeof settings.onComplete == 'function') {
               settings.onComplete.call(self, value);
             }
           }
@@ -256,20 +245,18 @@ function counter() {
 
   jQuery(function($) {
     // custom formatting example
-    $(".count-number").data("countToOptions", {
+    $('.count-number').data('countToOptions', {
       formatter: function(value, options) {
-        return value
-          .toFixed(options.decimals)
-          .replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
       },
     });
 
     // start all the timers
-    $(".timer").each(count);
+    $('.timer').each(count);
 
     function count(options) {
       var $this = $(this);
-      options = $.extend({}, options || {}, $this.data("countToOptions") || {});
+      options = $.extend({}, options || {}, $this.data('countToOptions') || {});
       $this.countTo(options);
     }
   });

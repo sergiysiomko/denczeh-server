@@ -16,6 +16,7 @@ router.post(
     failureRedirect: "/admin/register",
   })
 );
+
 router.post(
   "/login",
   passport.authenticate("local-login", {
@@ -24,6 +25,7 @@ router.post(
     failureFlash: true,
   })
 );
+
 router.get("/logout", passport.isLoggedIn, controller.logout);
 
 module.exports = router;
