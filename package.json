@@ -7,6 +7,7 @@
     "nodemon": "nodemon ./bin/www"
   },
   "dependencies": {
+    "amocrm-js": "^2.0.9",
     "aws-sdk": "2.x",
     "bcrypt": "^3.0.8",
     "body-parser": "*",

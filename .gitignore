@@ -49,3 +49,4 @@ public/img/vacancies/reviews/
 .vscode/launch.json
 .env
 *.css.map
+crm-test.js
