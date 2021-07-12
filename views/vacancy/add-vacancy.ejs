@@ -4,12 +4,7 @@
 
 <div class="container">
   <h3>Додавання вакансії</h3>
-  <form
-    action="/vacancies/add"
-    enctype="multipart/form-data"
-    class="add-vacancy"
-    method="post"
-  >
+  <form action="/vacancies/add" enctype="multipart/form-data" class="add-vacancy" method="post">
     <p class="input-field">
       <input type="text" name="title" value="" id="title" autofocus />
       <label for="title">Назва</label>
@@ -39,6 +34,7 @@
         <option value="" disabled selected>вибрати</option>
         <option value="Польща">Польща</option>
         <option value="Чехія">Чехія</option>
+        <option value="Бельгія">Бельгія</option>
       </select>
       <label>Країна</label>
     </div>
@@ -52,19 +48,9 @@
     </p>
     <p class="input-field">
       <span class="caption">Головний текст </span
-      ><a
-        href="https://wordhtml.com/"
-        target="_blank"
-        class="waves-effect waves-light btn"
-        >word to html</a
-      >
+      ><a href="https://wordhtml.com/" target="_blank" class="waves-effect waves-light btn">word to html</a>
       <br />
-      <textarea
-        name="bigDescription"
-        id="editor"
-        cols="70"
-        rows="20"
-      ></textarea>
+      <textarea name="bigDescription" id="editor" cols="70" rows="20"></textarea>
     </p>
 
     <p class="input-field">
@@ -88,11 +74,7 @@
         <input type="file" name="images" multiple />
       </div>
       <div class="file-path-wrapper">
-        <input
-          class="file-path validate"
-          type="text"
-          placeholder="upload one or more files"
-        />
+        <input class="file-path validate" type="text" placeholder="upload one or more files" />
       </div>
     </div>
 

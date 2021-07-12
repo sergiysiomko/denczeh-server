@@ -2,7 +2,7 @@ const {getVideocode, rus_to_latin, render} = require('./utils');
 const passport = require('passport');
 const Vacancies = require('../dbmodels/vacancy-model');
 
-const CATEGORIES = {czech: 'Чехія', polska: 'Польща'};
+const CATEGORIES = {czech: 'Чехія', polska: 'Польща', belgium: 'Бельгія'};
 
 async function getActiveVacancies(req, res) {
   let vacancies = await Vacancies.find({isActive: true});
@@ -156,8 +156,8 @@ async function getVacancy(req, res, next) {
 }
 
 async function getCategory(req, res) {
-  let ctg = req.params.category;
-  const category = CATEGORIES[ctg];
+  let categoryParam = req.params.category;
+  const category = CATEGORIES[categoryParam];
   let vacancies = await Vacancies.find({category, isActive: true});
 
   if (vacancies.length == 0) {
@@ -172,6 +172,7 @@ async function test(req, res) {
     auth: {
       client_id: '478e9ddc-840d-4ce1-9299-1a70db8c0fe8', // ID интеграции
       client_secret: 'S2fGPUZV9nTKNLGpQi8rCtUoTnbWxI5bL0ZTsv8aTDY7Rne4Vyax91Tis3Z9ln9E', // Секретный ключ
+      grant_type: 'authorization_code',
       redirect_uri: 'https://denysiukjob.com.ua/', // Ссылка для перенаправления
       server: {
         port: 3001,

@@ -10,6 +10,9 @@
       <li>
         <a href="<%=process.env.DOMAIN%>/vacancies/type/polska">Польща</a>
       </li>
+      <li>
+        <a href="<%=process.env.DOMAIN%>/vacancies/type/belgium">Бельгія</a>
+      </li>
     </ul>
   </div>
   <section id="vacancies">
@@ -23,16 +26,12 @@
         </div>
         <div class="content">
           <div class="title">
-            <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
-              ><h2><%=v.title%></h2></a
-            >
+            <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"><h2><%=v.title%></h2></a>
           </div>
           <div class="info">
             <%- include("../part/terms.ejs", {vacancy: v}) -%>
             <div class="photo mobile">
-              <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
-                ><img src="<%=v.faceImage%>" alt="avatar"
-              /></a>
+              <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"><img src="<%=v.faceImage%>" alt="avatar"/></a>
             </div>
             <div class="payment">
               <div class="payment-mounth">
@@ -41,9 +40,7 @@
               <div class="payment-hour">
                 <%= v.payment %>
               </div>
-              <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"
-                ><div class="button">Переглянути</div></a
-              >
+              <a href="<%=process.env.DOMAIN%>/vacancies/<%=v.link%>"><div class="button">Переглянути</div></a>
             </div>
           </div>
         </div>
