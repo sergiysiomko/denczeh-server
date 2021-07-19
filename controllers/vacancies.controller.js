@@ -1,6 +1,7 @@
 const {getVideocode, rus_to_latin, render} = require('./utils');
-const passport = require('passport');
+// const passport = require('passport');
 const Vacancies = require('../dbmodels/vacancy-model');
+const amoCrm = require('../services/amo-crm.service');
 
 const CATEGORIES = {czech: 'Чехія', polska: 'Польща', belgium: 'Бельгія'};
 
@@ -165,73 +166,12 @@ async function getCategory(req, res) {
   } else res.render('vacancy/vacancies', {vacancies, auth: req.isAuthenticated()});
 }
 
-async function test(req, res) {
-  const AmoCrm = require('amocrm-js');
-  const amoCrm = new AmoCrm({
-    domain: 'denisiukjob2020',
-    auth: {
-      client_id: '478e9ddc-840d-4ce1-9299-1a70db8c0fe8', // ID интеграции
-      client_secret: 'S2fGPUZV9nTKNLGpQi8rCtUoTnbWxI5bL0ZTsv8aTDY7Rne4Vyax91Tis3Z9ln9E', // Секретный ключ
-      grant_type: 'authorization_code',
-      redirect_uri: 'https://denysiukjob.com.ua/', // Ссылка для перенаправления
-      server: {
-        port: 3001,
-      },
-    },
-  });
-
+async function refreshToken(req, res) {
   try {
-    const url = amoCrm.connection.getAuthUrl();
-
-    // const data = await amoCrm.request.get('/api/v4/leads');
-    res.json(url);
+    let updateTokenObject = await amoCrm.updateToken();
+    return res.json(updateTokenObject);
   } catch (error) {
-    res.json(error);
-  }
-}
-
-async function test2(req, res) {
-  const AmoCrm = require('amocrm-js');
-  const amoCrm = new AmoCrm({
-    domain: 'denisiukjob2020',
-    auth: {
-      client_id: '478e9ddc-840d-4ce1-9299-1a70db8c0fe8', // ID интеграции
-      client_secret: 'S2fGPUZV9nTKNLGpQi8rCtUoTnbWxI5bL0ZTsv8aTDY7Rne4Vyax91Tis3Z9ln9E', // Секретный ключ
-      redirect_uri: 'https://denysiukjob.com.ua/', // Ссылка для перенаправления
-      server: {
-        port: 3001,
-      },
-    },
-  });
-
-  try {
-    const data = await amoCrm.request.get('/api/v4/leads');
-    res.json(data);
-  } catch (error) {
-    res.json(error);
-  }
-}
-
-async function test3(req, res) {
-  const AmoCrm = require('amocrm-js');
-  const amoCrm = new AmoCrm({
-    domain: 'denisiukjob2020',
-    auth: {
-      client_id: '478e9ddc-840d-4ce1-9299-1a70db8c0fe8', // ID интеграции
-      client_secret: 'S2fGPUZV9nTKNLGpQi8rCtUoTnbWxI5bL0ZTsv8aTDY7Rne4Vyax91Tis3Z9ln9E', // Секретный ключ
-      redirect_uri: 'https://denysiukjob.com.ua/', // Ссылка для перенаправления
-      server: {
-        port: 3001,
-      },
-    },
-  });
-
-  try {
-    const url = amoCrm.connection.getAuthUrl();
-    const data = await amoCrm.request.get('/api/v4/leads');
-    res.json(data);
-  } catch (error) {
-    res.json(error);
+    return res.json(error);
   }
 }
 
@@ -247,7 +187,5 @@ module.exports = {
   editVacancy,
   editVacancyPage,
   addVacancyPage,
-  test,
-  test2,
-  test3,
+  refreshToken,
 };

@@ -12,6 +12,9 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
+let routers = require('./routes/routers');
+const amoCrmService = require('./services/amo-crm.service');
+
 mongoose.Promise = global.Promise;
 
 mongoose
@@ -27,8 +30,6 @@ mongoose
     console.log(err);
     console.log('db crash');
   });
-
-let routers = require('./routes/routers');
 
 const app = express();
 app.listen(() => {
@@ -61,5 +62,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routers);
+
+amoCrmService.init();
 
 module.exports = app;

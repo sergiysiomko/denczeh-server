@@ -9,6 +9,7 @@
   "dependencies": {
     "amocrm-js": "^2.0.9",
     "aws-sdk": "2.x",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.8",
     "body-parser": "*",
     "connect-mongo": "^3.2.0",

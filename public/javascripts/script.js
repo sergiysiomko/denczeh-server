@@ -11,6 +11,8 @@ function init() {
   gallery('#image-reviews');
 
   select();
+
+  amoCrmVisitor();
 }
 function select() {
   $(document).ready(function() {
@@ -18,7 +20,7 @@ function select() {
   });
 }
 function vacanciesCategoriesCheck() {
-  var categories = {vacancies: 0, czech: 1, polska: 2};
+  var categories = {vacancies: 0, czech: 1, polska: 2, belgium: 3};
   var buttons = document.querySelectorAll('.vacancies-ctg a');
 
   if (buttons.length == 0) return;
@@ -260,4 +262,12 @@ function counter() {
       $this.countTo(options);
     }
   });
+}
+
+function amoCrmVisitor() {
+  window.AMOPIXEL_IDENTIFIER_PARAMS = window.AMOPIXEL_IDENTIFIER_PARAMS || {};
+  window.AMOPIXEL_IDENTIFIER_PARAMS.onload = function(pixel_identifier) {
+    var visitor_uid = pixel_identifier.getVisitorUid();
+    console.log('visitor_uid', visitor_uid);
+  };
 }
