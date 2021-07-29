@@ -2,7 +2,10 @@
 const axios = require('axios');
 const CrmModel = require('../dbmodels/crm-model');
 
-const Urls = {access_token: 'https://denisiukjob2020.amocrm.ru/oauth2/access_token/'};
+const api_paths = {
+  access_token: 'https://denisiukjob2020.amocrm.ru/oauth2/access_token/',
+  add_lead: 'https://denisiukjob2020.amocrm.ru/api/v4/leads',
+};
 
 async function firstInit() {
   try {
@@ -18,7 +21,7 @@ async function firstInit() {
 
     await CrmModel.deleteMany({});
 
-    let accessData = await axios.post(Urls.access_token, requestParams, {headers});
+    let accessData = await axios.post(api_paths.access_token, requestParams, {headers});
     let newAccessData = new CrmModel(accessData.data);
 
     await newAccessData.save();
@@ -34,7 +37,7 @@ function init() {
 }
 
 function startTokenUpdater() {
-  const threeHoursInMilliseconds = 1000 * 60 * 60 * 3;
+  // const threeHoursInMilliseconds = 1000 * 60 * 60 * 3;
   const minuteInMilliseconds = 1000 * 60;
   setInterval(async () => {
     await updateToken();
@@ -56,7 +59,7 @@ async function updateToken() {
 
     await CrmModel.deleteMany({});
 
-    let accessData = await axios.post(Urls.access_token, requestParams, {headers});
+    let accessData = await axios.post(api_paths.access_token, requestParams, {headers});
     let newAccessData = new CrmModel(accessData.data);
 
     await newAccessData.save();
@@ -64,6 +67,20 @@ async function updateToken() {
     return newAccessData;
   } catch (error) {
     console.log(error);
+    return error;
+  }
+}
+
+async function addLead(leadData) {
+  try {
+    let leadsData = [leadData];
+    let accessData = await CrmModel.findOne({});
+    let headers = {'Content-Type': 'application/json', Authorization: 'Bearer ' + accessData.access_token};
+    let lead = await axios.post(api_paths.add_lead, leadsData, {headers});
+    return lead;
+  } catch (error) {
+    console.log(error);
+    return error;
   }
 }
 
@@ -71,4 +88,5 @@ module.exports = {
   firstInit,
   init,
   updateToken,
+  addLead,
 };

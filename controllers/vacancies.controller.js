@@ -175,6 +175,37 @@ async function refreshToken(req, res) {
   }
 }
 
+async function addLead(req, res) {
+  try {
+    let data = {
+      name: 'Сделка для примера 2',
+      custom_fields_values: [
+        {
+          field_id: 867205,
+          values: [
+            {
+              value: 'field_id - 867205 - тестовое зачение (имя)',
+            },
+          ],
+        },
+        {
+          field_id: 867203,
+          values: [
+            {
+              value: 'field_id - 867203 - тестовое зачение (номер телефона)',
+            },
+          ],
+        },
+      ],
+    };
+
+    let addedLead = await amoCrm.addLead(data);
+    return res.json(addedLead);
+  } catch (error) {
+    return res.send(error);
+  }
+}
+
 module.exports = {
   getActiveVacancies,
   addVacancy,
@@ -188,4 +219,5 @@ module.exports = {
   editVacancyPage,
   addVacancyPage,
   refreshToken,
+  addLead,
 };
