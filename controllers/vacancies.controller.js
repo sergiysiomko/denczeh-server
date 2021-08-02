@@ -3,7 +3,7 @@ const {getVideocode, rus_to_latin, render} = require('./utils');
 const Vacancies = require('../dbmodels/vacancy-model');
 const amoCrm = require('../services/amo-crm.service');
 
-const CATEGORIES = {czech: 'Чехія', polska: 'Польща', belgium: 'Бельгія'};
+const CATEGORIES = {czech: 'Чехія', polska: 'Польща', belgium: 'Бельгія', slovakia:'Словаччина'};
 
 async function getActiveVacancies(req, res) {
   let vacancies = await Vacancies.find({isActive: true});
