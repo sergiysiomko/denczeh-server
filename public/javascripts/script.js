@@ -21,7 +21,7 @@ function select() {
   });
 }
 function vacanciesCategoriesCheck() {
-  var categories = {vacancies: 0, czech: 1, polska: 2, belgium: 3};
+  var categories = {vacancies: 0, czech: 1, polska: 2, belgium: 3, slovakia: 4};
   var buttons = document.querySelectorAll('.vacancies-ctg a');
 
   if (buttons.length == 0) return;
