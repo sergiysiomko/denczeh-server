@@ -1,4 +1,5 @@
 <%- include('../part/header',{title:"Робота за кордоном - " + vacancy.title})-%> <%- include('../part/menu/menu',{auth})-%>
+<%-include('../part/lead-form')-%>
 
 <div id="vacancy">
   <div class="main-text">
@@ -8,7 +9,7 @@
       <img src="<%=vacancy.faceImage%>" alt="" />
     </div>
 
-    <!-- <button id="openFormButton">Залиши заявку на вакансію</button> -->
+    <button id="openLeadFormButton">Залиши заявку на вакансію</button>
 
     <div id="description"><%-vacancy.bigDescription%></div>
     <% if (vacancy.videocode) { %>
@@ -108,5 +109,3 @@
 </div>
 
 <%- include('../part/footer')-%>
-
-<!-- <script src="/javascripts/amocrm-form.js"></script> -->

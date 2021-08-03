@@ -1,30 +1,27 @@
 <div class="terms">
-  <div class="term">
+  <div class="term region">
     <i class="material-icons">location_on</i>
-    <span class="category">Регіон</span>
-    <span class="value"
-      ><%=vacancy.country? vacancy.country+': ': ''%>
-      <%=vacancy.location%></span
-    >
+    <span class="category ">Регіон</span>
+    <span class="value"><%=vacancy.country? vacancy.country+': ': ''%> <%=vacancy.location%></span>
   </div>
-  <div class="term">
+  <div class="term schedule">
     <i class="material-icons">insert_invitation</i>
-    <span class="category">Графік</span>
+    <span class="category ">Графік</span>
     <span class="value"><%=vacancy.shchedule%></span>
   </div>
-  <div class="term">
+  <div class="term habitation">
     <i class="material-icons">house</i>
-    <span class="category">Житло</span>
+    <span class="category ">Житло</span>
     <span class="value"><%=vacancy.habitation%></span>
   </div>
-  <div class="term">
+  <div class="term verified">
     <i class="material-icons">verified_user</i>
-    <span class="category">Вакасія</span>
+    <span class="category ">Вакасія</span>
     <span class="value">Перевірена та безкоштовна</span>
   </div>
-  <div class="term">
+  <div class="term workers-count">
     <i class="material-icons">person</i>
-    <span class="category">Необхідно</span>
+    <span class="category ">Необхідно</span>
     <span class="value"><%= vacancy.workers_count %></span>
   </div>
 </div>

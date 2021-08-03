@@ -176,15 +176,16 @@ async function refreshToken(req, res) {
 }
 
 async function addLead(req, res) {
+  console.log(req.body);
   try {
     let data = {
-      name: 'Сделка для примера 2',
+      name: req.body.region,
       custom_fields_values: [
         {
           field_id: 867205,
           values: [
             {
-              value: 'field_id - 867205 - тестовое зачение (имя)',
+              value: req.body.name,
             },
           ],
         },
@@ -192,7 +193,7 @@ async function addLead(req, res) {
           field_id: 867203,
           values: [
             {
-              value: 'field_id - 867203 - тестовое зачение (номер телефона)',
+              value: req.body.phone,
             },
           ],
         },
@@ -200,7 +201,7 @@ async function addLead(req, res) {
     };
 
     let addedLead = await amoCrm.addLead(data);
-    return res.json(addedLead);
+    res.send('asdfasdf');
   } catch (error) {
     return res.send(error);
   }

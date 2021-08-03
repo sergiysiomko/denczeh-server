@@ -37,11 +37,12 @@ function init() {
 }
 
 function startTokenUpdater() {
-  // const threeHoursInMilliseconds = 1000 * 60 * 60 * 3;
+  const threeHoursInMilliseconds = 1000 * 60 * 60 * 3;
   const minuteInMilliseconds = 1000 * 60;
+
   setInterval(async () => {
     await updateToken();
-  }, minuteInMilliseconds);
+  }, threeHoursInMilliseconds);
 }
 
 async function updateToken() {
@@ -77,7 +78,8 @@ async function addLead(leadData) {
     let accessData = await CrmModel.findOne({});
     let headers = {'Content-Type': 'application/json', Authorization: 'Bearer ' + accessData.access_token};
     let lead = await axios.post(api_paths.add_lead, leadsData, {headers});
-    return lead;
+
+    return lead.data;
   } catch (error) {
     console.log(error);
     return error;

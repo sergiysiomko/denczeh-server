@@ -12,7 +12,8 @@ function init() {
 
   select();
 
-  amoCrmVisitor();
+  leadForm();
+  // amoCrmVisitor();
 }
 function select() {
   $(document).ready(function() {
@@ -264,6 +265,122 @@ function counter() {
   });
 }
 
+function leadForm() {
+  let elOpenLeadFormButton = document.getElementById('openLeadFormButton');
+  if (!elOpenLeadFormButton) return;
+
+  elOpenLeadFormButton.addEventListener('click', handleOpenLeadForm);
+  let elForm = document.getElementById('leadForm');
+  elForm.addEventListener('submit', handleLeadFormSubmit);
+
+  let elCloseButton = document.querySelector('.popup-wrapper .close');
+  elCloseButton.addEventListener('click', handleClosePopup);
+}
+
+function handleOpenLeadForm() {
+  let elPopupWrapper = document.querySelector('.popup-wrapper');
+  resetForm();
+  elPopupWrapper.classList.add('open');
+}
+
+function handleClosePopup() {
+  let elPopupWrapper = document.querySelector('.popup-wrapper');
+  elPopupWrapper.classList.remove('open');
+}
+
+function handleLeadFormSubmit(event) {
+  event.preventDefault();
+
+  resetValidation();
+
+  let elRequiredFields = document.querySelectorAll('#leadForm input.required');
+
+  let isValidForm = validation(elRequiredFields);
+  if (isValidForm) {
+    let data = getData();
+
+    sendFormData(data);
+  }
+}
+
+function getData() {
+  let vacancyRegion = document.querySelector('.terms .region .value').innerText;
+  let vacancyName = 'test vacancy name';
+  let name = document.querySelector("#leadForm > input[name='name']").value;
+  let region = document.querySelector("#leadForm > input[name='region']").value;
+  let promocode = document.querySelector("#leadForm > input[name='promocode']").value;
+  let phone = document.querySelector("#leadForm > input[name='phone']").value;
+
+  return {
+    name,
+    region,
+    vacancyRegion,
+    vacancyName,
+    phone,
+    promocode,
+  };
+}
+
+async function sendFormData(data) {
+  let url = 'http://localhost:3000/vacancies/lead';
+  let payLoad = JSON.stringify(data);
+
+  let response = await fetch(url, {
+    method: 'POST',
+    body: payLoad,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  let json = await response.json();
+
+  console.log('response: ', json);
+}
+
+function resetForm() {
+  resetValues();
+  resetValidation();
+}
+
+function resetValues() {
+  let elFields = document.querySelectorAll('#leadForm input:not([type="submit"])');
+
+  Array.from(elFields).forEach(elField => {
+    elField.value = '';
+  });
+}
+
+function resetValidation() {
+  let elFields = document.querySelectorAll('#leadForm input:not([type="submit"])');
+
+  Array.from(elFields).forEach(elField => {
+    elField.classList.remove('invalid');
+  });
+}
+
+function validation(elRequiredFields) {
+  let isAllValid = true;
+  Array.from(elRequiredFields).forEach(elField => {
+    if (isValidField(elField) === false) {
+      isAllValid = false;
+      elField.classList.add('invalid');
+    }
+  });
+
+  return isAllValid;
+}
+
+function isValidField(elField) {
+  let pureValue = elField.value.trim();
+  if (pureValue == '' || pureValue.length < 6) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+/*
 function amoCrmVisitor() {
   window.AMOPIXEL_IDENTIFIER_PARAMS = window.AMOPIXEL_IDENTIFIER_PARAMS || {};
   window.AMOPIXEL_IDENTIFIER_PARAMS.onload = function(pixel_identifier) {
@@ -271,3 +388,4 @@ function amoCrmVisitor() {
     console.log('visitor_uid', visitor_uid);
   };
 }
+*/
