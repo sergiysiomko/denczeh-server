@@ -7,9 +7,16 @@
     <div class="info">
       <%- include("../part/terms", {vacancy})-%>
       <img src="<%=vacancy.faceImage%>" alt="" />
+      <button id="openLeadFormButton">
+        <div class="phone-icon">
+          <i class="material-icons">phone</i>
+        </div>
+        <div class="text">
+          <span class="main-text">Залиши заявку на вакансію</span>
+          <span class="subtext">Ми зараз в онлайні</span>
+        </div>
+      </button>
     </div>
-
-    <button id="openLeadFormButton">Залиши заявку на вакансію</button>
 
     <div id="description"><%-vacancy.bigDescription%></div>
     <% if (vacancy.videocode) { %>

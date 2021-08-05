@@ -281,11 +281,13 @@ function handleOpenLeadForm() {
   let elPopupWrapper = document.querySelector('.popup-wrapper');
   resetForm();
   elPopupWrapper.classList.add('open');
+  document.body.classList.add('open-popup');
 }
 
 function handleClosePopup() {
   let elPopupWrapper = document.querySelector('.popup-wrapper');
   elPopupWrapper.classList.remove('open');
+  document.body.classList.remove('open-popup');
 }
 
 function handleLeadFormSubmit(event) {
@@ -299,7 +301,7 @@ function handleLeadFormSubmit(event) {
   if (isValidForm) {
     let data = getData();
 
-    sendFormData(data);
+    sendFormData(data).then(showThankYouInfo);
   }
 }
 
@@ -307,13 +309,11 @@ function getData() {
   let vacancyRegion = document.querySelector('.terms .region .value').innerText;
   let vacancyName = 'test vacancy name';
   let name = document.querySelector("#leadForm > input[name='name']").value;
-  let region = document.querySelector("#leadForm > input[name='region']").value;
   let promocode = document.querySelector("#leadForm > input[name='promocode']").value;
   let phone = document.querySelector("#leadForm > input[name='phone']").value;
 
   return {
     name,
-    region,
     vacancyRegion,
     vacancyName,
     phone,
@@ -322,25 +322,28 @@ function getData() {
 }
 
 async function sendFormData(data) {
-  let url = 'http://localhost:3000/vacancies/lead';
-  let payLoad = JSON.stringify(data);
+  try {
+    let url = 'http://localhost:3000/vacancies/lead';
+    let payLoad = JSON.stringify(data);
 
-  let response = await fetch(url, {
-    method: 'POST',
-    body: payLoad,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  let json = await response.json();
-
-  console.log('response: ', json);
+    let response = await fetch(url, {
+      method: 'POST',
+      body: payLoad,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    let json = await response.json();
+  } catch (error) {
+    alert('Щось пішло не так.');
+    console.log(error);
+  }
 }
 
 function resetForm() {
   resetValues();
   resetValidation();
+  resetView();
 }
 
 function resetValues() {
@@ -357,6 +360,11 @@ function resetValidation() {
   Array.from(elFields).forEach(elField => {
     elField.classList.remove('invalid');
   });
+}
+
+function resetView() {
+  let elContent = document.querySelector('.popup-wrapper .content');
+  elContent.classList.remove('thank-you');
 }
 
 function validation(elRequiredFields) {
@@ -378,6 +386,12 @@ function isValidField(elField) {
   } else {
     return true;
   }
+}
+
+function showThankYouInfo() {
+  let elContent = document.querySelector('.popup-wrapper .content');
+
+  elContent.classList.add('thank-you');
 }
 
 /*

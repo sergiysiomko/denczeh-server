@@ -3,7 +3,7 @@ const {getVideocode, rus_to_latin, render} = require('./utils');
 const Vacancies = require('../dbmodels/vacancy-model');
 const amoCrm = require('../services/amo-crm.service');
 
-const CATEGORIES = {czech: 'Чехія', polska: 'Польща', belgium: 'Бельгія', slovakia:'Словаччина'};
+const CATEGORIES = {czech: 'Чехія', polska: 'Польща', belgium: 'Бельгія', slovakia: 'Словаччина'};
 
 async function getActiveVacancies(req, res) {
   let vacancies = await Vacancies.find({isActive: true});
@@ -179,7 +179,7 @@ async function addLead(req, res) {
   console.log(req.body);
   try {
     let data = {
-      name: req.body.region,
+      name: req.body.vacancyRegion,
       custom_fields_values: [
         {
           field_id: 867205,
