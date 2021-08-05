@@ -22,6 +22,7 @@ async function firstInit() {
     await CrmModel.deleteMany({});
 
     let accessData = await axios.post(api_paths.access_token, requestParams, {headers});
+    accessData.data.start_at = new Date().toString();
     let newAccessData = new CrmModel(accessData.data);
 
     await newAccessData.save();
@@ -33,6 +34,7 @@ async function firstInit() {
 }
 
 function init() {
+  updateToken();
   startTokenUpdater();
 }
 
@@ -61,6 +63,7 @@ async function updateToken() {
     await CrmModel.deleteMany({});
 
     let accessData = await axios.post(api_paths.access_token, requestParams, {headers});
+    accessData.data.start_at = new Date().toString();
     let newAccessData = new CrmModel(accessData.data);
 
     await newAccessData.save();

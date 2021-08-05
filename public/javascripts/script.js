@@ -307,7 +307,7 @@ function handleLeadFormSubmit(event) {
 
 function getData() {
   let vacancyRegion = document.querySelector('.terms .region .value').innerText;
-  let vacancyName = 'test vacancy name';
+  let vacancyName = document.querySelector('h1').innerText;
   let name = document.querySelector("#leadForm > input[name='name']").value;
   let promocode = document.querySelector("#leadForm > input[name='promocode']").value;
   let phone = document.querySelector("#leadForm > input[name='phone']").value;
@@ -334,6 +334,7 @@ async function sendFormData(data) {
       },
     });
     let json = await response.json();
+    console.log(json);
   } catch (error) {
     alert('Щось пішло не так.');
     console.log(error);

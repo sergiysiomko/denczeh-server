@@ -197,11 +197,27 @@ async function addLead(req, res) {
             },
           ],
         },
+        {
+          field_id: 891289,
+          values: [
+            {
+              value: req.body.vacancyName,
+            },
+          ],
+        },
+        {
+          field_id: 891287,
+          values: [
+            {
+              value: req.body.promocode,
+            },
+          ],
+        },
       ],
     };
 
     let addedLead = await amoCrm.addLead(data);
-    res.send('asdfasdf');
+    res.send({status: 'ok'});
   } catch (error) {
     return res.send(error);
   }

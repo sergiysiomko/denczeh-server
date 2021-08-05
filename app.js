@@ -63,7 +63,9 @@ app.use(passport.session());
 
 app.use('/', routers);
 
-// amoCrmService.firstInit();
-// amoCrmService.init();
+(async function() {
+  // await amoCrmService.firstInit();
+  amoCrmService.init();
+})();
 
 module.exports = app;
