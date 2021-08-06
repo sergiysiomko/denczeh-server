@@ -329,7 +329,6 @@ async function sendFormData(data) {
     let response = await fetch(url, {
       method: 'POST',
       body: payLoad,
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },

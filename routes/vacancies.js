@@ -27,7 +27,7 @@ router.get('/deactivate/:id', passport.isLoggedIn, controller.deactivateVacancy)
 
 router.get('/list', passport.isLoggedIn, controller.getList);
 
-router.get('/crm-api-refresh-token', passport.isLoggedIn, controller.refreshToken);
+router.get('/crm-api-refresh-token', controller.refreshToken);
 
 router.post('/lead', controller.addLead);
 
