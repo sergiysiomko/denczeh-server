@@ -177,6 +177,11 @@ async function refreshToken(req, res) {
 
 async function addLead(req, res) {
   res.setHeader('Access-Control-Allow-Origin', 'https://denysiukjob.com.ua/');
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
   try {
     let data = {
       name: req.body.vacancyRegion,
