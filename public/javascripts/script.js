@@ -323,7 +323,7 @@ function getData() {
 
 async function sendFormData(data) {
   try {
-    let url = 'http://localhost:3000/vacancies/lead';
+    let url = window.location.origin + '/vacancies/lead';
     let payLoad = JSON.stringify(data);
 
     let response = await fetch(url, {
