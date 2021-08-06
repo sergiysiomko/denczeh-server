@@ -65,7 +65,7 @@ app.use('/', routers);
 
 (async function() {
   // await amoCrmService.firstInit();
-  amoCrmService.init();
+  // amoCrmService.init();
 })();
 
 module.exports = app;
